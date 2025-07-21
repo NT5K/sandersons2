@@ -1,21 +1,16 @@
 import React from "react";
+import PageHero from "../components/PageHero";
 
 const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="hero-about">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="hero-content">
-                <h1>About the Experience</h1>
-                <h2>Extremely Social Presents The Sanderson Sisters</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage="./assets/images/hero/witches-hero-wide.png"
+        title="About the Experience"
+        subtitle="Extremely Social Presents The Sanderson Sisters"
+        height="60vh"
+      />
 
       {/* About Section */}
       <section className="about-section">

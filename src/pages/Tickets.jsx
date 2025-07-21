@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PageHero from "../components/PageHero";
 
 const Tickets = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -43,18 +44,12 @@ const Tickets = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="tickets-hero">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="hero-content">
-                <h1>Reserve Your Experience</h1>
-                <h2>An Evening with the Sanderson Sisters</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage="./assets/images/hero/tickets-hero-wide.png"
+        title="Reserve Your Experience"
+        subtitle="An Evening with the Sanderson Sisters"
+        height="60vh"
+      />
 
       {/* Ticket Packages Section */}
       <section className="ticket-packages">

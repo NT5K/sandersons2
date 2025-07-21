@@ -1,21 +1,16 @@
 import React from "react";
+import PageHero from "../components/PageHero";
 
 const Cocktails = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="cocktails-hero">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="hero-content">
-                <h1>Signature Cocktails</h1>
-                <h2>Enchanted Libations of Salem</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage="./assets/images/drinks/hero_cocktail_mashup.png"
+        title="Signature Cocktails"
+        subtitle="Enchanted Libations of Salem"
+        height="60vh"
+      />
 
       {/* Cocktail Menu Introduction */}
       <section className="cocktail-menu-section">
@@ -64,7 +59,6 @@ const Cocktails = () => {
                     Smoked simple syrup • Blood orange juice • Angostura bitters
                   </p>
                 </div>
-                {/* <p className="cocktail-price">$18</p> */}
               </div>
             </div>
           </div>
@@ -90,7 +84,6 @@ const Cocktails = () => {
                     Edible glitter
                   </p>
                 </div>
-                {/* <p className="cocktail-price">$16</p> */}
               </div>
               <div className="cocktail-image">
                 <img
@@ -130,7 +123,6 @@ const Cocktails = () => {
                     garnish
                   </p>
                 </div>
-                {/* <p className="cocktail-price">$15</p> */}
               </div>
             </div>
           </div>
@@ -156,7 +148,6 @@ const Cocktails = () => {
                     absinthe float
                   </p>
                 </div>
-                {/* <p className="cocktail-price">$22</p> */}
               </div>
               <div className="cocktail-image">
                 <img

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PageHero from "../components/PageHero";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -55,18 +56,12 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="contact-hero">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="hero-content">
-                <h1>Contact Us</h1>
-                <h2>Begin Your Enchanted Journey</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage="./assets/images/hero/contact-hero-wide.png"
+        title="Contact Us"
+        subtitle="Begin Your Enchanted Journey"
+        height="60vh"
+      />
 
       {/* Contact Form Section */}
       <section className="contact-section">
@@ -80,7 +75,6 @@ const Contact = () => {
           <div className="contact-content">
             <div className="contact-form-container">
               <div className="contact-form">
-                {/* Form simulation */}
                 <h3>Send Us a Message</h3>
 
                 {submitMessage && (
