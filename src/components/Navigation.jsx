@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const location = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -14,8 +14,8 @@ const Navigation = () => {
   };
 
   const isActive = (path) => {
-    if (path === '/') {
-      return location.pathname === '/';
+    if (path === "/") {
+      return location.pathname === "/";
     }
     return location.pathname === path;
   };
@@ -23,20 +23,22 @@ const Navigation = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">Sanderson Sisters</Link>
-        <button 
-          className="navbar-toggler" 
-          type="button" 
+        <Link className="navbar-brand" to="/">
+          Sanderson Sisters
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
           onClick={toggleNav}
           aria-expanded={isNavOpen}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`}>
+        <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link 
-                className={`nav-link ${isActive('/') ? 'active' : ''}`} 
+              <Link
+                className={`nav-link ${isActive("/") ? "active" : ""}`}
                 to="/"
                 onClick={() => setIsNavOpen(false)}
               >
@@ -44,8 +46,8 @@ const Navigation = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                className={`nav-link ${isActive('/about') ? 'active' : ''}`} 
+              <Link
+                className={`nav-link ${isActive("/about") ? "active" : ""}`}
                 to="/about"
                 onClick={() => setIsNavOpen(false)}
               >
@@ -53,8 +55,8 @@ const Navigation = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                className={`nav-link ${isActive('/cocktails') ? 'active' : ''}`} 
+              <Link
+                className={`nav-link ${isActive("/cocktails") ? "active" : ""}`}
                 to="/cocktails"
                 onClick={() => setIsNavOpen(false)}
               >
@@ -62,8 +64,8 @@ const Navigation = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                className={`nav-link ${isActive('/tickets') ? 'active' : ''}`} 
+              <Link
+                className={`nav-link ${isActive("/tickets") ? "active" : ""}`}
                 to="/tickets"
                 onClick={() => setIsNavOpen(false)}
               >
@@ -71,8 +73,8 @@ const Navigation = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link 
-                className={`nav-link ${isActive('/contact') ? 'active' : ''}`} 
+              <Link
+                className={`nav-link ${isActive("/contact") ? "active" : ""}`}
                 to="/contact"
                 onClick={() => setIsNavOpen(false)}
               >
