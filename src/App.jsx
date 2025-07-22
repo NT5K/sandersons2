@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Cocktails from "./pages/Cocktails";
 import Home from "./pages/Home";
 import Tickets from "./pages/Tickets";
+import "./App.css"; 
 import "./styles/main.css";
 import Contact from "./pages/Contact";
 
