@@ -53,6 +53,18 @@ const Footer = () => {
                 that elevate any occasion into an unforgettable evening of
                 theatrical excellence.
               </p>
+              <a
+                href="https://extremelysocialcle.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="./assets/images/logo/logo_transparent.png"
+                  alt="Company Logo"
+                  className="footer-logo"
+                  style={{ maxHeight: "100px" }}
+                />
+              </a>
             </div>
             <div className="col-lg-4">
               <h5>Experience</h5>
