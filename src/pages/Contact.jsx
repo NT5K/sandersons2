@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import PageHero from "../components/PageHero";
 
-// Component-specific styles
 const contactStyles = `
 /* Contact Page Styles */
 
-.contact-section {
-  padding: 120px 0;
+/* Section Padding (Unified) */
+.contact-section,
+.office-hours,
+.social-section {
+  padding: 120px 0; /* Consistent vertical padding for main sections */
   position: relative;
   z-index: 2;
 }
 
+/* Contact Content Grid */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 80px; /* Keep custom gap for grid */
   align-items: start;
 }
 
+/* Form Container */
 .contact-form-container {
   background: linear-gradient(
     145deg,
@@ -25,7 +29,7 @@ const contactStyles = `
     rgba(42, 42, 42, 0.8)
   );
   border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 50px 40px;
+  padding: 50px 40px; /* Keep custom padding */
   backdrop-filter: blur(15px);
   position: relative;
   overflow: hidden;
@@ -60,17 +64,19 @@ const contactStyles = `
   font-family: "Playfair Display", serif;
   font-size: 2.2rem;
   color: var(--gold-accent);
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Keep custom margin */
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
+/* Form Controls (Bootstrap handles most of this, keeping custom resize) */
 textarea.form-control {
   min-height: 120px;
   resize: vertical;
 }
 
+/* Submit Button */
 .btn-submit {
   background: linear-gradient(45deg, var(--deep-black), var(--charcoal));
   border: 2px solid var(--gold-accent);
@@ -79,14 +85,14 @@ textarea.form-control {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 3px;
-  padding: 18px 45px;
+  padding: 18px 45px; /* Keep custom padding */
   font-size: 1rem;
-  border-radius: 0;
+  border-radius: 0; /* Bootstrap applies rounding, explicitly remove */
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 20px; /* Keep custom margin */
 }
 
 .btn-submit::before {
@@ -116,10 +122,11 @@ textarea.form-control {
   left: 100%;
 }
 
+/* Contact Info Section */
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 40px; /* Keep custom gap for flex items */
 }
 
 .contact-card {
@@ -129,7 +136,7 @@ textarea.form-control {
     rgba(42, 42, 42, 0.6)
   );
   border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 40px 30px;
+  padding: 40px 30px; /* Keep custom padding */
   text-align: center;
   transition: all 0.5s ease;
   backdrop-filter: blur(15px);
@@ -166,7 +173,7 @@ textarea.form-control {
 .contact-icon {
   font-size: 2.5rem;
   color: var(--gold-accent);
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Keep custom margin */
   filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
 }
 
@@ -174,7 +181,7 @@ textarea.form-control {
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
   color: var(--gold-accent);
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Keep custom margin */
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -185,7 +192,7 @@ textarea.form-control {
   line-height: 1.6;
   font-size: 1.1rem;
   opacity: 0.9;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Keep custom margin */
 }
 
 .contact-card a {
@@ -200,7 +207,6 @@ textarea.form-control {
 
 /* Office Hours Section */
 .office-hours {
-  padding: 100px 0;
   background: linear-gradient(
     180deg,
     rgba(26, 26, 26, 0.3) 0%,
@@ -211,7 +217,7 @@ textarea.form-control {
 .hours-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 80px; /* Keep custom gap for grid */
   align-items: center;
 }
 
@@ -219,7 +225,7 @@ textarea.form-control {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   color: var(--gold-accent);
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Keep custom margin */
   letter-spacing: 1px;
 }
 
@@ -240,7 +246,7 @@ textarea.form-control {
 .location-map {
   background: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 30px;
+  padding: 30px; /* Keep custom padding */
   text-align: center;
 }
 
@@ -251,7 +257,7 @@ textarea.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Keep custom margin */
 }
 
 .map-placeholder i {
@@ -262,7 +268,6 @@ textarea.form-control {
 
 /* Social Media Section */
 .social-section {
-  padding: 100px 0;
   background: linear-gradient(
     180deg,
     transparent 0%,
@@ -274,8 +279,7 @@ textarea.form-control {
 .social-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
+  gap: 40px; /* Keep custom gap for grid */
 }
 
 .social-card {
@@ -285,10 +289,11 @@ textarea.form-control {
     rgba(42, 42, 42, 0.6)
   );
   border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 40px 30px;
+  padding: 40px 30px; /* Keep custom padding */
   text-align: center;
   transition: all 0.5s ease;
   backdrop-filter: blur(15px);
+  height: 100%; /* Ensure cards are same height */
 }
 
 .social-card:hover {
@@ -300,13 +305,13 @@ textarea.form-control {
 .social-card i {
   font-size: 2.5rem;
   color: var(--gold-accent);
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Keep custom margin */
 }
 
 .social-card h4 {
   font-family: "Cinzel", serif;
   color: var(--gold-accent);
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Keep custom margin */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -315,7 +320,7 @@ textarea.form-control {
   font-family: "Cormorant Garamond", serif;
   color: var(--silver);
   opacity: 0.9;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Keep custom margin */
 }
 
 .social-link {
@@ -335,23 +340,21 @@ textarea.form-control {
 
 /* Emergency Contact Section */
 .emergency-contact {
-  padding: 80px 0;
+  padding: 80px 0; /* Keep custom padding */
   background: rgba(139, 0, 0, 0.1);
   border-top: 1px solid rgba(139, 0, 0, 0.3);
   border-bottom: 1px solid rgba(139, 0, 0, 0.3);
 }
 
 .emergency-content {
-  text-align: center;
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .emergency-content h3 {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   color: var(--ember);
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Keep custom margin */
   letter-spacing: 1px;
 }
 
@@ -360,7 +363,7 @@ textarea.form-control {
   font-size: 1.2rem;
   color: var(--silver);
   opacity: 0.9;
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Keep custom margin */
 }
 
 .emergency-phone {
@@ -371,7 +374,32 @@ textarea.form-control {
   letter-spacing: 2px;
 }
 
-/* Responsive adjustments for contact */
+/* Section Titles (reused from Home.jsx or global styles) */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--gold-accent);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Section Subtitle (reused from Home.jsx or global styles) */
+.section-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: var(--silver);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  opacity: 0.9;
+  max-width: 800px; /* Added max-width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-content,
   .hours-content {
@@ -383,14 +411,11 @@ textarea.form-control {
     padding: 40px 30px;
   }
 
+  /* Unified padding adjustment for smaller screens */
   .contact-section,
   .office-hours,
   .social-section {
     padding: 80px 0;
-  }
-
-  .social-grid {
-    grid-template-columns: 1fr;
   }
 }
 `;
@@ -468,20 +493,19 @@ const Contact = () => {
               evening with the Sanderson Sisters.
             </p>
 
-            <div className="contact-content">
+            <div className="contact-content mt-5">
               <div className="contact-form-container">
                 <div className="contact-form">
-                  <h3>Send Us a Message</h3>
+                  <h3 className="text-uppercase mb-4">Send Us a Message</h3>
 
                   {submitMessage && (
                     <div
-                      className="alert alert-info"
+                      className="alert alert-info mb-4"
                       style={{
                         background: "rgba(212, 175, 55, 0.1)",
                         border: "1px solid rgba(212, 175, 55, 0.3)",
                         color: "var(--gold-accent)",
                         padding: "15px",
-                        marginBottom: "25px",
                         fontFamily: '"Cormorant Garamond", serif',
                       }}
                     >
@@ -489,9 +513,9 @@ const Contact = () => {
                     </div>
                   )}
 
-                  <div className="row">
+                  <div className="row g-3">
                     <div className="col-md-6">
-                      <div className="form-group">
+                      <div className="form-group mb-3">
                         <label htmlFor="firstName" className="form-label">
                           First Name
                         </label>
@@ -508,7 +532,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="form-group">
+                      <div className="form-group mb-3">
                         <label htmlFor="lastName" className="form-label">
                           Last Name
                         </label>
@@ -526,7 +550,8 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group mb-3">
+                    {" "}
                     <label htmlFor="email" className="form-label">
                       Email Address
                     </label>
@@ -542,7 +567,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group mb-3">
+                    {" "}
                     <label htmlFor="phone" className="form-label">
                       Phone Number
                     </label>
@@ -557,7 +583,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group mb-3">
+                    {" "}
                     <label htmlFor="inquiryType" className="form-label">
                       Inquiry Type
                     </label>
@@ -573,19 +600,24 @@ const Contact = () => {
                       <option value="general-booking">
                         General Ticket Booking
                       </option>
-                      <option value="private-event">Private Event Inquiry</option>
+                      <option value="private-event">
+                        Private Event Inquiry
+                      </option>
                       <option value="corporate-event">Corporate Event</option>
                       <option value="group-booking">
                         Group Booking (10+ people)
                       </option>
                       <option value="gift-certificate">Gift Certificate</option>
                       <option value="media-press">Media & Press</option>
-                      <option value="partnership">Partnership Opportunity</option>
+                      <option value="partnership">
+                        Partnership Opportunity
+                      </option>
                       <option value="other">Other</option>
                     </select>
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group mb-3">
+                    {" "}
                     <label htmlFor="preferredDate" className="form-label">
                       Preferred Date
                     </label>
@@ -599,7 +631,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group mb-3">
+                    {" "}
                     <label htmlFor="guestCount" className="form-label">
                       Number of Guests
                     </label>
@@ -620,7 +653,8 @@ const Contact = () => {
                     </select>
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group mb-4">
+                    {" "}
                     <label htmlFor="message" className="form-label">
                       Message
                     </label>
@@ -637,7 +671,7 @@ const Contact = () => {
 
                   <button
                     type="button"
-                    className="btn-submit"
+                    className="btn-submit w-100 mt-3"
                     onClick={handleSubmit}
                     disabled={isSubmitting}
                   >
@@ -645,17 +679,18 @@ const Contact = () => {
                   </button>
                 </div>
               </div>
-
-              <div className="contact-info">
+              <div className="contact-info d-flex flex-column gap-4">
                 <div className="contact-card">
                   <div className="contact-icon">
                     <i className="fas fa-phone-alt"></i>
                   </div>
-                  <h3>Phone</h3>
-                  <p>
+                  <h3 className="text-uppercase mb-3">Phone</h3>
+                  <p className="mb-2">
+                    {" "}
                     <a href="tel:+1-216-555-0199">(216) 555-0199</a>
                   </p>
-                  <p>
+                  <p className="mb-0">
+                    {" "}
                     Monday - Friday: 10 AM - 6 PM
                     <br />
                     Saturday: 10 AM - 4 PM
@@ -668,32 +703,32 @@ const Contact = () => {
                   <div className="contact-icon">
                     <i className="fas fa-envelope"></i>
                   </div>
-                  <h3>Email</h3>
-                  <p>
+                  <h3 className="text-uppercase mb-3">Email</h3>
+                  <p className="mb-2">
                     <a href="mailto:info@extremelysocial.com">
                       info@extremelysocial.com
                     </a>
                   </p>
-                  <p>General inquiries and bookings</p>
-                  <p>
+                  <p className="mb-3">General inquiries and bookings</p>
+                  <p className="mb-2">
                     <a href="mailto:private@extremelysocial.com">
                       private@extremelysocial.com
                     </a>
                   </p>
-                  <p>Private events and corporate bookings</p>
+                  <p className="mb-0">Private events and corporate bookings</p>
                 </div>
 
                 <div className="contact-card">
                   <div className="contact-icon">
                     <i className="fas fa-map-marker-alt"></i>
                   </div>
-                  <h3>Location</h3>
-                  <p>
+                  <h3 className="text-uppercase mb-3">Location</h3>
+                  <p className="mb-2">
                     <strong>Extremely Social</strong>
                     <br />
                     Cleveland, Ohio
                   </p>
-                  <p>
+                  <p className="mb-0">
                     Event venues vary by booking.
                     <br />
                     Specific location details provided
@@ -710,9 +745,9 @@ const Contact = () => {
         <section className="office-hours">
           <div className="container">
             <h2 className="section-title">Visit Our Studio</h2>
-            <div className="hours-content">
+            <div className="hours-content mt-5">
               <div className="hours-info">
-                <h3>Business Hours</h3>
+                <h3 className="mb-4">Business Hours</h3>
                 <div className="hours-list">
                   <p>
                     <span className="day">Monday:</span> 10:00 AM - 6:00 PM
@@ -732,13 +767,13 @@ const Contact = () => {
                   <p>
                     <span className="day">Saturday:</span> 10:00 AM - 4:00 PM
                   </p>
-                  <p>
+                  <p className="mb-0">
                     <span className="day">Sunday:</span> Closed
                   </p>
                 </div>
                 <p
+                  className="mt-4 mb-0"
                   style={{
-                    marginTop: "30px",
                     fontFamily: '"Cormorant Garamond", serif',
                     fontSize: "1.2rem",
                     color: "var(--silver)",
@@ -752,27 +787,28 @@ const Contact = () => {
                 </p>
               </div>
               <div className="location-map">
-                <div className="map-placeholder">
+                <div className="map-placeholder mb-4">
                   <i className="fas fa-map-marked-alt"></i>
                 </div>
                 <p
+                  className="mb-2"
                   style={{
                     fontFamily: '"Cinzel", serif',
                     color: "var(--gold-accent)",
-                    marginBottom: "10px",
                   }}
                 >
                   Cleveland, Ohio
                 </p>
                 <p
+                  className="mb-0"
                   style={{
                     fontFamily: '"Cormorant Garamond", serif',
                     color: "var(--silver)",
                     fontSize: "1.1rem",
                   }}
                 >
-                  Detailed address provided upon booking confirmation for security
-                  and exclusivity.
+                  Detailed address provided upon booking confirmation for
+                  security and exclusivity.
                 </p>
               </div>
             </div>
@@ -788,11 +824,11 @@ const Contact = () => {
               behind-the-scenes content, and upcoming events.
             </p>
 
-            <div className="social-grid">
+            <div className="social-grid mt-5">
               <div className="social-card">
-                <i className="fab fa-facebook-f"></i>
-                <h4>Facebook</h4>
-                <p>
+                <i className="fab fa-facebook-f mb-3"></i>
+                <h4 className="text-uppercase mb-3">Facebook</h4>
+                <p className="mb-3">
                   Get updates on upcoming shows, exclusive content, and connect
                   with our community of magic enthusiasts.
                 </p>
@@ -807,9 +843,9 @@ const Contact = () => {
               </div>
 
               <div className="social-card">
-                <i className="fab fa-instagram"></i>
-                <h4>Instagram</h4>
-                <p>
+                <i className="fab fa-instagram mb-3"></i>
+                <h4 className="text-uppercase mb-3">Instagram</h4>
+                <p className="mb-3">
                   Behind-the-scenes photos, costume details, cocktail creations,
                   and glimpses into the mystical world we create.
                 </p>
@@ -824,11 +860,11 @@ const Contact = () => {
               </div>
 
               <div className="social-card">
-                <i className="fas fa-envelope-open-text"></i>
-                <h4>Newsletter</h4>
-                <p>
-                  Be the first to know about new shows, early bird discounts, and
-                  exclusive subscriber-only events.
+                <i className="fas fa-envelope-open-text mb-3"></i>
+                <h4 className="text-uppercase mb-3">Newsletter</h4>
+                <p className="mb-3">
+                  Be the first to know about new shows, early bird discounts,
+                  and exclusive subscriber-only events.
                 </p>
                 <a
                   href="mailto:info@extremelysocial.com?subject=Newsletter Subscription"
@@ -839,11 +875,11 @@ const Contact = () => {
               </div>
 
               <div className="social-card">
-                <i className="fas fa-calendar-star"></i>
-                <h4>Events</h4>
-                <p>
-                  Join our mailing list for invitations to special events, season
-                  announcements, and VIP experiences.
+                <i className="fas fa-calendar-star mb-3"></i>
+                <h4 className="text-uppercase mb-3">Events</h4>
+                <p className="mb-3">
+                  Join our mailing list for invitations to special events,
+                  season announcements, and VIP experiences.
                 </p>
                 <a
                   href="mailto:info@extremelysocial.com?subject=VIP Events List"
@@ -859,13 +895,15 @@ const Contact = () => {
         {/* Emergency Contact Section */}
         <section className="emergency-contact">
           <div className="container">
-            <div className="emergency-content">
-              <h3>Day-of-Event Contact</h3>
-              <p>
+            <div className="emergency-content text-center mx-auto">
+              <h3 className="mb-3">Day-of-Event Contact</h3>
+              <p className="mb-3">
                 For urgent matters on the day of your event, including late
                 arrivals, emergencies, or last-minute changes:
               </p>
-              <p className="emergency-phone">Emergency Line: (216) 555-0911</p>
+              <p className="emergency-phone mb-0">
+                Emergency Line: (216) 555-0911
+              </p>
             </div>
           </div>
         </section>

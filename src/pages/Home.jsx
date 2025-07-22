@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 
-// Component-specific styles
 const homeStyles = `
 /* Home Page Styles */
 
 /* Hero Section */
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
   background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
     radial-gradient(
@@ -53,9 +50,6 @@ const homeStyles = `
 }
 
 .hero-content {
-  text-align: center;
-  z-index: 3;
-  position: relative;
   animation: fadeInUp 1s ease-out;
 }
 
@@ -64,7 +58,6 @@ const homeStyles = `
   font-size: clamp(3.5rem, 8vw, 7rem);
   font-weight: 900;
   color: var(--gold-accent);
-  margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -77,7 +70,6 @@ const homeStyles = `
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 600;
   color: var(--silver);
-  margin-bottom: 3rem;
   letter-spacing: 4px;
   text-transform: uppercase;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
@@ -87,30 +79,18 @@ const homeStyles = `
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   color: var(--silver);
-  max-width: 700px;
-  margin: 0 auto 4rem;
   line-height: 1.8;
   font-weight: 500;
   opacity: 1;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.7);
 }
 
-.hero-icons {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 4rem;
-  flex-wrap: wrap;
-}
-
 .hero-icon {
-  text-align: center;
   color: var(--gold-accent);
 }
 
 .hero-icon i {
   font-size: 2.5rem;
-  margin-bottom: 15px;
   display: block;
 }
 
@@ -122,11 +102,59 @@ const homeStyles = `
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-/* Experience Section */
-.experience {
-  padding: 120px 0;
+/* Section Titles */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--gold-accent);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.section-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--silver);
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* Custom Buttons */
+.btn-luxury {
+  display: inline-block;
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  margin: 0 1rem 1rem 0;
+  border: 2px solid var(--gold-accent);
+  color: var(--gold-accent);
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+.btn-luxury:hover {
+  background-color: var(--gold-accent);
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Sections - Padding & Backgrounds */
+.experience, .services, .practical-info, .reviews, .gallery, .location {
+  padding: 100px 0; /* Consistent vertical padding for sections */
   position: relative;
   z-index: 2;
+}
+
+.experience {
   background: linear-gradient(
     180deg,
     transparent 0%,
@@ -135,18 +163,50 @@ const homeStyles = `
   );
 }
 
-.experience-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.services {
+  /* No specific background, relies on body background or previous section */
 }
 
+.practical-info {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 26, 0.3) 0%,
+    transparent 100%
+  );
+}
+
+.reviews {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(45, 27, 105, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+.gallery {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(45, 27, 105, 0.05) 50%,
+    transparent 100%
+  );
+}
+
+.location {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 26, 0.2) 0%,
+    transparent 100%
+  );
+}
+
+
+/* Experience Section */
 .experience-text h3 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   color: var(--gold-accent);
-  margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
@@ -156,19 +216,14 @@ const homeStyles = `
   line-height: 1.8;
   color: var(--silver);
   opacity: 0.9;
-  margin-bottom: 20px;
 }
 
 .experience-image {
-  position: relative;
   border: 1px solid rgba(212, 175, 55, 0.3);
   overflow: hidden;
 }
 
 .experience-image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
   transition: transform 0.6s ease;
 }
 
@@ -177,12 +232,6 @@ const homeStyles = `
 }
 
 /* Services Section */
-.services {
-  padding: 100px 0;
-  position: relative;
-  z-index: 2;
-}
-
 .service-card {
   background: linear-gradient(
     145deg,
@@ -191,7 +240,6 @@ const homeStyles = `
   );
   border: 1px solid rgba(212, 175, 55, 0.3);
   padding: 40px 30px;
-  text-align: center;
   transition: all 0.5s ease;
   backdrop-filter: blur(15px);
   height: 100%;
@@ -228,7 +276,6 @@ const homeStyles = `
 .service-icon {
   font-size: 2.5rem;
   color: var(--gold-accent);
-  margin-bottom: 20px;
   transition: all 0.4s ease;
 }
 
@@ -242,7 +289,6 @@ const homeStyles = `
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--gold-accent);
-  margin-bottom: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -257,32 +303,11 @@ const homeStyles = `
 }
 
 /* Practical Info Section */
-.practical-info {
-  padding: 120px 0;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.3) 0%,
-    transparent 100%
-  );
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.info-content {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+.info-video iframe {
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .info-item {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   transition: all 0.3s ease;
 }
@@ -294,7 +319,6 @@ const homeStyles = `
 .info-item i {
   font-size: 1.5rem;
   color: var(--gold-accent);
-  margin-right: 25px;
   min-width: 30px;
 }
 
@@ -308,27 +332,13 @@ const homeStyles = `
 }
 
 /* Reviews Section */
-.reviews {
-  padding: 120px 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(45, 27, 105, 0.1) 50%,
-    transparent 100%
-  );
-}
-
 .review-card {
   background: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(212, 175, 55, 0.3);
   padding: 40px 30px;
-  margin: 0 15px;
   border-radius: 0;
   transition: all 0.4s ease;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100%; /* Ensure cards are same height */
 }
 
 .review-card:hover {
@@ -341,44 +351,31 @@ const homeStyles = `
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--silver);
-  margin-bottom: 20px;
-  flex-grow: 1;
+  flex-grow: 1; /* Allows text to grow and push author/stars down */
 }
 
 .review-author {
   font-family: "Cinzel", serif;
   color: var(--gold-accent);
   font-weight: 500;
-  margin-bottom: 10px;
 }
 
 .review-stars {
   color: var(--gold-accent);
 }
 
-/* Gallery Section */
-.gallery {
-  padding: 100px 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(45, 27, 105, 0.05) 50%,
-    transparent 100%
-  );
-}
-
 /* Location Section */
-.location {
-  padding: 100px 0;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.2) 0%,
-    transparent 100%
-  );
+.location-description {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--silver);
+  opacity: 0.9;
 }
 
-.location-description {
-  opacity: 0.9;
+.location a {
+  color: var(--silver); /* Default link color for location section */
+  text-decoration: none;
 }
 
 .location a:hover {
@@ -386,45 +383,37 @@ const homeStyles = `
   transition: all 0.3s ease;
 }
 
+.location .fab {
+  font-size: 1.3rem; /* Consistent icon size */
+}
+
 .location .fab:hover {
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
-/* Responsive adjustments */
+.location-image {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  overflow: hidden;
+}
+
+.location-image img {
+  height: 400px; /* Specific height for location image */
+  object-fit: cover;
+}
+
+
+/* Responsive adjustments - remaining custom breakpoints */
 @media (max-width: 768px) {
   .hero {
     min-height: 90vh;
     padding: 120px 0 60px;
-  }
-
-  .service-card {
-    margin-bottom: 40px;
-    padding: 40px 30px;
-  }
-
-  .services,
-  .experience,
-  .practical-info,
-  .reviews {
-    padding: 80px 0;
-  }
-
-  .experience-content,
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero-icons {
-    gap: 30px;
   }
 }
 `;
 
 const Home = () => {
   useEffect(() => {
-    // Initialize nanogallery2 when component mounts
     const initializeGallery = (galleryID, items, title, description) => {
       if (window.jQuery && window.jQuery.fn.nanogallery2) {
         window.jQuery(`#${galleryID}`).nanogallery2({
@@ -474,7 +463,6 @@ const Home = () => {
       }
     };
 
-    // Wait for jQuery and nanogallery2 to load
     const checkLibraries = () => {
       if (window.jQuery && window.jQuery.fn.nanogallery2) {
         initializeGallery(
@@ -557,7 +545,10 @@ const Home = () => {
       <style>{homeStyles}</style>
       <div>
         {/* Hero Section */}
-        <section id="home" className="hero">
+        <section
+          id="home"
+          className="hero d-flex align-items-center justify-content-center"
+        >
           {/* Video Background */}
           <video autoPlay muted loop playsInline className="video-background">
             <source src="./assets/videos/sample.mp4" type="video/mp4" />
@@ -566,19 +557,19 @@ const Home = () => {
           {/* Dark overlay for text readability */}
           <div className="hero-overlay"></div>
 
-          <div className="container">
+          <div className="container position-relative z-3 text-center text-white">
             <div className="row">
               <div className="col-12">
-                <div className="hero-content">
-                  <h1>Sanderson Sisters</h1>
-                  <h2>An Exclusive Salem Experience</h2>
-                  <p>
+                <div className="hero-content mx-auto">
+                  <h1 className="mb-3">Sanderson Sisters</h1>
+                  <h2 className="mb-5">An Exclusive Salem Experience</h2>
+                  <p className="mx-auto mb-5">
                     Step into the shadows of Salem's most notorious witches. An
                     immersive theatrical experience where ancient mystique meets
-                    modern luxury in an unforgettable evening of spells, spirits,
-                    and sophisticated entertainment.
+                    modern luxury in an unforgettable evening of spells,
+                    spirits, and sophisticated entertainment.
                   </p>
-                  <div className="cta-buttons">
+                  <div className="d-flex justify-content-center flex-wrap mb-5">
                     <a href="#tickets" className="btn-luxury">
                       Reserve Experience
                     </a>
@@ -586,9 +577,9 @@ const Home = () => {
                       Discover More
                     </a>
                   </div>
-                  <div className="hero-icons">
+                  <div className="hero-icons d-flex justify-content-center flex-wrap gap-5 mt-4">
                     <div className="hero-icon">
-                      <i className="fas fa-cocktail"></i>
+                      <i className="fas fa-cocktail mb-3"></i>
                       <span>
                         Themed Cocktails
                         <br />
@@ -596,7 +587,7 @@ const Home = () => {
                       </span>
                     </div>
                     <div className="hero-icon">
-                      <i className="fas fa-theater-masks"></i>
+                      <i className="fas fa-theater-masks mb-3"></i>
                       <span>
                         Live Performance
                         <br />
@@ -604,7 +595,7 @@ const Home = () => {
                       </span>
                     </div>
                     <div className="hero-icon">
-                      <i className="fas fa-users"></i>
+                      <i className="fas fa-users mb-3"></i>
                       <span>
                         Intimate Venue
                         <br />
@@ -622,33 +613,39 @@ const Home = () => {
         <section className="experience" id="about">
           <div className="container">
             <h2 className="section-title">The Experience</h2>
-            <div className="experience-content">
-              <div className="experience-text">
-                <h3>A Tale of Salem's Most Infamous</h3>
-                <p>
-                  Immerse yourself in the legendary story of Winifred, Sarah, and
-                  Mary Sanderson. Our sophisticated interpretation brings these
-                  iconic characters to life through masterful storytelling,
-                  atmospheric design, and interactive entertainment.
-                </p>
-                <p>
-                  Set in an intimate venue that captures the essence of 1600s
-                  Salem, guests are invited to witness—and participate in—the
-                  sisters' most bewitching evening. From spell-casting rituals to
-                  musical performances, every moment is crafted to transport you
-                  into their mystical world.
-                </p>
-                <p>
-                  This is not merely dinner theater—this is an immersive journey
-                  into the heart of Salem's most captivating legend, elevated for
-                  the discerning adult audience.
-                </p>
+            <div className="row align-items-center g-5 g-md-4">
+              <div className="col-md-6 order-md-1">
+                <div className="experience-text">
+                  <h3 className="mb-4">A Tale of Salem's Most Infamous</h3>
+                  <p className="mb-3">
+                    Immerse yourself in the legendary story of Winifred, Sarah,
+                    and Mary Sanderson. Our sophisticated interpretation brings
+                    these iconic characters to life through masterful
+                    storytelling, atmospheric design, and interactive
+                    entertainment.
+                  </p>
+                  <p className="mb-3">
+                    Set in an intimate venue that captures the essence of 1600s
+                    Salem, guests are invited to witness—and participate in—the
+                    sisters' most bewitching evening. From spell-casting rituals
+                    to musical performances, every moment is crafted to
+                    transport you into their mystical world.
+                  </p>
+                  <p className="mb-0">
+                    This is not merely dinner theater—this is an immersive
+                    journey into the heart of Salem's most captivating legend,
+                    elevated for the discerning adult audience.
+                  </p>
+                </div>
               </div>
-              <div className="experience-image">
-                <img
-                  src="./assets/images/sample1.png"
-                  alt="Atmospheric Salem setting"
-                />
+              <div className="col-md-6 order-md-2">
+                <div className="experience-image">
+                  <img
+                    src="./assets/images/sample1.png"
+                    alt="Atmospheric Salem setting"
+                    className="img-fluid w-100 h-100"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -660,12 +657,12 @@ const Home = () => {
             <h2 className="section-title">Exclusive Offerings</h2>
             <div className="row g-5">
               <div className="col-lg-4 col-md-6">
-                <div className="service-card">
-                  <div className="service-icon">
+                <div className="service-card text-center">
+                  <div className="service-icon mb-4">
                     <i className="fas fa-crown"></i>
                   </div>
-                  <h3>Premium Performance</h3>
-                  <p>
+                  <h3 className="mb-3">Premium Performance</h3>
+                  <p className="mb-0">
                     Experience theatrical excellence with professionally trained
                     performers delivering an immersive, high-caliber
                     interpretation of the legendary Sanderson Sisters in an
@@ -674,28 +671,29 @@ const Home = () => {
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="service-card">
-                  <div className="service-icon">
+                <div className="service-card text-center">
+                  <div className="service-icon mb-4">
                     <i className="fas fa-glass-cheers"></i>
                   </div>
-                  <h3>Curated Libations</h3>
-                  <p>
+                  <h3 className="mb-3">Curated Libations</h3>
+                  <p className="mb-0">
                     Sophisticated audience engagement paired with carefully
-                    crafted themed cocktails and bespoke entertainment tailored to
-                    discerning guests who appreciate theatrical artistry.
+                    crafted themed cocktails and bespoke entertainment tailored
+                    to discerning guests who appreciate theatrical artistry.
                   </p>
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="service-card">
-                  <div className="service-icon">
+                <div className="service-card text-center">
+                  <div className="service-icon mb-4">
                     <i className="fas fa-gem"></i>
                   </div>
-                  <h3>Luxury Events</h3>
-                  <p>
-                    Elevated Halloween experiences designed for exclusive venues,
-                    private parties, corporate events, and upscale gatherings
-                    seeking unparalleled entertainment and atmosphere.
+                  <h3 className="mb-3">Luxury Events</h3>
+                  <p className="mb-0">
+                    Elevated Halloween experiences designed for exclusive
+                    venues, private parties, corporate events, and upscale
+                    gatherings seeking unparalleled entertainment and
+                    atmosphere.
                   </p>
                 </div>
               </div>
@@ -707,65 +705,65 @@ const Home = () => {
         <section className="practical-info" id="tickets">
           <div className="container">
             <h2 className="section-title">Information</h2>
-            <div className="info-grid">
-              <div className="info-video">
-                <iframe
-                  width="100%"
-                  height="400"
-                  src="https://www.youtube.com/embed/idc0EOmKr30?si=Ln52qSfUqzX7QFFY"
-                  title="The Sanderson Sisters - The Witches Are Back (Music Video) Hocus Pocus 2"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  style={{ border: "1px solid rgba(212, 175, 55, 0.3)" }}
-                ></iframe>
+            <div className="row align-items-center g-5 g-md-4">
+              <div className="col-md-6">
+                <div className="info-video">
+                  <iframe
+                    width="100%"
+                    height="400"
+                    src="https://www.youtube.com/embed/idc0EOmKr30?si=Ln52qSfUqzX7QFFY"
+                    title="The Sanderson Sisters - The Witches Are Back (Music Video) Hocus Pocus 2"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
-              <div className="info-content">
-                <div className="info-item p-0">
-                  <i className="fas fa-calendar-alt"></i>
-                  <span>
-                    <strong>Dates:</strong> October - November, select evenings
-                  </span>
-                </div>
-                <div className="info-item p-0">
-                  <i className="fas fa-clock"></i>
-                  <span>
-                    <strong>Duration:</strong> 2.5 hours immersive experience
-                  </span>
-                </div>
-                <div className="info-item p-0">
-                  <i className="fas fa-map-marker-alt"></i>
-                  <span>
-                    <strong>Location:</strong> Exclusive Salem venue
-                  </span>
-                </div>
-                <div className="info-item p-0">
-                  <i className="fas fa-id-card"></i>
-                  <span>
-                    <strong>Age Requirement:</strong> 21+ with valid ID
-                  </span>
-                </div>
-                <div className="info-item p-0">
-                  <i className="fas fa-tshirt"></i>
-                  <span>
-                    <strong>Dress Code:</strong> Cocktail attire or costume
-                  </span>
-                </div>
-                <div className="info-item p-0">
-                  <i className="fas fa-cocktail"></i>
-                  <span>
-                    <strong>Included:</strong> Welcome cocktails & themed
-                    libations
-                  </span>
-                </div>
+              <div className="col-md-6">
+                <div className="info-content d-flex flex-column gap-3">
+                  <div className="info-item d-flex align-items-center py-3">
+                    <i className="fas fa-calendar-alt me-4"></i>
+                    <span>
+                      <strong>Dates:</strong> October - November, select
+                      evenings
+                    </span>
+                  </div>
+                  <div className="info-item d-flex align-items-center py-3">
+                    <i className="fas fa-clock me-4"></i>
+                    <span>
+                      <strong>Duration:</strong> 2.5 hours immersive experience
+                    </span>
+                  </div>
+                  <div className="info-item d-flex align-items-center py-3">
+                    <i className="fas fa-map-marker-alt me-4"></i>
+                    <span>
+                      <strong>Location:</strong> Exclusive Salem venue
+                    </span>
+                  </div>
+                  <div className="info-item d-flex align-items-center py-3">
+                    <i className="fas fa-id-card me-4"></i>
+                    <span>
+                      <strong>Age Requirement:</strong> 21+ with valid ID
+                    </span>
+                  </div>
+                  <div className="info-item d-flex align-items-center py-3">
+                    <i className="fas fa-tshirt me-4"></i>
+                    <span>
+                      <strong>Dress Code:</strong> Cocktail attire or costume
+                    </span>
+                  </div>
+                  <div className="info-item d-flex align-items-center py-3">
+                    <i className="fas fa-cocktail me-4"></i>
+                    <span>
+                      <strong>Included:</strong> Welcome cocktails & themed
+                      libations
+                    </span>
+                  </div>
 
-                <a
-                  href="#contact"
-                  className="btn-luxury"
-                  style={{ marginTop: "2rem" }}
-                >
-                  Reserve Your Experience
-                </a>
+                  <a href="#contact" className="btn-luxury mt-4">
+                    Reserve Your Experience
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -790,56 +788,62 @@ const Home = () => {
             <p className="section-subtitle">
               What our guests say about their enchanted evening
             </p>
-            <div className="row g-4">
+            <div className="row g-4 justify-content-center">
               <div className="col-lg-4 col-md-6">
-                <div className="review-card">
-                  <p className="review-text">
+                <div className="review-card d-flex flex-column">
+                  <p className="review-text mb-3">
                     "An absolutely spellbinding experience. The attention to
                     detail and the performers' commitment to their roles created
                     an evening I'll never forget. Sophisticated Halloween
                     entertainment at its finest."
                   </p>
-                  <div className="review-author">Margaret S.</div>
-                  <div className="review-stars">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
+                  <div className="mt-auto">
+                    <div className="review-author mb-2">Margaret S.</div>
+                    <div className="review-stars">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="review-card">
-                  <p className="review-text">
+                <div className="review-card d-flex flex-column">
+                  <p className="review-text mb-3">
                     "The perfect blend of theater, cocktails, and atmosphere. My
                     friends and I felt like we were truly part of the Sanderson
                     Sisters' world. Exceptional production quality throughout."
                   </p>
-                  <div className="review-author">Robert K.</div>
-                  <div className="review-stars">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
+                  <div className="mt-auto">
+                    <div className="review-author mb-2">Robert K.</div>
+                    <div className="review-stars">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="review-card">
-                  <p className="review-text">
+                <div className="review-card d-flex flex-column">
+                  <p className="review-text mb-3">
                     "Elegantly executed and thoroughly immersive. The venue was
                     intimate yet grand, and the cocktails were as bewitching as
                     the performance itself. A truly unique Salem experience."
                   </p>
-                  <div className="review-author">Diana L.</div>
-                  <div className="review-stars">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
+                  <div className="mt-auto">
+                    <div className="review-author mb-2">Diana L.</div>
+                    <div className="review-stars">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -850,161 +854,66 @@ const Home = () => {
         {/* Location Section */}
         <section className="location" id="location">
           <div className="container">
-            <div className="row align-items-center">
+            <div className="row align-items-center g-5 g-md-4">
               <div className="col-lg-7">
-                <h2
-                  className="section-title"
-                  style={{ textAlign: "left", marginBottom: "40px" }}
-                >
+                <h2 className="section-title text-start mb-4">
                   Extremely Social
                 </h2>
-                <p
-                  className="location-description"
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: "1.3rem",
-                    lineHeight: "1.8",
-                    color: "var(--silver)",
-                    marginBottom: "40px",
-                  }}
-                >
+                <p className="location-description mb-4">
                   Based in Cleveland, Ohio, Extremely Social specializes in
                   creating immersive, emotionally effective life experiences. We
                   don't just plan events—we craft unforgettable experiences that
-                  transport guests into extraordinary worlds of entertainment and
-                  sophistication.
+                  transport guests into extraordinary worlds of entertainment
+                  and sophistication.
                 </p>
-                <div className="location-info" style={{ marginBottom: "40px" }}>
-                  <div
-                    className="info-item"
-                    style={{ display: "flex", alignItems: "center" }}
-                  >
-                    <i
-                      className="fas fa-map-marker-alt"
-                      style={{
-                        fontSize: "1.5rem",
-                        color: "var(--gold-accent)",
-                        marginRight: "20px",
-                        minWidth: "30px",
-                      }}
-                    ></i>
-                    <span
-                      style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "1.2rem",
-                      }}
-                    >
-                      <strong style={{ color: "var(--gold-accent)" }}>
-                        Location:
-                      </strong>{" "}
-                      Cleveland, Ohio
+                <div className="location-info mb-4">
+                  <div className="info-item d-flex align-items-center">
+                    <i className="fas fa-map-marker-alt me-4"></i>
+                    <span>
+                      <strong>Location:</strong> Cleveland, Ohio
                     </span>
                   </div>
-                  <div
-                    className="info-item"
-                    style={{ display: "flex", alignItems: "center" }}
-                  >
-                    <i
-                      className="fas fa-envelope"
-                      style={{
-                        fontSize: "1.5rem",
-                        color: "var(--gold-accent)",
-                        marginRight: "20px",
-                        minWidth: "30px",
-                      }}
-                    ></i>
-                    <span
-                      style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "1.2rem",
-                      }}
-                    >
-                      <strong style={{ color: "var(--gold-accent)" }}>
-                        Contact:
-                      </strong>
-                      <a
-                        href="mailto:info@extremelysocial.com"
-                        style={{ color: "var(--silver)", textDecoration: "none" }}
-                      >
+                  <div className="info-item d-flex align-items-center">
+                    <i className="fas fa-envelope me-4"></i>
+                    <span>
+                      <strong>Contact:</strong>{" "}
+                      <a href="mailto:info@extremelysocial.com">
                         info@extremelysocial.com
                       </a>
                     </span>
                   </div>
-                  <div
-                    className="info-item"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginBottom: "30px",
-                    }}
-                  >
-                    <i
-                      className="fas fa-users"
-                      style={{
-                        fontSize: "1.5rem",
-                        color: "var(--gold-accent)",
-                        marginRight: "20px",
-                        minWidth: "30px",
-                      }}
-                    ></i>
-                    <span
-                      style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontSize: "1.2rem",
-                      }}
-                    >
-                      <strong style={{ color: "var(--gold-accent)" }}>
-                        Follow Us:
-                      </strong>
+                  <div className="info-item d-flex align-items-center mb-3">
+                    <i className="fas fa-users me-4"></i>
+                    <span>
+                      <strong>Follow Us:</strong>
                       <a
                         href="https://www.facebook.com/extremelysocial/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                          color: "var(--silver)",
-                          textDecoration: "none",
-                          marginLeft: "10px",
-                        }}
+                        className="ms-3 me-2"
                       >
-                        <i
-                          className="fab fa-facebook"
-                          style={{ fontSize: "1.3rem", marginRight: "15px" }}
-                        ></i>
+                        <i className="fab fa-facebook"></i>
                       </a>
                       <a
                         href="https://www.instagram.com/extremelysocialcle/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ color: "var(--silver)", textDecoration: "none" }}
                       >
-                        <i
-                          className="fab fa-instagram"
-                          style={{ fontSize: "1.3rem" }}
-                        ></i>
+                        <i className="fab fa-instagram"></i>
                       </a>
                     </span>
                   </div>
                 </div>
-                <a
-                  href="#contact"
-                  className="btn-luxury"
-                  style={{ marginTop: "20px" }}
-                >
+                <a href="#contact" className="btn-luxury mt-3">
                   Get In Touch
                 </a>
               </div>
               <div className="col-lg-5">
-                <div
-                  className="location-image"
-                  style={{
-                    border: "1px solid rgba(212, 175, 55, 0.3)",
-                    overflow: "hidden",
-                  }}
-                >
+                <div className="location-image">
                   <img
                     src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop"
                     alt="Cleveland Event Space"
-                    style={{ width: "100%", height: "400px", objectFit: "cover" }}
+                    className="img-fluid w-100"
                   />
                 </div>
               </div>
