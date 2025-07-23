@@ -1,0 +1,21 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 64 64"
+   width="32" height="32"
+   aria-hidden="true"
+>
+   <!-- Top cone -->
+   <path
+      fill="#722f37"
+      d="M16 50
+      C16 50 20 28 32 14
+      C44 28 48 50 48 50
+      Z"
+   />
+
+   <!-- Brim -->
+   <ellipse
+      fill="#CC8400"
+      cx="32" cy="52" rx="32" ry="6"
+   />
+</svg>
