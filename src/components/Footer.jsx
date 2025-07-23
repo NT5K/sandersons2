@@ -64,7 +64,7 @@ const Footer = () => {
                   src="./assets/images/logo/logo_transparent.png"
                   alt="Company Logo"
                   className="footer-logo"
-                  style={{ maxHeight: "100px" }}
+                  style={{ maxHeight: "80px" }}
                 />
               </a>
             </div>
