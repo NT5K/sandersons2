@@ -40,6 +40,8 @@ const footerStyles = `
 `;
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       <style>{footerStyles}</style>
@@ -104,7 +106,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-12 text-center">
               <p>
-                &copy; 2025 Extremely Social. All rights reserved. |{" "}
+                &copy; {currentYear} Extremely Social. All rights reserved. |{" "}
                 <em>Magic guaranteed, memories eternal.</em>
               </p>
             </div>
