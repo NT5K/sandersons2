@@ -2,8 +2,6 @@ import React from "react";
 import PageHero from "../components/PageHero";
 
 const aboutStyles = `
-/* About Page Styles */
-
 /* About Section */
 .about-section,
 .production-details,

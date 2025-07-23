@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// Component-specific styles
 const navigationStyles = `
-/* Navigation Styles */
 .navbar {
   background: rgba(10, 10, 10, 0.95) !important;
   backdrop-filter: blur(20px);
@@ -95,7 +93,9 @@ const Navigation = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}>
+          <div
+            className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
+          >
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link
@@ -117,7 +117,9 @@ const Navigation = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${isActive("/cocktails") ? "active" : ""}`}
+                  className={`nav-link ${
+                    isActive("/cocktails") ? "active" : ""
+                  }`}
                   to="/cocktails"
                   onClick={() => setIsNavOpen(false)}
                 >

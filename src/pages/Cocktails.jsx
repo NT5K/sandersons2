@@ -2,8 +2,6 @@ import React from "react";
 import PageHero from "../components/PageHero";
 
 const cocktailsStyles = `
-/* Cocktails Page Styles - Minimized */
-
 .cocktails-section {
   padding-top: 120px; /* Use Bootstrap py- for content if possible */
   padding-bottom: 120px;

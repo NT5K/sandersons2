@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Component-specific styles
 const footerStyles = `
-/* Footer Styles */
 .footer {
   background: var(--deep-black);
   padding: 80px 0 40px;

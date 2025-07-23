@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import PageHero from "../components/PageHero";
 
 const contactStyles = `
-/* Contact Page Styles */
-
 /* Section Padding (Unified) */
 .contact-section,
 .office-hours,

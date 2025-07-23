@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-// Component-specific styles
 const pageHeroStyles = `
-/* Page Hero Component Styles */
 .page-hero {
   display: flex;
   align-items: center;
@@ -108,10 +106,12 @@ const PageHero = ({
           className="page-hero-background"
           style={{
             ...parallaxStyle,
-            backgroundImage: `linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.5)),
-                             radial-gradient(circle at 30% 20%, rgba(45, 27, 105, 0.3) 0%, transparent 50%),
-                             radial-gradient(circle at 70% 80%, rgba(114, 47, 55, 0.3) 0%, transparent 50%),
-                             url(${backgroundImage})`,
+            backgroundImage: `
+              linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.5)),
+              radial-gradient(circle at 30% 20%, rgba(45, 27, 105, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(114, 47, 55, 0.3) 0%, transparent 50%),
+              url(${backgroundImage})
+            `,
           }}
         ></div>
         <div className="container">

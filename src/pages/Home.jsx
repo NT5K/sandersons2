@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 
 const homeStyles = `
-/* Home Page Styles */
-
 /* Hero Section */
 .hero {
   min-height: 100vh;
