@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
-import About from "./pages/About";
-import Cocktails from "./pages/Cocktails";
-import Home from "./pages/Home";
-import Tickets from "./pages/Tickets";
+import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
+import About from "./pages/About/About";
+import Cocktails from "./pages/Cocktails/Cocktails";
+import Home from "./pages/Home/Home";
+import Tickets from "./pages/Tickets/Tickets";
 import "./App.css"; 
 import "./styles/main.css";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
