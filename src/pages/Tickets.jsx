@@ -42,6 +42,15 @@ const Tickets = () => {
   ];
 
   const faqComponentStyles = `
+    /* Global styles to prevent horizontal scroll/gap */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     .faq-question:hover {
         background: rgba(26, 26, 26, 0.8);
     }
