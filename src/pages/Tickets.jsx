@@ -89,23 +89,24 @@ const Tickets = () => {
     .package-featured {
         border-color: var(--gold-accent);
         background: linear-gradient(145deg, rgba(45, 27, 105, 0.2), rgba(26, 26, 26, 0.95));
-        transform: scale(1.05);
     }
-    .package-featured::after {
+      .package-featured::after {
         content: "MOST POPULAR";
         position: absolute;
-        top: 20px;
-        right: -30px;
+        top: 35px;
+        right: -45px;
         background: var(--gold-accent);
         color: var(--deep-black);
-        padding: 8px 40px;
+        padding: 10px 45px;
         font-family: "Cinzel", serif;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 600;
         letter-spacing: 1px;
         transform: rotate(45deg);
         z-index: 3;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
+
     .package-icon {
         font-size: 3rem;
         color: var(--gold-accent);
