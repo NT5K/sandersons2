@@ -8,6 +8,14 @@ const navigationStyles = `
   border-bottom: 1px solid rgba(212, 175, 55, 0.3);
   z-index: 1000;
   padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: top 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+  top: -100px;
 }
 
 .navbar-brand {
@@ -60,11 +68,30 @@ const navigationStyles = `
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -80,7 +107,11 @@ const Navigation = () => {
   return (
     <>
       <style>{navigationStyles}</style>
-      <nav className="navbar navbar-expand-lg navbar-dark">
+      <nav
+        className={`navbar navbar-expand-lg navbar-dark ${
+          isVisible ? "" : "hidden"
+        }`}
+      >
         <div className="container">
           <Link className="navbar-brand" to="/">
             Sanderson Sisters
