@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import PageHero from "../components/PageHero";
+import PageHero from "../../components/PageHero/PageHero";
+import "./Tickets.css";
 
 const Tickets = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -41,354 +42,8 @@ const Tickets = () => {
     },
   ];
 
-  const faqComponentStyles = `
-    /* Global styles to prevent horizontal scroll/gap */
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    .faq-question:hover {
-        background: rgba(26, 26, 26, 0.8);
-    }
-    .faq-icon {
-        font-size: 1rem;
-        transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-icon {
-        transform: rotate(45deg);
-    }
-    .faq-answer {
-        display: none; /* Hide by default */
-        padding: 0 30px 25px; /* Original padding */
-    }
-    .faq-answer.active {
-        display: block; /* Show when active */
-    }
-    /* Keeping some specific custom styles not directly replaced by Bootstrap */
-    .package-card {
-        background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.8));
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        backdrop-filter: blur(15px);
-        transition: all 0.6s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    .package-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-        transition: left 0.8s ease;
-    }
-    .package-card:hover::before {
-        left: 100%;
-    }
-    .package-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--gold-accent);
-        box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
-    }
-    .package-featured {
-        border-color: var(--gold-accent);
-        background: linear-gradient(145deg, rgba(45, 27, 105, 0.2), rgba(26, 26, 26, 0.95));
-    }
-      .package-featured::after {
-        content: "MOST POPULAR";
-        position: absolute;
-        top: 35px;
-        right: -45px;
-        background: var(--gold-accent);
-        color: var(--deep-black);
-        padding: 10px 45px;
-        font-family: "Cinzel", serif;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        transform: rotate(45deg);
-        z-index: 3;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .package-icon {
-        font-size: 3rem;
-        color: var(--gold-accent);
-        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-    }
-    .package-name {
-        font-family: "Playfair Display", serif;
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: var(--gold-accent);
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-    .package-subtitle {
-        font-family: "Cinzel", serif;
-        font-size: 1rem;
-        color: var(--silver);
-        opacity: 0.8;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    .package-price {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
-        font-weight: 700;
-        color: var(--gold-accent);
-        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-    }
-    .package-price-note {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1rem;
-        color: var(--silver);
-        opacity: 0.7;
-    }
-    .package-features li {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.1rem;
-        color: var(--silver);
-        padding-left: 25px;
-        position: relative;
-        text-align: left;
-        opacity: 0.9;
-    }
-    .package-features li::before {
-        content: "✦";
-        position: absolute;
-        left: 0;
-        color: var(--gold-accent);
-        font-size: 1rem;
-    }
-    .package-button {
-        background: linear-gradient(45deg, var(--deep-black), var(--charcoal));
-        border: 2px solid var(--gold-accent);
-        color: var(--gold-accent);
-        font-family: "Cinzel", serif;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        padding: 18px 35px;
-        font-size: 1rem;
-        border-radius: 0;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s ease;
-        text-decoration: none;
-        display: inline-block;
-        width: 100%;
-    }
-    .package-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-        transition: left 0.6s ease;
-    }
-    .package-button:hover {
-        background: var(--gold-accent);
-        color: var(--deep-black);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-        text-decoration: none;
-    }
-    .package-button:hover::before {
-        left: 100%;
-    }
-
-    .detail-info-card {
-        background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        backdrop-filter: blur(15px);
-        transition: all 0.5s ease;
-    }
-    .detail-info-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--gold-accent);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    }
-    .detail-info-icon {
-        font-size: 2.5rem;
-        color: var(--gold-accent);
-    }
-    .detail-info-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.6rem;
-        color: var(--gold-accent);
-        letter-spacing: 1px;
-    }
-    .detail-info-card p {
-        font-family: "Cormorant Garamond", serif;
-        color: var(--silver);
-        line-height: 1.6;
-        font-size: 1.1rem;
-        opacity: 0.9;
-    }
-
-    .private-text h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 2.5rem;
-        color: var(--gold-accent);
-        letter-spacing: 1px;
-    }
-    .private-text p {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.3rem;
-        line-height: 1.8;
-        color: var(--silver);
-        opacity: 0.9;
-    }
-    .private-features li {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.2rem;
-        color: var(--silver);
-        padding-left: 25px;
-        position: relative;
-        opacity: 0.9;
-    }
-    .private-features li::before {
-        content: "★";
-        position: absolute;
-        left: 0;
-        color: var(--gold-accent);
-        font-size: 1rem;
-    }
-    .private-image {
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        overflow: hidden;
-    }
-    .private-image img {
-        transition: transform 0.6s ease;
-    }
-    .private-image:hover img {
-        transform: scale(1.05);
-    }
-
-    .faq-item {
-        background: rgba(26, 26, 26, 0.6);
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        transition: all 0.3s ease;
-    }
-    .faq-item:hover {
-        border-color: var(--gold-accent);
-    }
-    .faq-question {
-        background: none;
-        border: none;
-        text-align: left;
-        font-family: "Cinzel", serif;
-        font-size: 1.2rem;
-        color: var(--gold-accent);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-        /* Call Now to Reserve Section */
-    .call-now-section {
-        background: linear-gradient(180deg, rgba(45, 27, 105, 0.1) 0%, transparent 100%);
-        border-top: 1px solid rgba(212, 175, 55, 0.3);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    }
-
-    .call-now-title {
-        font-family: "Playfair Display", serif;
-        font-size: 2.5rem;
-        color: var(--gold-accent);
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-    }
-
-    .call-now-description {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.4rem;
-        color: var(--silver);
-        opacity: 0.9;
-        line-height: 1.8;
-    }
-
-    .call-now-icon {
-        font-size: 2rem;
-        color: var(--gold-accent);
-        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-    }
-
-    .call-now-phone {
-        font-family: "Cinzel", serif;
-        font-size: 2.2rem;
-        color: var(--gold-accent);
-        font-weight: 600;
-        letter-spacing: 3px;
-        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-        transition: all 0.3s ease;
-    }
-
-    .call-now-phone:hover {
-        color: var(--silver);
-        text-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-        transform: scale(1.02);
-    }
-
-    .call-now-hours {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.1rem;
-        color: var(--silver);
-        opacity: 0.8;
-    }
-
-    .call-now-hours strong {
-        color: var(--gold-accent);
-    }
-
-    /* Responsive adjustments for call now section */
-    @media (max-width: 768px) {
-        .call-now-title {
-            font-size: 2rem;
-        }
-        
-        .call-now-phone {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-        }
-        
-        .call-now-description {
-            font-size: 1.2rem;
-        }
-
-        .package-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-
-        /* Adjust FAQ answer padding for smaller screens to prevent wobble */
-        .faq-answer {
-            padding: 0 15px 25px; /* Reduced horizontal padding */
-        }
-    }
-
-    /* Ensure consistent horizontal centering for all main sections */
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-  `;
-
   return (
     <>
-      <style>{faqComponentStyles}</style>
       <div>
         {/* Hero Section */}
         <PageHero
@@ -399,7 +54,7 @@ const Tickets = () => {
         />
 
         {/* Ticket Packages Section */}
-        <section className="py-5" style={{ position: "relative", zIndex: 2 }}>
+        <section className="py-5 position-relative z-index-2">
           <div className="container">
             <h2 className="text-center mb-4 section-title">
               Experience Packages
@@ -419,38 +74,38 @@ const Tickets = () => {
                   <h3 className="card-title package-name">
                     Essential Enchantment
                   </h3>
-                  <p className="card-subtitle mb-3 package-subtitle">
+                  <p className="package-subtitle mb-3">
                     The Classic Salem Experience
                   </p>
                   <div className="package-price">$75</div>
-                  <p className="package-price-note">per person</p>
+                  <p className="package-price-note mb-4">per person</p>
 
                   <ul className="list-unstyled text-start package-features flex-grow-1">
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-magic text-gold me-2"></i>2.5-hour
                       immersive theatrical experience
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-cocktail text-gold me-2"></i>Welcome
                       cocktail upon arrival
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-hat-wizard text-gold me-2"></i>
                       Interactive participation in spell-casting rituals
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-mask text-gold me-2"></i>Professional
                       performance by the Sanderson Sisters
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-lamp text-gold me-2"></i>Atmospheric
                       setting with period décor
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-bread-slice text-gold me-2"></i>
                       Complimentary themed appetizers
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-camera text-gold me-2"></i>Photo
                       opportunities throughout the evening
                     </li>
@@ -458,7 +113,7 @@ const Tickets = () => {
 
                   <a
                     href="#contact"
-                    className="btn btn-outline-warning mt-auto package-button"
+                    className="btn btn-outline-warning mt-auto btn-luxury w-100"
                   >
                     Select Package
                   </a>
@@ -474,42 +129,42 @@ const Tickets = () => {
                   <h3 className="card-title package-name">
                     Deluxe Spellbinding
                   </h3>
-                  <p className="card-subtitle mb-3 package-subtitle">
+                  <p className="package-subtitle mb-3">
                     The Premium Salem Adventure
                   </p>
                   <div className="package-price">$125</div>
-                  <p className="package-price-note">per person</p>
+                  <p className="package-price-note mb-4">per person</p>
 
                   <ul className="list-unstyled text-start package-features flex-grow-1">
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-check text-gold me-2"></i>Everything
                       in Essential Enchantment
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-cocktail text-gold me-2"></i>Three
                       signature cocktails (one per sister)
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-chair text-gold me-2"></i>Priority
                       seating in the front section
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-handshake text-gold me-2"></i>
                       Personal interaction with each Sanderson Sister
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-camera text-gold me-2"></i>Exclusive
                       behind-the-scenes mini-tour
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-utensils text-gold me-2"></i>Gourmet
                       themed dinner service
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-book-sparkles text-gold me-2"></i>
                       Commemorative spell book and quill
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-images text-gold me-2"></i>
                       Professional photos delivered digitally
                     </li>
@@ -517,7 +172,7 @@ const Tickets = () => {
 
                   <a
                     href="#contact"
-                    className="btn btn-outline-warning mt-auto package-button"
+                    className="btn btn-outline-warning mt-auto btn-luxury w-100"
                   >
                     Select Package
                   </a>
@@ -531,46 +186,46 @@ const Tickets = () => {
                     <i className="fas fa-crown"></i>
                   </div>
                   <h3 className="card-title package-name">Black Flame VIP</h3>
-                  <p className="card-subtitle mb-3 package-subtitle">
+                  <p className="package-subtitle mb-3">
                     The Ultimate Luxury Experience
                   </p>
                   <div className="package-price">$200</div>
-                  <p className="package-price-note">per person</p>
+                  <p className="package-price-note mb-4">per person</p>
 
                   <ul className="list-unstyled text-start package-features flex-grow-1">
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-check-double text-gold me-2"></i>
                       Everything in Deluxe Spellbinding
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-users text-gold me-2"></i>Private
                       pre-show meet & greet with the Sisters
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-couch text-gold me-2"></i>Reserved
                       VIP lounge area with premium service
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-fire text-gold me-2"></i>Black Flame
                       Candle signature cocktail experience
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-plate-utensils text-gold me-2"></i>
                       Luxury three-course plated dinner
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-scroll text-gold me-2"></i>
                       Personalized spell scroll with your name
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-gift text-gold me-2"></i>Exclusive
                       VIP gift bag with memorabilia
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-car text-gold me-2"></i>Complimentary
                       valet parking
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-camera-retro text-gold me-2"></i>
                       Private photo session with the Sisters
                     </li>
@@ -578,7 +233,7 @@ const Tickets = () => {
 
                   <a
                     href="#contact"
-                    className="btn btn-outline-warning mt-auto package-button"
+                    className="btn btn-outline-warning mt-auto btn-luxury w-100"
                   >
                     Select Package
                   </a>
@@ -732,31 +387,31 @@ const Tickets = () => {
                   </p>
 
                   <ul className="list-unstyled mb-4 private-features">
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-house-chimney text-gold me-2"></i>
                       Exclusive venue rental for groups of 20-60
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-wand-magic-sparkles text-gold me-2"></i>
                       Customized performance elements
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-bell text-gold me-2"></i>Personalized
                       welcome and farewell ceremonies
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-cocktail text-gold me-2"></i>Flexible
                       menu and cocktail options
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-camera-retro text-gold me-2"></i>
                       Photography and videography permissions
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-handshake-angle text-gold me-2"></i>
                       Dedicated event coordinator
                     </li>
-                    <li>
+                    <li className="mb-3">
                       <i className="fas fa-briefcase text-gold me-2"></i>
                       Corporate team-building activities available
                     </li>
@@ -797,10 +452,12 @@ const Tickets = () => {
               {faqData.map((faq, index) => (
                 <div
                   key={index}
-                  className={`faq-item ${activeFaq === index ? "active" : ""}`}
+                  className={`faq-item ${
+                    activeFaq === index ? "active" : ""
+                  } mb-3`}
                 >
                   <button
-                    className="faq-question w-100 py-3 px-4" // Added Bootstrap padding/width
+                    className="faq-question w-100 py-3 px-4"
                     onClick={() => toggleFaq(index)}
                   >
                     {faq.question}
@@ -815,7 +472,7 @@ const Tickets = () => {
                       activeFaq === index ? "active" : ""
                     }`}
                   >
-                    {faq.answer}
+                    <p className="pb-3 px-4 mb-0">{faq.answer}</p>
                   </div>
                 </div>
               ))}

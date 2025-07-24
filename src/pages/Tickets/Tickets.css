@@ -1,0 +1,351 @@
+/* Tickets.css */
+
+/* Global styles to prevent horizontal scroll/gap - typically handled by global CSS or Bootstrap's reset */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Custom styles that cannot be fully replaced by Bootstrap */
+.faq-question:hover {
+    background: rgba(26, 26, 26, 0.8);
+}
+.faq-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-answer {
+    display: none; /* Hide by default */
+    padding: 0 30px 25px; /* Original padding */
+}
+.faq-answer.active {
+    display: block; /* Show when active */
+}
+
+.package-card {
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.8));
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(15px);
+    transition: all 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+.package-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-accent);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+}
+
+.package-featured {
+    border-color: var(--gold-accent);
+    background: linear-gradient(145deg, rgba(45, 27, 105, 0.2), rgba(26, 26, 26, 0.95));
+    transform: scale(1.05);
+}
+.package-featured::after {
+    content: "MOST POPULAR";
+    position: absolute;
+    top: 35px;
+    right: -45px;
+    background: var(--gold-accent);
+    color: var(--deep-black);
+    padding: 10px 45px;
+    font-family: "Cinzel", serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transform: rotate(45deg);
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.package-icon {
+    font-size: 3rem;
+    color: var(--gold-accent);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+}
+
+.package-name {
+    font-family: "Playfair Display", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.package-subtitle {
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    color: var(--silver);
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.package-price {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.package-price-note {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    color: var(--silver);
+    opacity: 0.7;
+}
+
+.package-features li {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    color: var(--silver);
+    padding-left: 25px;
+    position: relative;
+    text-align: left;
+    opacity: 0.9;
+}
+
+.package-features li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--gold-accent);
+    font-size: 1rem;
+}
+
+/* Luxury Buttons - Integrated */
+.btn-luxury {
+  background: linear-gradient(45deg, var(--deep-black), var(--charcoal));
+  border: 2px solid var(--gold-accent);
+  color: var(--gold-accent);
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 18px 45px;
+  font-size: 1rem;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block; /* Maintain inline-block for flex/grid, use w-100 for full width if needed */
+  backdrop-filter: blur(10px);
+}
+
+.btn-luxury::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-luxury:hover {
+  background: var(--gold-accent);
+  color: var(--deep-black);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+  text-decoration: none;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+.detail-info-card {
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(15px);
+    transition: all 0.5s ease;
+}
+.detail-info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-accent);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+.detail-info-icon {
+    font-size: 2.5rem;
+    color: var(--gold-accent);
+}
+.detail-info-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    color: var(--gold-accent);
+    letter-spacing: 1px;
+}
+.detail-info-card p {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--silver);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.private-text h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: var(--gold-accent);
+    letter-spacing: 1px;
+}
+.private-text p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--silver);
+    opacity: 0.9;
+}
+.private-features li {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    color: var(--silver);
+    padding-left: 25px;
+    position: relative;
+    opacity: 0.9;
+}
+.private-features li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: var(--gold-accent);
+    font-size: 1rem;
+}
+.private-image {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    overflow: hidden;
+}
+.private-image img {
+    transition: transform 0.6s ease;
+}
+.private-image:hover img {
+    transform: scale(1.05);
+}
+
+.faq-item {
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+.faq-item:hover {
+    border-color: var(--gold-accent);
+}
+.faq-question {
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: "Cinzel", serif;
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Call Now to Reserve Section */
+.call-now-section {
+    background: linear-gradient(180deg, rgba(45, 27, 105, 0.1) 0%, transparent 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.call-now-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    color: var(--gold-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.call-now-description {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    color: var(--silver);
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.call-now-icon {
+    font-size: 2rem;
+    color: var(--gold-accent);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+}
+
+.call-now-phone {
+    font-family: "Cinzel", serif;
+    font-size: 2.2rem;
+    color: var(--gold-accent);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.call-now-phone:hover {
+    color: var(--silver);
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    transform: scale(1.02);
+}
+
+.call-now-hours {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    color: var(--silver);
+    opacity: 0.8;
+}
+
+.call-now-hours strong {
+    color: var(--gold-accent);
+}
+
+/* Responsive adjustments for call now section */
+@media (max-width: 768px) {
+    .call-now-title {
+        font-size: 2rem;
+    }
+
+    .call-now-phone {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .call-now-description {
+        font-size: 1.2rem;
+    }
+
+    /* Adjust FAQ answer padding for smaller screens to prevent wobble */
+    .faq-answer {
+        padding: 0 15px 25px; /* Reduced horizontal padding */
+    }
+        .package-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .package-featured {
+    transform: none;
+  }
+
+  .package-card {
+    min-height: auto;
+  }
+}
+
+/* Ensure consistent horizontal centering for all main sections - handled by Bootstrap's container */
