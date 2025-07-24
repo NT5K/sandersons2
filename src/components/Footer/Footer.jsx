@@ -1,54 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const footerStyles = `
-.footer {
-  background: var(--deep-black);
-  padding: 80px 0 40px;
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
-  position: relative;
-  z-index: 2;
-}
-
-.footer h5 {
-  font-family: "Playfair Display", serif;
-  color: var(--gold-accent);
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.footer p,
-.footer a {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--silver);
-  opacity: 0.8;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-  line-height: 2;
-}
-
-.footer a:hover {
-  color: var(--gold-accent);
-  opacity: 1;
-}
-`;
+import "./Footer.css"; // Import the external CSS file
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <>
-      <style>{footerStyles}</style>
       <footer className="footer" id="contact">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
-              <h5>Extremely Social</h5>
-              <p>
+            <div className="col-lg-4 mb-4 mb-lg-0">
+              <h5 className="mb-3">Extremely Social</h5>
+              <p className="mb-4">
                 Creators of sophisticated, immersive entertainment experiences
                 that elevate any occasion into an unforgettable evening of
                 theatrical excellence.
@@ -62,12 +26,11 @@ const Footer = () => {
                   src="./assets/images/logo/logo_transparent.png"
                   alt="Company Logo"
                   className="footer-logo"
-                  style={{ maxHeight: "80px" }}
                 />
               </a>
             </div>
-            <div className="col-lg-4">
-              <h5>Experience</h5>
+            <div className="col-lg-4 mb-4 mb-lg-0">
+              <h5 className="mb-3">Experience</h5>
               <p>
                 <Link to="/about">About the Experience</Link>
               </p>
@@ -82,7 +45,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="col-lg-4">
-              <h5>Contact</h5>
+              <h5 className="mb-3">Contact</h5>
               <p>
                 <a href="mailto:info@extremelysocial.com">
                   info@extremelysocial.com
@@ -103,7 +66,7 @@ const Footer = () => {
           />
           <div className="row">
             <div className="col-12 text-center">
-              <p>
+              <p className="mb-0">
                 &copy; {currentYear} Extremely Social. All rights reserved. |{" "}
                 <em>Magic guaranteed, memories eternal.</em>
               </p>

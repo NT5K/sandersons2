@@ -1,0 +1,46 @@
+/* Footer.css */
+
+:root {
+  --gold-accent: #d4af37; /* Gold */
+  --silver: #c0c0c0; /* Silver */
+}
+
+.footer {
+  background: var(
+    --deep-black
+  ); /* Assuming --deep-black is defined elsewhere or in root */
+  padding: 80px 0 40px;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.footer h5 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold-accent);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer p,
+.footer a {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--silver);
+  opacity: 0.8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.footer a:hover {
+  color: var(--gold-accent);
+  opacity: 1;
+}
+
+.footer-logo {
+  max-height: 80px;
+}
