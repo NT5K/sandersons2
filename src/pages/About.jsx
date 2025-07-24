@@ -221,7 +221,7 @@ const About = () => {
           backgroundImage="./assets/images/hero/witches-hero-wide.png"
           title="About the Experience"
           subtitle="Extremely Social Presents The Sanderson Sisters"
-          height="60vh"
+          height="70vh"
         />
         {/* About Section */}
         <section className="about-section">

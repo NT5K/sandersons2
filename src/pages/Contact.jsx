@@ -479,7 +479,7 @@ const Contact = () => {
           backgroundImage="./assets/images/hero/contact-hero-wide.png"
           title="Contact Us"
           subtitle="Begin Your Enchanted Journey"
-          height="60vh"
+          height="70vh"
         />
 
         {/* Contact Form Section */}

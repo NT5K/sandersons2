@@ -395,7 +395,7 @@ const Tickets = () => {
           backgroundImage="./assets/images/hero/tickets-hero-wide.png"
           title="Reserve Your Experience"
           subtitle="An Evening with the Sanderson Sisters"
-          height="60vh"
+          height="70vh"
         />
 
         {/* Ticket Packages Section */}

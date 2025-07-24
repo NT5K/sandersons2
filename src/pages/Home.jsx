@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 
 const homeStyles = `
-/* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   position: relative;
   background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
     radial-gradient(
@@ -18,6 +17,7 @@ const homeStyles = `
     );
   z-index: 2;
   overflow: hidden;
+  padding-top: 80px;
 }
 
 .video-background {
@@ -404,7 +404,7 @@ const homeStyles = `
 /* Responsive adjustments - remaining custom breakpoints */
 @media (max-width: 768px) {
   .hero {
-    min-height: 90vh;
+    min-height: calc(90vh - 80px);
     padding: 120px 0 60px;
   }
 }
@@ -545,7 +545,7 @@ const Home = () => {
         {/* Hero Section */}
         <section
           id="home"
-          className="hero d-flex align-items-center justify-content-center"
+          className="hero d-flex align-items-center justify-content-center pb-3"
         >
           {/* Video Background */}
           <video autoPlay muted loop playsInline className="video-background">

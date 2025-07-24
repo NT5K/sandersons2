@@ -346,7 +346,7 @@ const Cocktails = () => {
           backgroundImage="./assets/images/drinks/hero_cocktail_mashup.png"
           title="Signature Cocktails"
           subtitle="Enchanted Libations of Salem"
-          height="60vh"
+          height="70vh"
         />
 
         {/* Cocktail Menu Introduction */}
