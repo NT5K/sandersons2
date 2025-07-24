@@ -5,6 +5,7 @@ const pageHeroStyles = `
   display: flex;
   align-items: center;
   position: relative;
+  margin-top: 80px;
   z-index: 2;
   overflow: hidden;
 }
@@ -56,7 +57,6 @@ const pageHeroStyles = `
 @media (max-width: 768px) {
   .page-hero {
     min-height: 50vh !important;
-    padding: 80px 0;
   }
   
   .page-hero-background {
