@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(
     180deg,
@@ -298,7 +302,7 @@ body::before {
   .btn-luxury::before {
     display: none;
   }
-  
+
   .card-base:hover,
   .btn-luxury:hover {
     transform: none;
