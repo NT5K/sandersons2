@@ -285,6 +285,96 @@ const Tickets = () => {
         justify-content: space-between;
         align-items: center;
     }
+        /* Call Now to Reserve Section */
+    .call-now-section {
+        background: linear-gradient(180deg, rgba(45, 27, 105, 0.1) 0%, transparent 100%);
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .call-now-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        color: var(--gold-accent);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .call-now-description {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        color: var(--silver);
+        opacity: 0.9;
+        line-height: 1.8;
+    }
+
+    .call-now-icon {
+        font-size: 2rem;
+        color: var(--gold-accent);
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+    }
+
+    .call-now-phone {
+        font-family: "Cinzel", serif;
+        font-size: 2.2rem;
+        color: var(--gold-accent);
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .call-now-phone:hover {
+        color: var(--silver);
+        text-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        transform: scale(1.02);
+    }
+
+    .call-now-hours {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        color: var(--silver);
+        opacity: 0.8;
+    }
+
+    .call-now-hours strong {
+        color: var(--gold-accent);
+    }
+
+    /* Responsive adjustments for call now section */
+    @media (max-width: 768px) {
+        .call-now-title {
+            font-size: 2rem;
+        }
+        
+        .call-now-phone {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+        
+        .call-now-description {
+            font-size: 1.2rem;
+        }
+
+        .package-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        /* Adjust FAQ answer padding for smaller screens to prevent wobble */
+        .faq-answer {
+            padding: 0 15px 25px; /* Reduced horizontal padding */
+        }
+    }
+
+    /* Ensure consistent horizontal centering for all main sections */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
   `;
 
   return (
@@ -484,6 +574,35 @@ const Tickets = () => {
                     Select Package
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call Now to Reserve Section */}
+        <section className="py-5 text-center call-now-section">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <h3 className="mb-4 call-now-title">Reserve by Phone</h3>
+                <p className="mb-4 call-now-description">
+                  Prefer to speak with our enchantment specialists? Call now to
+                  reserve your magical evening and receive personalized
+                  assistance with your Salem experience.
+                </p>
+                <div className="d-flex justify-content-center align-items-center gap-3 mb-4">
+                  <i className="fas fa-phone-alt call-now-icon"></i>
+                  <a
+                    href="tel:+1-216-555-0199"
+                    className="text-decoration-none call-now-phone"
+                  >
+                    (216) 555-0199
+                  </a>
+                </div>
+                <p className="mb-0 call-now-hours">
+                  <strong>Hours:</strong> Monday - Friday: 10 AM - 6 PM |
+                  Saturday: 10 AM - 4 PM
+                </p>
               </div>
             </div>
           </div>
