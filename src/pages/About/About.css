@@ -1,17 +1,15 @@
-/* About.css */
-
 /* About Section */
 .about-section,
 .production-details,
 .company-section,
 .experience-highlights {
-  padding: 100px 0; /* Consistent vertical padding for all main sections */
+  padding: 100px 0;
   position: relative;
   z-index: 2;
 }
 
 .about-content {
-  max-width: 800px; /* Keep max-width for content */
+  max-width: 800px;
 }
 
 .about-content p {
@@ -19,7 +17,7 @@
   font-size: 1.4rem;
   line-height: 1.8;
   color: var(--silver);
-  margin-bottom: 30px; /* Keep custom margin for p if not using Bootstrap spacing */
+  margin-bottom: 30px;
   opacity: 0.9;
 }
 
@@ -97,15 +95,15 @@
 .highlight-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px; /* Keep custom gap for grid */
+  gap: 30px;
 }
 
 .highlight-item {
   background: rgba(26, 26, 26, 0.6);
   border-left: 3px solid var(--gold-accent);
-  padding: 30px 25px; /* Keep custom padding */
+  padding: 30px 25px;
   transition: all 0.3s ease;
-  height: 100%; /* Ensure cards are same height */
+  height: 100%;
 }
 
 .highlight-item:hover {
@@ -116,7 +114,7 @@
 .highlight-item h4 {
   font-family: "Cinzel", serif;
   color: var(--gold-accent);
-  margin-bottom: 15px; /* Keep custom margin */
+  margin-bottom: 15px;
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
