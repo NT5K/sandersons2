@@ -9,6 +9,29 @@
   text-align: center;
   transition: all 0.5s ease;
   backdrop-filter: blur(15px);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+
+.detail-card:hover::before {
+  left: 100%;
 }
 
 .detail-card:hover {
@@ -17,18 +40,26 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-.detail-icon {
+.service-icon {
   font-size: 2.5rem;
   color: var(--gold-accent);
   margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.detail-card:hover .service-icon {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
 }
 
 .detail-card h3 {
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
+  font-weight: 600;
   color: var(--gold-accent);
   margin-bottom: 15px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .detail-card p {
@@ -36,5 +67,7 @@
   color: var(--silver);
   line-height: 1.6;
   font-size: 1.1rem;
+  font-weight: 300;
   opacity: 0.9;
 }
+

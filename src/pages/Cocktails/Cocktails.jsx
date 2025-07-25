@@ -192,7 +192,7 @@ const Cocktails = () => {
             </h2>
             <div className="row g-5">
               <div className="col-lg-4">
-                <div className="service-card text-center p-4">
+                <div className="detail-card text-center p-4">
                   <div className="service-icon mb-4">
                     <i className="fas fa-magic"></i>
                   </div>
@@ -207,7 +207,7 @@ const Cocktails = () => {
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="service-card text-center p-4">
+                <div className="detail-card text-center p-4">
                   <div className="service-icon mb-4">
                     <i className="fas fa-leaf"></i>
                   </div>
@@ -220,7 +220,7 @@ const Cocktails = () => {
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="service-card text-center p-4">
+                <div className="detail-card text-center p-4">
                   <div className="service-icon mb-4">
                     <i className="fas fa-users"></i>
                   </div>

@@ -249,7 +249,7 @@ const Home = () => {
             </h2>
             <div className="row g-5 justify-content-center">
               <div className="col-lg-4 col-md-6">
-                <div className="service-card text-center">
+                <div className="detail-card text-center">
                   <div className="service-icon mb-4">
                     <i className="fas fa-crown"></i>
                   </div>
@@ -263,7 +263,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="service-card text-center">
+                <div className="detail-card text-center">
                   <div className="service-icon mb-4">
                     <i className="fas fa-glass-cheers"></i>
                   </div>
@@ -276,7 +276,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="service-card text-center">
+                <div className="detail-card text-center">
                   <div className="service-icon mb-4">
                     <i className="fas fa-gem"></i>
                   </div>
