@@ -1,33 +1,3 @@
-:root {
-  --deep-black: #0a0a0a;
-  --charcoal: #1a1a1a;
-  --rich-purple: #2d1b69;
-  --burgundy: #722f37;
-  --gold-accent: #d4af37;
-  --silver: #c0c0c0;
-  --smoke: #2a2a2a;
-  --ember: #8b0000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: linear-gradient(
-    180deg,
-    var(--deep-black) 0%,
-    var(--charcoal) 50%,
-    var(--deep-black) 100%
-  );
-  color: var(--silver);
-  font-family: "Cormorant Garamond", serif;
-  overflow-x: hidden;
-  position: relative;
-}
-
 /* Luxury Buttons */
 .btn-luxury {
   background: linear-gradient(45deg, var(--deep-black), var(--charcoal));
@@ -265,30 +235,6 @@ body {
   }
 }
 
-/* Premium animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Swiper overrides for dark theme */
-.swiper-pagination-bullet {
-  background: var(--silver);
-  opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--gold-accent);
-  opacity: 1;
-}
-
 /* Gallery Section */
 .gallery {
   padding: 100px 0;
@@ -300,104 +246,9 @@ body {
   );
 }
 
-/* nanogallery2 dark theme customization */
-.nGY2Gallery {
-  background: transparent !important;
-}
-
-.nGY2Gallery .nGY2GThumbnail {
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
-  background: rgba(26, 26, 26, 0.8) !important;
-}
-
-.nGY2Gallery .nGY2GThumbnail:hover {
-  border-color: var(--gold-accent) !important;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2) !important;
-}
-
-.nGY2Gallery .nGY2GThumbnailLabel {
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.9),
-    transparent
-  ) !important;
-  color: var(--silver) !important;
-  font-family: "Cormorant Garamond", serif !important;
-}
-
-.nGY2Gallery .nGY2GThumbnailTitle {
-  color: var(--gold-accent) !important;
-  font-family: "Cinzel", serif !important;
-  font-weight: 500 !important;
-}
-
 /* Experience Highlights */
 .experience-highlights {
   padding: 100px 0;
-}
-
-/* nanogallery2 dark theme customization */
-.nGY2Gallery {
-  background: transparent !important;
-}
-
-.nGY2Gallery .nGY2GThumbnail {
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
-  background: rgba(26, 26, 26, 0.8) !important;
-}
-
-.nGY2Gallery .nGY2GThumbnail:hover {
-  border-color: var(--gold-accent) !important;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2) !important;
-}
-
-.nGY2Gallery .nGY2GThumbnailLabel {
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.9),
-    transparent
-  ) !important;
-  color: var(--silver) !important;
-  font-family: "Cormorant Garamond", serif !important;
-}
-
-.nGY2Gallery .nGY2GThumbnailTitle {
-  color: var(--gold-accent) !important;
-  font-family: "Cinzel", serif !important;
-  font-weight: 500 !important;
-}
-
-/* Cocktails page */
-
-/* nanogallery2 dark theme customization */
-.nGY2Gallery {
-  background: transparent !important;
-}
-
-.nGY2Gallery .nGY2GThumbnail {
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
-  background: rgba(26, 26, 26, 0.8) !important;
-}
-
-.nGY2Gallery .nGY2GThumbnail:hover {
-  border-color: var(--gold-accent) !important;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2) !important;
-}
-
-.nGY2Gallery .nGY2GThumbnailLabel {
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.9),
-    transparent
-  ) !important;
-  color: var(--silver) !important;
-  font-family: "Cormorant Garamond", serif !important;
-}
-
-.nGY2Gallery .nGY2GThumbnailTitle {
-  color: var(--gold-accent) !important;
-  font-family: "Cinzel", serif !important;
-  font-weight: 500 !important;
 }
 
 /* Event Details Section */
