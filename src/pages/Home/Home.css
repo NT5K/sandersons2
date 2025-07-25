@@ -353,3 +353,14 @@
 .info-item strong {
   color: var(--gold-accent);
 }
+
+/* Gallery Section */
+.gallery {
+  padding: 100px 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(45, 27, 105, 0.05) 50%,
+    transparent 100%
+  );
+}
