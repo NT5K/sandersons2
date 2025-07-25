@@ -312,7 +312,6 @@
   object-fit: cover;
 }
 
-
 /* Responsive adjustments - remaining custom breakpoints */
 @media (max-width: 768px) {
   .hero {
