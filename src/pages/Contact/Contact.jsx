@@ -41,12 +41,63 @@ const Contact = () => {
               General Inquiries
             </h2>
             <div className="contact-content">
-              <div className="contact-form-container p-5">
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <h3 className="mb-4 text-center">Send Us a Message</h3>
+              <div className="contact-info text-white">
+                <h3 className="mb-4">Get in Touch</h3>
+                <p className="mb-4">
+                  We're eager to hear from you! For all inquiries regarding the
+                  Sanderson Sisters experience, private events, or general
+                  questions, please reach out.
+                </p>
+
+                {/* Email Contact Card with Shimmer Effect */}
+                <div className="email-shimmer-card p-4 mb-4">
+                  <div className="d-flex align-items-center w-100">
+                    {" "}
+                    {/* Use d-flex to align content horizontally */}
+                    <i
+                      className="fas fa-envelope me-4"
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "var(--gold-accent)",
+                        minWidth: "30px",
+                      }}
+                    ></i>
+                    <span>
+                      <strong>Email:</strong>{" "}
+                      <a
+                        href="mailto:info@extremelysocial.com"
+                        className="text-silver"
+                      >
+                        info@extremelysocial.com
+                      </a>
+                    </span>
+                  </div>
+                </div>
+
+                <div className="info-item mb-4">
+                  <i className="fas fa-phone-alt me-4"></i>
+                  <span>
+                    <strong>Phone:</strong>{" "}
+                    <a href="tel:+1-216-555-0199" className="text-silver">
+                      (216) 555-0199
+                    </a>
+                  </span>
+                </div>
+                <div className="info-item mb-4">
+                  <i className="fas fa-map-marker-alt me-4"></i>
+                  <span>
+                    <strong>Address:</strong> 123 Witchcraft Way, Salem, MA
+                  </span>
+                </div>
+              </div>
+              <div className="contact-form-container text-white">
+                <h3 className="mb-4 text-center section-subtitle">
+                  Send Us a Message
+                </h3>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-3">
-                    <label htmlFor="name" className="form-label text-gold">
-                      Name
+                    <label htmlFor="name" className="form-label">
+                      Your Name
                     </label>
                     <input
                       type="text"
@@ -59,8 +110,8 @@ const Contact = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="email" className="form-label text-gold">
-                      Email
+                    <label htmlFor="email" className="form-label">
+                      Your Email
                     </label>
                     <input
                       type="email"
@@ -73,7 +124,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor="subject" className="form-label text-gold">
+                    <label htmlFor="subject" className="form-label">
                       Subject
                     </label>
                     <input
@@ -87,7 +138,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="message" className="form-label text-gold">
+                    <label htmlFor="message" className="form-label">
                       Message
                     </label>
                     <textarea
@@ -100,170 +151,134 @@ const Contact = () => {
                       required
                     ></textarea>
                   </div>
-                  <button type="submit" className="btn-submit">
+                  <button type="submit" className="btn btn-luxury w-100">
                     Send Message
                   </button>
                 </form>
-              </div>
-
-              <div className="contact-info">
-                <div className="contact-card p-4 text-center">
-                  <div className="contact-icon mb-3">
-                    <i className="fas fa-map-marker-alt"></i>
-                  </div>
-                  <h3 className="mb-3">Our Location</h3>
-                  <p className="mb-2">123 Spooky Lane</p>
-                  <p className="mb-0">Salem, MA 01970</p>
-                </div>
-
-                <div className="contact-card p-4 text-center">
-                  <div className="contact-icon mb-3">
-                    <i className="fas fa-envelope"></i>
-                  </div>
-                  <h3 className="mb-3">Email Us</h3>
-                  <p className="mb-0">
-                    <a href="mailto:info@extremelysocial.com">
-                      info@extremelysocial.com
-                    </a>
-                  </p>
-                </div>
-
-                <div className="contact-card p-4 text-center">
-                  <div className="contact-icon mb-3">
-                    <i className="fas fa-phone-alt"></i>
-                  </div>
-                  <h3 className="mb-3">Call Us</h3>
-                  <p className="mb-0">
-                    <a href="tel:+12165550911">(216) 555-0911</a>
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Office Hours Section */}
-        <section className="office-hours py-5">
+        <section className="office-hours py-5 text-center">
           <div className="container">
-            <h2 className="section-title text-center mb-5">Office Hours</h2>
-            <div className="hours-content">
-              <div className="hours-info">
-                <h3 className="mb-4">When We're Available</h3>
-                <p className="hours-list">
-                  <span className="day">Monday:</span> 9:00 AM - 5:00 PM
-                  <br />
-                  <span className="day">Tuesday:</span> 9:00 AM - 5:00 PM
-                  <br />
-                  <span className="day">Wednesday:</span> 9:00 AM - 5:00 PM
-                  <br />
-                  <span className="day">Thursday:</span> 9:00 AM - 5:00 PM
-                  <br />
-                  <span className="day">Friday:</span> 9:00 AM - 3:00 PM
-                  <br />
-                  <span className="day">Saturday:</span> Closed
-                  <br />
-                  <span className="day">Sunday:</span> Closed
-                </p>
-              </div>
-              <div className="location-map p-4 text-center">
-                <h3 className="mb-4 text-gold">Find Us Here</h3>
-                <div className="map-placeholder mb-4 rounded-0">
-                  <i className="fas fa-map-marked-alt"></i>
+            <h2 className="section-title mb-5">Office Hours</h2>
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+              <div className="col">
+                <div className="card h-100 p-4 text-white hours-card">
+                  <div className="hours-icon mb-3">
+                    <i className="fas fa-clock"></i>
+                  </div>
+                  <h4 className="card-title mb-3">General Inquiries</h4>
+                  <p className="card-text mb-0">
+                    Monday - Friday: 9:00 AM - 5:00 PM EST
+                  </p>
+                  <p className="card-text">Saturday: 10:00 AM - 2:00 PM EST</p>
                 </div>
-                <p className="text-silver opacity-90">
-                  While our events take place in various enchanting locations,
-                  our main office is here to assist you with inquiries and
-                  planning.
-                </p>
+              </div>
+              <div className="col">
+                <div className="card h-100 p-4 text-white hours-card">
+                  <div className="hours-icon mb-3">
+                    <i className="fas fa-ticket-alt"></i>
+                  </div>
+                  <h4 className="card-title mb-3">Ticket Support</h4>
+                  <p className="card-text mb-0">
+                    Monday - Friday: 10:00 AM - 6:00 PM EST
+                  </p>
+                  <p className="card-text">Saturday: 10:00 AM - 4:00 PM EST</p>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100 p-4 text-white hours-card">
+                  <div className="hours-icon mb-3">
+                    <i className="fas fa-handshake"></i>
+                  </div>
+                  <h4 className="card-title mb-3">Private Events</h4>
+                  <p className="card-text mb-0">
+                    By Appointment Only:
+                    <br />
+                    Please email to schedule a consultation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Social Media Section */}
-        <section className="social-section py-5">
+        {/* Social Section */}
+        <section className="social-section py-5 text-center">
           <div className="container">
-            <h2 className="section-title text-center mb-5">Stay Connected</h2>
-            <div className="social-grid">
-              <div className="social-card">
-                <i className="fab fa-instagram mb-3"></i>
-                <h4 className="text-uppercase mb-3">Instagram</h4>
-                <p className="mb-3">
-                  Follow us for behind-the-scenes glimpses, event highlights,
-                  and daily doses of magic.
-                </p>
-                <a
-                  href="https://www.instagram.com/extremelysocial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  @extremelysocial
-                </a>
+            <h2 className="section-title mb-5">Stay Connected</h2>
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+              <div className="col">
+                <div className="card h-100 p-4 text-white social-card">
+                  <i className="fab fa-instagram mb-3"></i>
+                  <h4 className="text-uppercase mb-3">Instagram</h4>
+                  <p className="mb-3">
+                    Follow us for daily magic, behind-the-scenes glimpses, and
+                    event highlights.
+                  </p>
+                  <a
+                    href="https://www.instagram.com/extremelysocialcle/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    @ExtremelySocialCLE
+                  </a>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100 p-4 text-white social-card">
+                  <i className="fab fa-facebook-f mb-3"></i>
+                  <h4 className="text-uppercase mb-3">Facebook</h4>
+                  <p className="mb-3">
+                    Join our community for event updates, photos, and special
+                    discounts.
+                  </p>
+                  <a
+                    href="https://www.facebook.com/extremelysocial/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    Extremely Social
+                  </a>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100 p-4 text-white social-card">
+                  <i className="fas fa-bell-concierge mb-3"></i>
+                  <h4 className="text-uppercase mb-3">Newsletter</h4>
+                  <p className="mb-3">
+                    Sign up for our newsletter to receive exclusive offers and
+                    news directly.
+                  </p>
+                  <a
+                    href="mailto:info@extremelysocial.com?subject=Newsletter%20Subscription"
+                    className="social-link"
+                  >
+                    Subscribe
+                  </a>
+                </div>
               </div>
 
-              <div className="social-card">
-                <i className="fab fa-facebook-f mb-3"></i>
-                <h4 className="text-uppercase mb-3">Facebook</h4>
-                <p className="mb-3">
-                  Like our page to stay updated on new shows, special offers,
-                  and community events.
-                </p>
-                <a
-                  href="https://www.facebook.com/extremelysocial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  Extremely Social
-                </a>
-              </div>
-
-              <div className="social-card">
-                <i className="fab fa-youtube mb-3"></i>
-                <h4 className="text-uppercase mb-3">YouTube</h4>
-                <p className="mb-3">
-                  Watch trailers, past performances, and exclusive content from
-                  our immersive productions.
-                </p>
-                <a
-                  href="https://www.youtube.com/extremelysocial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  Watch Now
-                </a>
-              </div>
-
-              <div className="social-card">
-                <i className="fas fa-rss-square mb-3"></i>
-                <h4 className="text-uppercase mb-3">Newsletter</h4>
-                <p className="mb-3">
-                  Sign up for our newsletter to receive exclusive updates, early
-                  bird ticket access, and news.
-                </p>
-                <a
-                  href="mailto:info@extremelysocial.com?subject=Newsletter Signup"
-                  className="social-link"
-                >
-                  Subscribe
-                </a>
-              </div>
-
-              <div className="social-card">
-                <i className="fas fa-calendar-star mb-3"></i>
-                <h4 className="text-uppercase mb-3">Events</h4>
-                <p className="mb-3">
-                  Join our mailing list for invitations to special events,
-                  season announcements, and VIP experiences.
-                </p>
-                <a
-                  href="mailto:info@extremelysocial.com?subject=VIP Events List"
-                  className="social-link"
-                >
-                  Join VIP List
-                </a>
+              <div className="col">
+                <div className="card h-100 p-4 text-white social-card">
+                  <i className="fas fa-calendar-star mb-3"></i>
+                  <h4 className="text-uppercase mb-3">Events</h4>
+                  <p className="mb-3">
+                    Join our mailing list for invitations to special events,
+                    season announcements, and VIP experiences.
+                  </p>
+                  <a
+                    href="mailto:info@extremelysocial.com?subject=VIP Events List"
+                    className="social-link"
+                  >
+                    Join VIP List
+                  </a>
+                </div>
               </div>
             </div>
           </div>
