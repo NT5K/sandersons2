@@ -1,7 +1,8 @@
 // About.jsx
 import React from "react";
 import PageHero from "../../components/PageHero/PageHero";
-import "./About.css"; // Import the CSS file
+import DetailsCard from "../../components/DetailsCard/DetailsCard";
+import "./About.css";
 
 const About = () => {
   return (
@@ -48,72 +49,36 @@ const About = () => {
           <div className="container">
             <h2 className="section-title">The Production</h2>
             <div className="detail-grid mt-5">
-              <div className="detail-card">
-                <div className="detail-icon">
-                  <i className="fas fa-theater-masks"></i>
-                </div>
-                <h3 className="mb-3 text-uppercase">Theatrical Excellence</h3>
-                <p>
-                  Professional performers trained in character work, vocal
-                  performance, and audience engagement bring Winifred, Sarah,
-                  and Mary to life with authenticity and theatrical flair.
-                </p>
-              </div>
-              <div className="detail-card">
-                <div className="detail-icon">
-                  <i className="fas fa-eye"></i>
-                </div>
-                <h3 className="mb-3 text-uppercase">Immersive Design</h3>
-                <p>
-                  Every element—from atmospheric lighting to period-inspired set
-                  pieces—is meticulously designed to create an authentic 1600s
-                  Salem environment that envelops guests completely.
-                </p>
-              </div>
-              <div className="detail-card">
-                <div className="detail-icon">
-                  <i className="fas fa-users"></i>
-                </div>
-                <h3 className="mb-3 text-uppercase">Interactive Experience</h3>
-                <p>
-                  Guests become part of the story through carefully orchestrated
-                  moments of participation, spell-casting rituals, and direct
-                  engagement with the Sisters themselves.
-                </p>
-              </div>
-              <div className="detail-card">
-                <div className="detail-icon">
-                  <i className="fas fa-cocktail"></i>
-                </div>
-                <h3 className="mb-3 text-uppercase">Curated Refreshments</h3>
-                <p>
-                  Themed cocktails and libations are seamlessly woven into the
-                  narrative, enhancing the immersive experience while providing
-                  sophisticated refreshment throughout the evening.
-                </p>
-              </div>
-              <div className="detail-card">
-                <div className="detail-icon">
-                  <i className="fas fa-music"></i>
-                </div>
-                <h3 className="mb-3 text-uppercase">Musical Performance</h3>
-                <p>
-                  Live musical elements and carefully curated soundscapes create
-                  an authentic atmospheric backdrop that supports both intimate
-                  moments and grand theatrical reveals.
-                </p>
-              </div>
-              <div className="detail-card">
-                <div className="detail-icon">
-                  <i className="fas fa-star"></i>
-                </div>
-                <h3 className="mb-3 text-uppercase">Intimate Setting</h3>
-                <p>
-                  Limited seating ensures every guest enjoys optimal sightlines
-                  and personal interaction opportunities, creating an exclusive,
-                  premium experience for each attendee.
-                </p>
-              </div>
+              <DetailsCard
+                iconClass="fas fa-theater-masks"
+                title="Theatrical Excellence"
+                description="Professional performers trained in character work, vocal performance, and audience engagement bring Winifred, Sarah, and Mary to life with authenticity and theatrical flair."
+              />
+              <DetailsCard
+                iconClass="fas fa-eye"
+                title="Immersive Design"
+                description="Every element—from atmospheric lighting to period-inspired set pieces—is meticulously designed to create an authentic 1600s Salem environment that envelops guests completely."
+              />
+              <DetailsCard
+                iconClass="fas fa-users"
+                title="Interactive Experience"
+                description="Guests become part of the story through carefully orchestrated moments of participation, spell-casting rituals, and direct engagement with the Sisters themselves."
+              />
+              <DetailsCard
+                iconClass="fas fa-cocktail"
+                title="Curated Refreshments"
+                description="Themed cocktails and libations are seamlessly woven into the narrative, enhancing the immersive experience while providing sophisticated refreshment throughout the evening."
+              />
+              <DetailsCard
+                iconClass="fas fa-music"
+                title="Musical Performance"
+                description="Live musical elements and carefully curated soundscapes create an authentic atmospheric backdrop that supports both intimate moments and grand theatrical reveals."
+              />
+              <DetailsCard
+                iconClass="fas fa-star"
+                title="Intimate Setting"
+                description="Limited seating ensures every guest enjoys optimal sightlines and personal interaction opportunities, creating an exclusive, premium experience for each attendee."
+              />
             </div>
           </div>
         </section>
