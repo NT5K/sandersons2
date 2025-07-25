@@ -237,14 +237,6 @@ body::before {
   transition: all 0.3s ease;
 }
 
-.form-select:focus {
-  background: rgba(10, 10, 10, 0.9);
-  border-color: var(--gold-accent);
-  color: var(--silver);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-  outline: none;
-}
-
 /* Global nanogallery2 theme customization */
 .nGY2Gallery {
   background: transparent !important;
