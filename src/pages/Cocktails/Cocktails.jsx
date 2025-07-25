@@ -185,7 +185,7 @@ const Cocktails = () => {
         </section>
 
         {/* Experience Enhancement Section */}
-        <section className="experience py-5">
+        <section className="py-5">
           <div className="container">
             <h2 className="section-title text-center">
               The Complete Experience

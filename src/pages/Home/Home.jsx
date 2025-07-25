@@ -198,7 +198,7 @@ const Home = () => {
         </section>
 
         {/* Experience Section */}
-        <section className="experience py-5" id="about">
+        <section className="py-5" id="about">
           <div className="container">
             <h2 className="section-title text-center mb-5">The Experience</h2>
             <div className="row align-items-center g-5 g-md-4">
