@@ -1,4 +1,4 @@
-.detail-card {
+.details-card {
   background: linear-gradient(
     145deg,
     rgba(26, 26, 26, 0.8),
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.detail-card::before {
+.details-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -30,29 +30,29 @@
   transition: left 0.8s ease;
 }
 
-.detail-card:hover::before {
+.details-card:hover::before {
   left: 100%;
 }
 
-.detail-card:hover {
+.details-card:hover {
   transform: translateY(-5px);
   border-color: var(--gold-accent);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-.service-icon {
+.detail-icon {
   font-size: 2.5rem;
   color: var(--gold-accent);
   margin-bottom: 20px;
   transition: all 0.4s ease;
 }
 
-.detail-card:hover .service-icon {
+.details-card:hover .detail-icon {
   transform: scale(1.05);
   filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
 }
 
-.detail-card h3 {
+.details-card h3 {
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
   font-weight: 600;
@@ -62,7 +62,7 @@
   text-transform: uppercase;
 }
 
-.detail-card p {
+.details-card p {
   font-family: "Cormorant Garamond", serif;
   color: var(--silver);
   line-height: 1.6;

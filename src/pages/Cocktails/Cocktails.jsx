@@ -1,5 +1,6 @@
 import React from "react";
 import PageHero from "../../components/PageHero/PageHero";
+import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import "./Cocktails.css";
 
 const Cocktails = () => {
@@ -190,47 +191,43 @@ const Cocktails = () => {
             <h2 className="section-title text-center">
               The Complete Experience
             </h2>
-            <div className="row g-5">
-              <div className="col-lg-4">
-                <div className="detail-card text-center p-4">
-                  <div className="service-icon mb-4">
-                    <i className="fas fa-magic"></i>
-                  </div>
-                  <h3 className="mb-3 text-uppercase">
-                    Theatrical Presentation
-                  </h3>
-                  <p className="fw-light">
-                    Each cocktail is presented with dramatic flair,
-                    incorporating smoke effects, color-changing elements, and
-                    theatrical garnishes that enhance the mystical atmosphere.
-                  </p>
-                </div>
+            <div className="row g-5 justify-content-center mt-4">
+              <div className="col-lg-6">
+                <DetailsCard
+                  iconClass="fas fa-crown"
+                  title="Premium Performance"
+                  description="Experience theatrical excellence with professionally trained
+                      performers delivering an immersive, high-caliber
+                      interpretation of the legendary Sanderson Sisters in an
+                      intimate setting."
+                />
               </div>
-              <div className="col-lg-4">
-                <div className="detail-card text-center p-4">
-                  <div className="service-icon mb-4">
-                    <i className="fas fa-leaf"></i>
-                  </div>
-                  <h3 className="mb-3 text-uppercase">Premium Ingredients</h3>
-                  <p className="fw-light">
-                    We source only the finest spirits and craft each cocktail
-                    with house-made syrups, fresh herbs, and unique ingredients
-                    that cannot be found elsewhere.
-                  </p>
-                </div>
+              <div className="col-lg-6">
+                <DetailsCard
+                  iconClass="fas fa-magic"
+                  title="Theatrical Presentation"
+                  description="Each cocktail is presented with dramatic flair,
+                      incorporating smoke effects, color-changing elements, and
+                      theatrical garnishes that enhance the mystical atmosphere."
+                />
               </div>
-              <div className="col-lg-4">
-                <div className="detail-card text-center p-4">
-                  <div className="service-icon mb-4">
-                    <i className="fas fa-users"></i>
-                  </div>
-                  <h3 className="mb-3 text-uppercase">Interactive Service</h3>
-                  <p className="fw-light">
-                    Our servers, trained in the art of theatrical presentation,
-                    deliver each cocktail with a story, enhancing your immersion
-                    in the Sanderson Sisters' world.
-                  </p>
-                </div>
+              <div className="col-lg-6">
+                <DetailsCard
+                  iconClass="fas fa-leaf"
+                  title="Premium Ingredients"
+                  description="We source only the finest spirits and craft each cocktail
+                      with house-made syrups, fresh herbs, and unique ingredients
+                      that cannot be found elsewhere."
+                />
+              </div>
+              <div className="col-lg-6">
+                <DetailsCard
+                  iconClass="fas fa-users"
+                  title="Interactive Service"
+                  description="Our servers, trained in the art of theatrical presentation,
+                      deliver each cocktail with a story, enhancing your immersion
+                      in the Sanderson Sisters' world."
+                />
               </div>
             </div>
 

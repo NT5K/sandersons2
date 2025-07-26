@@ -3,7 +3,7 @@ import "./DetailsCard.css";
 
 const DetailsCard = ({ iconClass, title, description }) => {
   return (
-    <div className="detail-card">
+    <div className="details-card">
       <div className="detail-icon">
         <i className={iconClass}></i>
       </div>

@@ -1,3 +1,4 @@
+import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import React, { useEffect } from "react";
 import "./Home.css";
 
@@ -249,45 +250,33 @@ const Home = () => {
             </h2>
             <div className="row g-5 justify-content-center">
               <div className="col-lg-4 col-md-6">
-                <div className="detail-card text-center">
-                  <div className="service-icon mb-4">
-                    <i className="fas fa-crown"></i>
-                  </div>
-                  <h3 className="mb-3">Premium Performance</h3>
-                  <p className="mb-0">
-                    Experience theatrical excellence with professionally trained
-                    performers delivering an immersive, high-caliber
-                    interpretation of the legendary Sanderson Sisters in an
-                    intimate setting.
-                  </p>
-                </div>
+                <DetailsCard
+                  iconClass="fas fa-crown"
+                  title="Premium Performance"
+                  description="Experience theatrical excellence with professionally trained
+                      performers delivering an immersive, high-caliber
+                      interpretation of the legendary Sanderson Sisters in an
+                      intimate setting."
+                />
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="detail-card text-center">
-                  <div className="service-icon mb-4">
-                    <i className="fas fa-glass-cheers"></i>
-                  </div>
-                  <h3 className="mb-3">Curated Libations</h3>
-                  <p className="mb-0">
-                    Sophisticated audience engagement paired with carefully
-                    crafted themed cocktails and bespoke entertainment tailored
-                    to discerning guests who appreciate theatrical artistry.
-                  </p>
-                </div>
+                <DetailsCard
+                  iconClass="fas fa-glass-cheers"
+                  title="Curated Libations"
+                  description="Sophisticated audience engagement paired with carefully
+                      crafted themed cocktails and bespoke entertainment tailored
+                      to discerning guests who appreciate theatrical artistry."
+                />
               </div>
               <div className="col-lg-4 col-md-6">
-                <div className="detail-card text-center">
-                  <div className="service-icon mb-4">
-                    <i className="fas fa-gem"></i>
-                  </div>
-                  <h3 className="mb-3">Luxury Events</h3>
-                  <p className="mb-0">
-                    Elevated Halloween experiences designed for exclusive
-                    venues, private parties, corporate events, and upscale
-                    gatherings seeking unparalleled entertainment and
-                    atmosphere.
-                  </p>
-                </div>
+                <DetailsCard
+                  iconClass="fas fa-gem"
+                  title="Luxury Events"
+                  description="Elevated Halloween experiences designed for exclusive
+                      venues, private parties, corporate events, and upscale
+                      gatherings seeking unparalleled entertainment and
+                      atmosphere."
+                />
               </div>
             </div>
           </div>
