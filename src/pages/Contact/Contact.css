@@ -202,44 +202,6 @@
   );
 }
 
-.hours-card {
-  background: linear-gradient(
-    145deg,
-    rgba(26, 26, 26, 0.8),
-    rgba(42, 42, 42, 0.6)
-  );
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  backdrop-filter: blur(15px);
-  transition: all 0.5s ease;
-  height: 100%; /* Ensure cards are same height */
-}
-
-.hours-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold-accent);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.hours-icon {
-  font-size: 2.5rem;
-  color: var(--gold-accent);
-}
-
-.hours-card h4 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.6rem;
-  color: var(--gold-accent);
-  letter-spacing: 1px;
-}
-
-.hours-card p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--silver);
-  opacity: 0.9;
-}
-
 /* Social Section */
 .social-section {
   background: linear-gradient(
@@ -248,69 +210,6 @@
     rgba(45, 27, 105, 0.1) 50%,
     transparent 100%
   );
-}
-
-.social-card {
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  padding: 40px 30px;
-  border-radius: 0;
-  transition: all 0.4s ease;
-  height: 100%; /* Ensure cards are same height */
-}
-
-.social-card:hover {
-  border-color: var(--gold-accent);
-  transform: translateY(-5px);
-}
-
-.social-card i {
-  font-size: 2.5rem;
-  color: var(--gold-accent);
-}
-
-.social-card h4 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  color: var(--gold-accent);
-  letter-spacing: 1px;
-}
-
-.social-card p {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--silver);
-  opacity: 0.9;
-}
-
-.social-link {
-  font-family: "Cinzel", serif;
-  color: var(--gold-accent);
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 1px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.social-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0;
-  height: 1px;
-  background-color: var(--gold-accent);
-  transition: width 0.3s ease-in-out;
-}
-
-.social-link:hover {
-  color: var(--silver);
-}
-
-.social-link:hover::after {
-  width: 100%;
 }
 
 /* Emergency Contact Section */

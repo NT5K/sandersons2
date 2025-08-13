@@ -1,6 +1,6 @@
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import React, { useEffect } from "react";
-import "./Home.css";
+import "./Home2.css";
 
 const Home = () => {
   useEffect(() => {
@@ -146,7 +146,7 @@ const Home = () => {
             playsInline
             className="video-background"
           >
-            <source src="./assets/videos/header1_compress.mp4" type="video/mp4" />
+            <source src="./assets/videos/header2_compress.mp4" type="video/mp4" />
           </video>
 
           {/* Dark overlay for text readability */}

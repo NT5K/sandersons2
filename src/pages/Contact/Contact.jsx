@@ -1,6 +1,7 @@
 // Contact.jsx
 import React, { useState } from "react";
 import PageHero from "../../components/PageHero/PageHero";
+import Card from "../../components/ContactCard/ContactCard";
 import "./Contact.css";
 
 const Contact = () => {
@@ -166,41 +167,46 @@ const Contact = () => {
             <h2 className="section-title mb-5">Office Hours</h2>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
               <div className="col">
-                <div className="card h-100 p-4 text-white hours-card">
-                  <div className="hours-icon mb-3">
-                    <i className="fas fa-clock"></i>
-                  </div>
-                  <h4 className="card-title mb-3">General Inquiries</h4>
-                  <p className="card-text mb-0">
-                    Monday - Friday: 9:00 AM - 5:00 PM EST
-                  </p>
-                  <p className="card-text">Saturday: 10:00 AM - 2:00 PM EST</p>
-                </div>
+                <Card
+                  type="hours"
+                  iconClass="fas fa-clock"
+                  title="General Inquiries"
+                  description={
+                    <>
+                      Monday - Friday: 9:00 AM - 5:00 PM EST
+                      <br />
+                      Saturday: 10:00 AM - 2:00 PM EST
+                    </>
+                  }
+                />
               </div>
               <div className="col">
-                <div className="card h-100 p-4 text-white hours-card">
-                  <div className="hours-icon mb-3">
-                    <i className="fas fa-ticket-alt"></i>
-                  </div>
-                  <h4 className="card-title mb-3">Ticket Support</h4>
-                  <p className="card-text mb-0">
-                    Monday - Friday: 10:00 AM - 6:00 PM EST
-                  </p>
-                  <p className="card-text">Saturday: 10:00 AM - 4:00 PM EST</p>
-                </div>
+                <Card
+                  type="hours"
+                  iconClass="fas fa-ticket-alt"
+                  title="Ticket Support"
+                  description={
+                    <>
+                      Monday - Friday: 10:00 AM - 6:00 PM EST
+                      <br />
+                      Saturday: 10:00 AM - 4:00 PM EST
+                    </>
+                  }
+                />
               </div>
               <div className="col">
-                <div className="card h-100 p-4 text-white hours-card">
-                  <div className="hours-icon mb-3">
-                    <i className="fas fa-handshake"></i>
-                  </div>
-                  <h4 className="card-title mb-3">Private Events</h4>
-                  <p className="card-text mb-0">
-                    By Appointment Only:
-                    <br />
-                    Please email to schedule a consultation.
-                  </p>
-                </div>
+                <Card
+                  type="hours"
+                  iconClass="fas fa-handshake"
+                  title="Private Events"
+                  description={
+                    <>
+                      By Appointment Only:
+                      <br />
+                      Please email to schedule a consultation.
+                    </>
+                  }
+                />
               </div>
             </div>
           </div>
@@ -212,73 +218,45 @@ const Contact = () => {
             <h2 className="section-title mb-5">Stay Connected</h2>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
               <div className="col">
-                <div className="card h-100 p-4 text-white social-card">
-                  <i className="fab fa-instagram mb-3"></i>
-                  <h4 className="text-uppercase mb-3">Instagram</h4>
-                  <p className="mb-3">
-                    Follow us for daily magic, behind-the-scenes glimpses, and
-                    event highlights.
-                  </p>
-                  <a
-                    href="https://www.instagram.com/extremelysocialcle/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link"
-                  >
-                    @ExtremelySocialCLE
-                  </a>
-                </div>
+                <Card
+                  type="social"
+                  iconClass="fab fa-instagram"
+                  title="Instagram"
+                  description="Follow us for daily magic, behind-the-scenes glimpses, and event highlights."
+                  link="https://www.instagram.com/extremelysocialcle/"
+                  linkText="@ExtremelySocialCLE"
+                />
               </div>
               <div className="col">
-                <div className="card h-100 p-4 text-white social-card">
-                  <i className="fab fa-facebook-f mb-3"></i>
-                  <h4 className="text-uppercase mb-3">Facebook</h4>
-                  <p className="mb-3">
-                    Join our community for event updates, photos, and special
-                    discounts.
-                  </p>
-                  <a
-                    href="https://www.facebook.com/extremelysocial/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link"
-                  >
-                    Extremely Social
-                  </a>
-                </div>
+                <Card
+                  type="social"
+                  iconClass="fab fa-facebook-f"
+                  title="Facebook"
+                  description="Join our community for event updates, photos, and special discounts."
+                  link="https://www.facebook.com/extremelysocial/"
+                  linkText="Extremely Social"
+                />
               </div>
               <div className="col">
-                <div className="card h-100 p-4 text-white social-card">
-                  <i className="fas fa-bell-concierge mb-3"></i>
-                  <h4 className="text-uppercase mb-3">Newsletter</h4>
-                  <p className="mb-3">
-                    Sign up for our newsletter to receive exclusive offers and
-                    news directly.
-                  </p>
-                  <a
-                    href="mailto:info@extremelysocial.com?subject=Newsletter%20Subscription"
-                    className="social-link"
-                  >
-                    Subscribe
-                  </a>
-                </div>
+                <Card
+                  type="social"
+                  iconClass="fas fa-bell-concierge"
+                  title="Newsletter"
+                  description="Sign up for our newsletter to receive exclusive offers and news directly."
+                  link="mailto:info@extremelysocial.com?subject=Newsletter%20Subscription"
+                  linkText="Subscribe"
+                />
               </div>
 
               <div className="col">
-                <div className="card h-100 p-4 text-white social-card">
-                  <i className="fas fa-calendar-star mb-3"></i>
-                  <h4 className="text-uppercase mb-3">Events</h4>
-                  <p className="mb-3">
-                    Join our mailing list for invitations to special events,
-                    season announcements, and VIP experiences.
-                  </p>
-                  <a
-                    href="mailto:info@extremelysocial.com?subject=VIP Events List"
-                    className="social-link"
-                  >
-                    Join VIP List
-                  </a>
-                </div>
+                <Card
+                  type="social"
+                  iconClass="fas fa-calendar-star"
+                  title="Events"
+                  description="Join our mailing list for invitations to special events, season announcements, and VIP experiences."
+                  link="mailto:info@extremelysocial.com?subject=VIP Events List"
+                  linkText="Join VIP List"
+                />
               </div>
             </div>
           </div>

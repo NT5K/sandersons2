@@ -1,0 +1,30 @@
+import React from "react";
+import "./ContactCard.css";
+
+const Card = ({ iconClass, title, description, link, linkText, type }) => {
+  const cardClass = `card h-100 p-4 text-white ${type}-card`;
+
+  return (
+    <div className={cardClass}>
+      {iconClass && (
+        <div className={`${type}-icon mb-3`}>
+          <i className={iconClass}></i>
+        </div>
+      )}
+      <h4 className="card-title mb-3">{title}</h4>
+      <p className="card-text mb-3">{description}</p>
+      {link && linkText && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${type}-link`}
+        >
+          {linkText}
+        </a>
+      )}
+    </div>
+  );
+};
+
+export default Card;
