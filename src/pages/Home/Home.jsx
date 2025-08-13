@@ -145,8 +145,9 @@ const Home = () => {
             loop
             playsInline
             className="video-background"
+            style={{ top: "60%" }}
           >
-            <source src="./assets/videos/header1_compress.mp4" type="video/mp4" />
+            <source src="./assets/videos/header1.mp4" type="video/mp4" />
           </video>
 
           {/* Dark overlay for text readability */}
