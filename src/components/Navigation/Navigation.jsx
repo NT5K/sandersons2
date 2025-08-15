@@ -49,7 +49,7 @@ const Navigation = () => {
       >
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Sanderson Sisters
+            The Sanderson Sisters Siore
           </Link>
           <button
             className="navbar-toggler"

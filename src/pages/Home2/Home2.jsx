@@ -139,14 +139,11 @@ const Home = () => {
           className="hero d-flex align-items-center justify-content-center pb-3"
         >
           {/* Video Background */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="video-background"
-          >
-            <source src="./assets/videos/header2_compress.mp4" type="video/mp4" />
+          <video autoPlay muted loop playsInline className="video-background">
+            <source
+              src="./assets/videos/header/header2_compress.mp4"
+              type="video/mp4"
+            />
           </video>
 
           {/* Dark overlay for text readability */}

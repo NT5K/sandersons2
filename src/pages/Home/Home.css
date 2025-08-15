@@ -20,7 +20,7 @@
 
 .video-background {
   position: absolute;
-  top: 00%; 
+  top: 00%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -52,7 +52,7 @@
 .hero h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(3.5rem, 8vw, 7rem);
-  font-weight: 900;
+  font-weight: 800;
   color: var(--gold-accent);
   line-height: 1.1;
   letter-spacing: 3px;

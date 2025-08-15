@@ -13,50 +13,58 @@ const Footer = () => {
             <div className="col-lg-4 mb-4 mb-lg-0">
               <h5 className="mb-3">Extremely Social</h5>
               <p className="mb-4">
-                Creators of sophisticated, immersive entertainment experiences
-                that elevate any occasion into an unforgettable evening of
-                theatrical excellence.
+                Immersive experience creation company specializing in
+                over-the-top themed events designed to engage guests and create
+                unforgettable moments. Now in our second spellbinding year with
+                the Sanderson Sisters.
               </p>
               <a
-                href="https://extremelysocialcle.com/"
+                href="https://www.youtube.com/@extremelysocial7946/videos"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   src="./assets/images/logo/logo_transparent.png"
-                  alt="Company Logo"
+                  alt="Extremely Social Logo"
                   className="footer-logo"
                 />
               </a>
             </div>
             <div className="col-lg-4 mb-4 mb-lg-0">
-              <h5 className="mb-3">Experience</h5>
+              <h5 className="mb-3">Experiences</h5>
               <p>
-                <Link to="/about">About the Experience</Link>
+                <Link to="/about">About Extremely Social</Link>
+              </p>
+              <p>
+                <Link to="/tickets">Sanderson Sisters Soirée</Link>
+              </p>
+              <p>
+                <Link to="/tickets">Private Appearances</Link>
               </p>
               <p>
                 <Link to="/cocktails">Signature Cocktails</Link>
               </p>
               <p>
-                <Link to="/tickets">Tickets & Packages</Link>
-              </p>
-              <p>
-                <Link to="/contact">Private Events</Link>
+                <Link to="/contact">Venue Partnerships</Link>
               </p>
             </div>
             <div className="col-lg-4">
-              <h5 className="mb-3">Contact</h5>
+              <h5 className="mb-3">Book the Magic</h5>
               <p>
-                <a href="mailto:info@extremelysocial.com">
-                  info@extremelysocial.com
+                <strong>Dominick Palazzo</strong>
+                <br />
+                Owner, Extremely Social
+              </p>
+              <p>
+                <a href="tel:2163752550">(216) 375-2550</a>
+              </p>
+              <p>
+                <a href="mailto:dominick@extrememp.com">
+                  dominick@extrememp.com
                 </a>
               </p>
               <p>
-                <a href="tel:+1-617-555-0123">(617) 555-0123</a>
-              </p>
-              <p>Salem, Massachusetts</p>
-              <p>
-                <a href="#tickets">Private Event Inquiries</a>
+                <small>Available: Late September - October 31st</small>
               </p>
             </div>
           </div>
@@ -66,10 +74,45 @@ const Footer = () => {
           />
           <div className="row">
             <div className="col-12 text-center">
-              <p className="mb-0">
+              <p className="mb-3">
                 &copy; {currentYear} Extremely Social. All rights reserved. |{" "}
-                <em>Magic guaranteed, memories eternal.</em>
+                <em>Bringing magic to venues across Ohio since 2023.</em>
               </p>
+              <div className="d-flex justify-content-center gap-4">
+                <a
+                  href="https://www.youtube.com/@extremelysocial7946/videos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  <i
+                    className="fab fa-youtube"
+                    style={{ fontSize: "1.5rem" }}
+                  ></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/extremelysocialcle/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  <i
+                    className="fab fa-instagram"
+                    style={{ fontSize: "1.5rem" }}
+                  ></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/extremelysocial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                >
+                  <i
+                    className="fab fa-facebook-f"
+                    style={{ fontSize: "1.5rem" }}
+                  ></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
