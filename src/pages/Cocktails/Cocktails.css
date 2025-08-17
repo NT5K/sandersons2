@@ -1,5 +1,9 @@
 /* Cocktails.css */
 
+.page-wrapper {
+  overflow-x: hidden;
+}
+
 .cocktails-section {
   padding-top: 120px; /* Use Bootstrap py- for content if possible */
   padding-bottom: 120px;
@@ -51,8 +55,6 @@
 }
 
 .cocktail-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   min-height: 400px;
   position: relative;
   z-index: 2;
@@ -235,10 +237,6 @@
 
 /* Responsive adjustments for cocktails */
 @media (max-width: 768px) {
-  .cocktail-content {
-    grid-template-columns: 1fr;
-  }
-
   .cocktail-name {
     font-size: 2.2rem;
   }

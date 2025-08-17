@@ -1,13 +1,102 @@
+// About.jsx is not used for this response
+// Cocktails.css is updated below
+// About.css is not used for this response
 import React from "react";
 import PageHero from "../../components/PageHero/PageHero";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import { Link } from "react-router-dom";
 import "./Cocktails.css";
 
+// --- Data for each cocktail, separated from presentation ---
+const cocktailsData = [
+  {
+    id: "winifred",
+    name: "Witch's Welcome",
+    pairing: `~ Paired with "I Put a Spell on You" ~`,
+    description: `The perfect greeting as the Sanderson Sisters make their grand entrance. This enchanting elixir puts a playful spell on guests, "claiming" them for the next 90 minutes of magical mayhem. A bewitching blend that sets the tone for an unforgettable evening of interactive entertainment.`,
+    ingredientsTitle: "Mystical Elements",
+    ingredientsList: `A welcoming concoction designed to enchant and delight • Crafted to complement the Sisters' dramatic entrance • Sets the magical tone for the evening's entertainment`,
+    imageSrc: "./assets/images/drinks/winifreds-revenge.png",
+    imageAlt: "Witch's Welcome Cocktail",
+    layout: "image-left",
+  },
+  {
+    id: "sarah",
+    name: "The Betrayal Brew",
+    pairing: `~ Paired with "One Way or Another" ~`,
+    description: `A dramatically bittersweet libation that accompanies Winifred's comedic storytelling moment about Billy's betrayal with her younger sister, Sarah. This cocktail perfectly captures the drama of sisterly rivalry and forbidden romance, providing the perfect liquid accompaniment to the evening's most theatrical revelation.`,
+    ingredientsTitle: "Dramatic Components",
+    ingredientsList: `A tale of love and betrayal in liquid form • Bittersweet notes reflecting sisterly drama • Perfect pairing for comedic storytelling and crowd interaction`,
+    imageSrc: "./assets/images/drinks/sarahs-seduction.png",
+    imageAlt: "The Betrayal Brew Cocktail",
+    layout: "image-right",
+  },
+  {
+    id: "black-flame",
+    name: "Black Flame Elixir",
+    pairing: `~ Paired with "The Witches Are Back" ~`,
+    description: `The most mystical of our offerings, served as the Sisters return from the grave— all thanks to a virgin lighting the black flame candle! This high-energy libation accompanies the audience spotlight moment when someone from the crowd is chosen to play "the virgin" in a hilarious recurring gag that delights guests throughout the evening.`,
+    ingredientsTitle: "Resurrection Elements",
+    ingredientsList: `Dark and mysterious with flickering flames • Channels the power of the legendary black flame candle • Served during the evening's most interactive and energetic moment`,
+    imageSrc: "./assets/images/drinks/marys-mischief.png",
+    imageAlt: "Black Flame Elixir Cocktail",
+    layout: "image-left",
+  },
+  {
+    id: "mary",
+    name: "Soul Sucker Sangria",
+    pairing: `~ Paired with "Carol of the Witches" ~`,
+    description: `The perfect finale as the Sanderson Sisters cast their most haunting, melodic spell. This deep red sangria or blackberry-vodka-based cocktail is garnished with dry ice or a "soul swirl" of silver edible glitter. Dark, mysterious, and delicious—served as the sisters circle the room and "choose" their next victims for eternal youth.`,
+    ingredientsTitle: "Soul-Stealing Components",
+    ingredientsList: `Deep red sangria or blackberry-vodka base • Garnished with mystical dry ice for dramatic effect • Silver edible glitter creates the signature "soul swirl" • The chilling finale to your evening's enchantment`,
+    imageSrc: "./assets/images/drinks/winifreds-revenge.png",
+    imageAlt: "Soul Sucker Sangria Cocktail",
+    layout: "image-right",
+  },
+];
+
+// --- Reusable component for a single cocktail card ---
+const CocktailCard = ({ cocktail }) => {
+  const isImageLeft = cocktail.layout === "image-left";
+  const cardClass = `${cocktail.id}-card`;
+  const imageOrder = isImageLeft ? "order-0" : "order-1 order-lg-0";
+  const infoOrder = isImageLeft ? "order-1" : "order-0 order-lg-1";
+
+  return (
+    <div className={`cocktail-card ${cardClass} rounded-0 mb-5`}>
+      <div className="cocktail-content d-flex flex-column flex-lg-row min-h-400 position-relative z-2">
+        <div className={`cocktail-image w-100 w-lg-50 min-h-300 ${imageOrder}`}>
+          <img
+            src={cocktail.imageSrc}
+            alt={cocktail.imageAlt}
+            className="w-100 h-100 object-fit-cover"
+          />
+        </div>
+        <div
+          className={`cocktail-info p-5 d-flex flex-column justify-content-center w-100 w-lg-50 ${infoOrder}`}
+        >
+          <h3 className="cocktail-name mb-3 text-uppercase">{cocktail.name}</h3>
+          <p className="cocktail-sister mb-4 text-uppercase">
+            {cocktail.pairing}
+          </p>
+          <p className="cocktail-description mb-4">{cocktail.description}</p>
+          <div className="cocktail-ingredients mb-4">
+            <p className="ingredients-title mb-3 text-uppercase">
+              {cocktail.ingredientsTitle}
+            </p>
+            <p className="ingredients-list">{cocktail.ingredientsList}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- Main Cocktails Page Component ---
 const Cocktails = () => {
   return (
     <>
-      <div>
+      <div className="page-wrapper"> {/* <--- FIX APPLIED HERE */}
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/drinks/hero_cocktail_mashup.png"
@@ -35,161 +124,9 @@ const Cocktails = () => {
         {/* Cocktails Section */}
         <section className="cocktails-section py-5">
           <div className="container">
-            {/* Cocktail 1: Witch's Welcome */}
-            <div className="cocktail-card winifred-card rounded-0 mb-5">
-              <div className="cocktail-content d-flex flex-column flex-lg-row min-h-400 position-relative z-2">
-                <div className="cocktail-image w-100 w-lg-50 min-h-300 order-0">
-                  <img
-                    src="./assets/images/drinks/winifreds-revenge.png"
-                    alt="Witch's Welcome Cocktail"
-                    className="w-100 h-100 object-fit-cover"
-                  />
-                </div>
-                <div className="cocktail-info p-5 d-flex flex-column justify-content-center w-100 w-lg-50 order-1">
-                  <h3 className="cocktail-name mb-3 text-uppercase">
-                    Witch's Welcome
-                  </h3>
-                  <p className="cocktail-sister mb-4 text-uppercase">
-                    ~ Paired with "I Put a Spell on You" ~
-                  </p>
-                  <p className="cocktail-description mb-4">
-                    The perfect greeting as the Sanderson Sisters make their
-                    grand entrance. This enchanting elixir puts a playful spell
-                    on guests, "claiming" them for the next 90 minutes of
-                    magical mayhem. A bewitching blend that sets the tone for an
-                    unforgettable evening of interactive entertainment.
-                  </p>
-                  <div className="cocktail-ingredients mb-4">
-                    <p className="ingredients-title mb-3 text-uppercase">
-                      Mystical Elements
-                    </p>
-                    <p className="ingredients-list">
-                      A welcoming concoction designed to enchant and delight •
-                      Crafted to complement the Sisters' dramatic entrance •
-                      Sets the magical tone for the evening's entertainment
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Cocktail 2: The Betrayal Brew */}
-            <div className="cocktail-card sarah-card rounded-0 mb-5">
-              <div className="cocktail-content d-flex flex-column flex-lg-row min-h-400 position-relative z-2">
-                <div className="cocktail-image w-100 w-lg-50 min-h-300 order-1 order-lg-0">
-                  <img
-                    src="./assets/images/drinks/sarahs-seduction.png"
-                    alt="The Betrayal Brew Cocktail"
-                    className="w-100 h-100 object-fit-cover"
-                  />
-                </div>
-                <div className="cocktail-info p-5 d-flex flex-column justify-content-center w-100 w-lg-50 order-0 order-lg-1">
-                  <h3 className="cocktail-name mb-3 text-uppercase">
-                    The Betrayal Brew
-                  </h3>
-                  <p className="cocktail-sister mb-4 text-uppercase">
-                    ~ Paired with "One Way or Another" ~
-                  </p>
-                  <p className="cocktail-description mb-4">
-                    A dramatically bittersweet libation that accompanies
-                    Winifred's comedic storytelling moment about Billy's
-                    betrayal with her younger sister, Sarah. This cocktail
-                    perfectly captures the drama of sisterly rivalry and
-                    forbidden romance, providing the perfect liquid
-                    accompaniment to the evening's most theatrical revelation.
-                  </p>
-                  <div className="cocktail-ingredients mb-4">
-                    <p className="ingredients-title mb-3 text-uppercase">
-                      Dramatic Components
-                    </p>
-                    <p className="ingredients-list">
-                      A tale of love and betrayal in liquid form • Bittersweet
-                      notes reflecting sisterly drama • Perfect pairing for
-                      comedic storytelling and crowd interaction
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Cocktail 3: Black Flame Elixir */}
-            <div className="cocktail-card black-flame-card rounded-0 mb-5">
-              <div className="cocktail-content d-flex flex-column flex-lg-row min-h-400 position-relative z-2">
-                <div className="cocktail-image w-100 w-lg-50 min-h-300 order-0">
-                  <img
-                    src="./assets/images/drinks/marys-mischief.png"
-                    alt="Black Flame Elixir Cocktail"
-                    className="w-100 h-100 object-fit-cover"
-                  />
-                </div>
-                <div className="cocktail-info p-5 d-flex flex-column justify-content-center w-100 w-lg-50 order-1">
-                  <h3 className="cocktail-name mb-3 text-uppercase">
-                    Black Flame Elixir
-                  </h3>
-                  <p className="cocktail-sister mb-4 text-uppercase">
-                    ~ Paired with "The Witches Are Back" ~
-                  </p>
-                  <p className="cocktail-description mb-4">
-                    The most mystical of our offerings, served as the Sisters
-                    return from the grave— all thanks to a virgin lighting the
-                    black flame candle! This high-energy libation accompanies
-                    the audience spotlight moment when someone from the crowd is
-                    chosen to play "the virgin" in a hilarious recurring gag
-                    that delights guests throughout the evening.
-                  </p>
-                  <div className="cocktail-ingredients mb-4">
-                    <p className="ingredients-title mb-3 text-uppercase">
-                      Resurrection Elements
-                    </p>
-                    <p className="ingredients-list">
-                      Dark and mysterious with flickering flames • Channels the
-                      power of the legendary black flame candle • Served during
-                      the evening's most interactive and energetic moment
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Cocktail 4: Soul Sucker Sangria */}
-            <div className="cocktail-card mary-card rounded-0 mb-5">
-              <div className="cocktail-content d-flex flex-column flex-lg-row min-h-400 position-relative z-2">
-                <div className="cocktail-image w-100 w-lg-50 min-h-300 order-1 order-lg-0">
-                  <img
-                    src="./assets/images/drinks/winifreds-revenge.png"
-                    alt="Soul Sucker Sangria Cocktail"
-                    className="w-100 h-100 object-fit-cover"
-                  />
-                </div>
-                <div className="cocktail-info p-5 d-flex flex-column justify-content-center w-100 w-lg-50 order-0 order-lg-1">
-                  <h3 className="cocktail-name mb-3 text-uppercase">
-                    Soul Sucker Sangria
-                  </h3>
-                  <p className="cocktail-sister mb-4 text-uppercase">
-                    ~ Paired with "Carol of the Witches" ~
-                  </p>
-                  <p className="cocktail-description mb-4">
-                    The perfect finale as the Sanderson Sisters cast their most
-                    haunting, melodic spell. This deep red sangria or
-                    blackberry-vodka-based cocktail is garnished with dry ice or
-                    a "soul swirl" of silver edible glitter. Dark, mysterious,
-                    and delicious—served as the sisters circle the room and
-                    "choose" their next victims for eternal youth.
-                  </p>
-                  <div className="cocktail-ingredients mb-4">
-                    <p className="ingredients-title mb-3 text-uppercase">
-                      Soul-Stealing Components
-                    </p>
-                    <p className="ingredients-list">
-                      Deep red sangria or blackberry-vodka base • Garnished with
-                      mystical dry ice for dramatic effect • Silver edible
-                      glitter creates the signature "soul swirl" • The chilling
-                      finale to your evening's enchantment
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {cocktailsData.map((cocktail) => (
+              <CocktailCard key={cocktail.id} cocktail={cocktail} />
+            ))}
           </div>
         </section>
 

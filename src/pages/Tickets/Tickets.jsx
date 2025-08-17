@@ -3,6 +3,147 @@ import PageHero from "../../components/PageHero/PageHero";
 import { Link } from "react-router-dom";
 import "./Tickets.css";
 
+// --- Data for Experience Packages ---
+const packagesData = [
+  {
+    isFeatured: true,
+    icon: "fas fa-theater-masks",
+    name: "Sanderson Sisters Soirée",
+    subtitle: "The Complete 90-Minute Experience",
+    price: "Custom",
+    priceNote: "Pricing based on venue capacity & ticket price",
+    features: [
+      "Four live musical numbers with professional cast",
+      "Billy Butcherson as theatrical greeter",
+      "Four themed cocktails paired with performances",
+      "Interactive spell-casting and audience participation",
+      "Complete run-of-show timeline (90 minutes)",
+      "Spooky decor and branded photo backdrop",
+      "Marketing to 7,000+ email database",
+      "Professional costumes, scripts & music included",
+    ],
+    link: "/contact",
+    buttonText: "Learn More",
+  },
+  {
+    isFeatured: false,
+    icon: "fas fa-magic",
+    name: "Sanderson Sisters Appearances",
+    subtitle: "Flexible High-Impact Visits",
+    price: "$450-$750",
+    priceNote: "1 to 2 hours • Perfect for any venue",
+    features: [
+      "Three spine-tingling musical performances",
+      "Professional Sanderson Sisters cast",
+      "Wicked banter and character interactions",
+      "Mingling and photo opportunities",
+      "Perfect for bars, restaurants, private parties",
+      "Optional spellbinding photo setup upgrade",
+      "Flexible duration: 1 hour ($450), 1.5 hours ($600), 2 hours ($750)",
+      "Adaptable to house parties and special events",
+    ],
+    link: "/contact",
+    buttonText: "Book an Appearance",
+  },
+];
+
+// --- Data for Soirée Experience Details ---
+const soireeDetailsData = [
+  {
+    icon: "fas fa-door-open",
+    title: "Guest Arrival",
+    description:
+      "Billy Butcherson greets guests in full character and costume, setting the theatrical mood while restaurant staff handles check-in.",
+  },
+  {
+    icon: "fas fa-music",
+    title: "Four Musical Numbers",
+    description:
+      '"I Put a Spell on You," "One Way or Another," "The Witches Are Back," and "Carol of the Witches" with full audience interaction.',
+  },
+  {
+    icon: "fas fa-cocktail",
+    title: "Themed Cocktails",
+    description:
+      "Witch's Welcome, The Betrayal Brew, Black Flame Elixir, and Soul Sucker Sangria—each paired with performances.",
+  },
+  {
+    icon: "fas fa-users",
+    title: "Interactive Magic",
+    description:
+      'Guests participate in spell-casting, play "the virgin" in hilarious gags, and enjoy close-up character interactions throughout.',
+  },
+];
+
+// --- Data for Venue Information ---
+const venueInfoData = [
+  {
+    icon: "fas fa-calendar-alt",
+    title: "Availability",
+    description:
+      "<strong>Limited Run:</strong> Late September through October 31st<br /><strong>Booking Status:</strong> 5 dates already reserved<br /><strong>Note:</strong> October weekends booking fastest",
+  },
+  {
+    icon: "fas fa-users",
+    title: "Capacity",
+    description:
+      "<strong>Soirée:</strong> 50 guests per performance<br /><strong>Appearances:</strong> Flexible for any venue size<br /><strong>Weekend:</strong> Up to 5 shows possible",
+  },
+  {
+    icon: "fas fa-handshake",
+    title: "Booking",
+    description:
+      "<strong>Contact:</strong> Dominick Palazzo<br /><strong>Phone:</strong> (216) 375-2550<br /><strong>Email:</strong> dominick@extrememp.com",
+  },
+];
+
+// --- Reusable Component for Package Cards ---
+const PackageCard = ({ pkg }) => (
+  <div className="col-lg-6">
+    <div
+      className={`package-card ${
+        pkg.isFeatured ? "package-featured" : ""
+      } p-5 h-100 text-center position-relative`}
+    >
+      <div className="package-icon mb-4">
+        <i className={pkg.icon}></i>
+      </div>
+      <h3 className="package-name mb-2">{pkg.name}</h3>
+      <p className="package-subtitle mb-4">{pkg.subtitle}</p>
+      <div className="mb-4">
+        <div className="package-price">{pkg.price}</div>
+        <div className="package-price-note">{pkg.priceNote}</div>
+      </div>
+      <ul className="list-unstyled package-features mb-4">
+        {pkg.features.map((feature, index) => (
+          <li key={index} className="mb-3">
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <Link to={pkg.link} className="btn btn-luxury w-100">
+        {pkg.buttonText}
+      </Link>
+    </div>
+  </div>
+);
+
+// --- Reusable Component for Detail Info Cards ---
+const DetailInfoCard = ({ detail }) => (
+  <div className="col-lg-3 col-md-6">
+    <div className="detail-info-card h-100 p-4 text-center">
+      <div className="detail-info-icon mb-3">
+        <i className={detail.icon}></i>
+      </div>
+      <h3 className="text-gold mb-3">{detail.title}</h3>
+      <p
+        className="text-silver"
+        dangerouslySetInnerHTML={{ __html: detail.description }}
+      ></p>
+    </div>
+  </div>
+);
+
 const Tickets = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
@@ -45,7 +186,7 @@ const Tickets = () => {
 
   return (
     <>
-      <div>
+      <div className="page-wrapper">
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/hero/witches-hero-wide.png"
@@ -107,110 +248,10 @@ const Tickets = () => {
             <h2 className="section-title text-center mb-5">
               Choose Your Enchantment
             </h2>
-
             <div className="row g-5 justify-content-center">
-              {/* Sanderson Sisters Soirée */}
-              <div className="col-lg-6">
-                <div className="package-card package-featured p-5 h-100 text-center position-relative">
-                  <div className="package-icon mb-4">
-                    <i className="fas fa-theater-masks"></i>
-                  </div>
-                  <h3 className="package-name mb-2">
-                    Sanderson Sisters Soirée
-                  </h3>
-                  <p className="package-subtitle mb-4">
-                    The Complete 90-Minute Experience
-                  </p>
-
-                  <div className="mb-4">
-                    <div className="package-price">Custom</div>
-                    <div className="package-price-note">
-                      Pricing based on venue capacity & ticket price
-                    </div>
-                  </div>
-
-                  <ul className="list-unstyled package-features mb-4">
-                    <li className="mb-3">
-                      Four live musical numbers with professional cast
-                    </li>
-                    <li className="mb-3">
-                      Billy Butcherson as theatrical greeter
-                    </li>
-                    <li className="mb-3">
-                      Four themed cocktails paired with performances
-                    </li>
-                    <li className="mb-3">
-                      Interactive spell-casting and audience participation
-                    </li>
-                    <li className="mb-3">
-                      Complete run-of-show timeline (90 minutes)
-                    </li>
-                    <li className="mb-3">
-                      Spooky decor and branded photo backdrop
-                    </li>
-                    <li className="mb-3">Marketing to 7,000+ email database</li>
-                    <li className="mb-3">
-                      Professional costumes, scripts & music included
-                    </li>
-                  </ul>
-
-                  <Link to="/contact" className="btn btn-luxury w-100">
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-
-              {/* Sanderson Sisters Appearances */}
-              <div className="col-lg-6">
-                <div className="package-card p-5 h-100 text-center position-relative">
-                  <div className="package-icon mb-4">
-                    <i className="fas fa-magic"></i>
-                  </div>
-                  <h3 className="package-name mb-2">
-                    Sanderson Sisters Appearances
-                  </h3>
-                  <p className="package-subtitle mb-4">
-                    Flexible High-Impact Visits
-                  </p>
-
-                  <div className="mb-4">
-                    <div className="package-price">$450-$750</div>
-                    <div className="package-price-note">
-                      1 to 2 hours • Perfect for any venue
-                    </div>
-                  </div>
-
-                  <ul className="list-unstyled package-features mb-4">
-                    <li className="mb-3">
-                      Three spine-tingling musical performances
-                    </li>
-                    <li className="mb-3">
-                      Professional Sanderson Sisters cast
-                    </li>
-                    <li className="mb-3">
-                      Wicked banter and character interactions
-                    </li>
-                    <li className="mb-3">Mingling and photo opportunities</li>
-                    <li className="mb-3">
-                      Perfect for bars, restaurants, private parties
-                    </li>
-                    <li className="mb-3">
-                      Optional spellbinding photo setup upgrade
-                    </li>
-                    <li className="mb-3">
-                      Flexible duration: 1 hour ($450), 1.5 hours ($600), 2
-                      hours ($750)
-                    </li>
-                    <li className="mb-3">
-                      Adaptable to house parties and special events
-                    </li>
-                  </ul>
-
-                  <a href="/contact" className="btn btn-luxury w-100">
-                    Book an Appearance
-                  </a>
-                </div>
-              </div>
+              {packagesData.map((pkg, index) => (
+                <PackageCard key={index} pkg={pkg} />
+              ))}
             </div>
           </div>
         </section>
@@ -227,62 +268,10 @@ const Tickets = () => {
             <h2 className="section-title text-center mb-5">
               The Soirée Experience Breakdown
             </h2>
-
             <div className="row g-4">
-              <div className="col-lg-3 col-md-6">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-door-open"></i>
-                  </div>
-                  <h3 className="text-gold mb-3">Guest Arrival</h3>
-                  <p className="text-silver">
-                    Billy Butcherson greets guests in full character and
-                    costume, setting the theatrical mood while restaurant staff
-                    handles check-in.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-3 col-md-6">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-music"></i>
-                  </div>
-                  <h3 className="text-gold mb-3">Four Musical Numbers</h3>
-                  <p className="text-silver">
-                    "I Put a Spell on You," "One Way or Another," "The Witches
-                    Are Back," and "Carol of the Witches" with full audience
-                    interaction.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-3 col-md-6">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-cocktail"></i>
-                  </div>
-                  <h3 className="text-gold mb-3">Themed Cocktails</h3>
-                  <p className="text-silver">
-                    Witch's Welcome, The Betrayal Brew, Black Flame Elixir, and
-                    Soul Sucker Sangria—each paired with performances.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-3 col-md-6">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-users"></i>
-                  </div>
-                  <h3 className="text-gold mb-3">Interactive Magic</h3>
-                  <p className="text-silver">
-                    Guests participate in spell-casting, play "the virgin" in
-                    hilarious gags, and enjoy close-up character interactions
-                    throughout.
-                  </p>
-                </div>
-              </div>
+              {soireeDetailsData.map((detail, index) => (
+                <DetailInfoCard key={index} detail={detail} />
+              ))}
             </div>
           </div>
         </section>
@@ -293,7 +282,6 @@ const Tickets = () => {
             <h2 className="section-title text-center mb-5">
               Revenue Potential for Venues
             </h2>
-
             <div className="row g-5 align-items-center">
               <div className="col-lg-6">
                 <div className="detail-info-card p-4">
@@ -357,7 +345,6 @@ const Tickets = () => {
                   </p>
                 </div>
               </div>
-
               <div className="col-lg-6">
                 <div className="private-text">
                   <h3 className="text-gold mb-4">Why Venues Choose Us</h3>
@@ -402,56 +389,21 @@ const Tickets = () => {
             <h2 className="section-title text-center mb-5">
               Venue Information
             </h2>
-
             <div className="row g-4">
-              <div className="col-lg-4">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-calendar-alt"></i>
+              {venueInfoData.map((detail, index) => (
+                <div key={index} className="col-lg-4">
+                  <div className="detail-info-card h-100 p-4 text-center">
+                    <div className="detail-info-icon mb-3">
+                      <i className={detail.icon}></i>
+                    </div>
+                    <h3 className="text-gold mb-3">{detail.title}</h3>
+                    <p
+                      className="text-silver"
+                      dangerouslySetInnerHTML={{ __html: detail.description }}
+                    ></p>
                   </div>
-                  <h3 className="text-gold mb-3">Availability</h3>
-                  <p className="text-silver">
-                    <strong>Limited Run:</strong> Late September through October
-                    31st
-                    <br />
-                    <strong>Booking Status:</strong> 5 dates already reserved
-                    <br />
-                    <strong>Note:</strong> October weekends booking fastest
-                  </p>
                 </div>
-              </div>
-
-              <div className="col-lg-4">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-users"></i>
-                  </div>
-                  <h3 className="text-gold mb-3">Capacity</h3>
-                  <p className="text-silver">
-                    <strong>Soirée:</strong> 50 guests per performance
-                    <br />
-                    <strong>Appearances:</strong> Flexible for any venue size
-                    <br />
-                    <strong>Weekend:</strong> Up to 5 shows possible
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4">
-                <div className="detail-info-card h-100 p-4 text-center">
-                  <div className="detail-info-icon mb-3">
-                    <i className="fas fa-handshake"></i>
-                  </div>
-                  <h3 className="text-gold mb-3">Booking</h3>
-                  <p className="text-silver">
-                    <strong>Contact:</strong> Dominick Palazzo
-                    <br />
-                    <strong>Phone:</strong> (216) 375-2550
-                    <br />
-                    <strong>Email:</strong> dominick@extrememp.com
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -480,7 +432,6 @@ const Tickets = () => {
                     hosted a Sanderson Sisters Brunch at Valenti's Restaurant in
                     Broadview Heights with three seatings—all sold out.
                   </p>
-
                   <p className="text-silver mb-4">
                     Our flexibility extends to house parties, corporate events,
                     bachelorette parties, themed birthdays, and special
@@ -488,7 +439,6 @@ const Tickets = () => {
                     audience, and creative vision while maintaining our
                     professional standards.
                   </p>
-
                   <ul className="list-unstyled mb-4 private-features">
                     <li className="mb-3">
                       Custom themed experiences (brunches, dinners, cocktail
@@ -511,7 +461,6 @@ const Tickets = () => {
                       Holiday and special occasion entertainment
                     </li>
                   </ul>
-
                   <a href="/contact" className="btn btn-luxury">
                     Discuss Custom Options
                   </a>
