@@ -1,6 +1,3 @@
-// About.jsx is not used for this response
-// Cocktails.css is updated below
-// About.css is not used for this response
 import React from "react";
 import PageHero from "../../components/PageHero/PageHero";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
@@ -58,14 +55,15 @@ const cocktailsData = [
 // --- Reusable component for a single cocktail card ---
 const CocktailCard = ({ cocktail }) => {
   const isImageLeft = cocktail.layout === "image-left";
-  const cardClass = `${cocktail.id}-card`;
-  const imageOrder = isImageLeft ? "order-0" : "order-1 order-lg-0";
-  const infoOrder = isImageLeft ? "order-1" : "order-0 order-lg-1";
 
   return (
-    <div className={`cocktail-card ${cardClass} rounded-0 mb-5`}>
-      <div className="cocktail-content d-flex flex-column flex-lg-row min-h-400 position-relative z-2">
-        <div className={`cocktail-image w-100 w-lg-50 min-h-300 ${imageOrder}`}>
+    <div className={`cocktail-card ${cocktail.id}-card`}>
+      <div className="cocktail-content row g-0">
+        <div
+          className={`cocktail-image col-lg-6 ${
+            !isImageLeft ? "order-lg-1" : ""
+          }`}
+        >
           <img
             src={cocktail.imageSrc}
             alt={cocktail.imageAlt}
@@ -73,15 +71,15 @@ const CocktailCard = ({ cocktail }) => {
           />
         </div>
         <div
-          className={`cocktail-info p-5 d-flex flex-column justify-content-center w-100 w-lg-50 ${infoOrder}`}
+          className={`cocktail-info p-5 d-flex flex-column justify-content-center col-lg-6 ${
+            !isImageLeft ? "order-lg-0" : ""
+          }`}
         >
-          <h3 className="cocktail-name mb-3 text-uppercase">{cocktail.name}</h3>
-          <p className="cocktail-sister mb-4 text-uppercase">
-            {cocktail.pairing}
-          </p>
-          <p className="cocktail-description mb-4">{cocktail.description}</p>
-          <div className="cocktail-ingredients mb-4">
-            <p className="ingredients-title mb-3 text-uppercase">
+          <h3 className="cocktail-name">{cocktail.name}</h3>
+          <p className="cocktail-sister">{cocktail.pairing}</p>
+          <p className="cocktail-description">{cocktail.description}</p>
+          <div className="cocktail-ingredients">
+            <p className="ingredients-title">
               {cocktail.ingredientsTitle}
             </p>
             <p className="ingredients-list">{cocktail.ingredientsList}</p>
@@ -96,7 +94,7 @@ const CocktailCard = ({ cocktail }) => {
 const Cocktails = () => {
   return (
     <>
-      <div className="page-wrapper"> {/* <--- FIX APPLIED HERE */}
+      <div className="page-wrapper">
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/drinks/hero_cocktail_mashup.png"
@@ -106,11 +104,11 @@ const Cocktails = () => {
         />
 
         {/* Cocktail Menu Introduction */}
-        <section className="cocktail-menu-section py-5">
+        <section className="cocktail-menu-section">
           <div className="container">
             <h2 className="section-title text-center">Bewitching Beverages</h2>
-            <div className="menu-intro text-center mx-auto mb-5">
-              <p className="fs-4 lh-base text-silver opacity-90">
+            <div className="menu-intro col-lg-8 mx-auto text-center">
+              <p>
                 Four signature cocktails expertly paired with each musical
                 performance in our Sanderson Sisters Soirée. From the welcoming
                 spell to the soul-sucking finale, each libation is crafted to
@@ -122,7 +120,7 @@ const Cocktails = () => {
         </section>
 
         {/* Cocktails Section */}
-        <section className="cocktails-section py-5">
+        <section className="cocktails-section">
           <div className="container">
             {cocktailsData.map((cocktail) => (
               <CocktailCard key={cocktail.id} cocktail={cocktail} />
@@ -131,15 +129,9 @@ const Cocktails = () => {
         </section>
 
         {/* Experience Enhancement Section */}
-        <section
-          className="py-5"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, transparent 100%)",
-          }}
-        >
+        <section className="enhancement-section">
           <div className="container">
-            <h2 className="section-title text-center mb-5">
+            <h2 className="section-title text-center">
               More Than Just Cocktails
             </h2>
             <div className="row g-4">
@@ -175,68 +167,46 @@ const Cocktails = () => {
         </section>
 
         {/* Venue Customization Section */}
-        <section
-          className="py-5"
-          style={{
-            background:
-              "linear-gradient(180deg, transparent 0%, rgba(45, 27, 105, 0.05) 50%, transparent 100%)",
-          }}
-        >
+        <section className="customization-section pt-5">
           <div className="container">
-            <h2 className="section-title text-center mb-5">
+            <h2 className="section-title text-center">
               Venue Customization
             </h2>
             <div className="row g-5 align-items-center">
               <div className="col-lg-6">
                 <div className="private-text">
-                  <h3 className="text-gold mb-4">
+                  <h3 className="text-gold">
                     Adaptable to Your Bar Program
                   </h3>
-                  <p
-                    className="text-silver mb-3"
-                    style={{
-                      fontFamily: "Cormorant Garamond, serif",
-                      fontSize: "1.3rem",
-                      lineHeight: "1.8",
-                    }}
-                  >
+                  <p className="text-silver">
                     We provide coordinated drink pairing recommendations and
                     work with your bartending team to ensure these signature
                     cocktails can be executed with your existing bar setup and
                     inventory.
                   </p>
-
-                  <p
-                    className="text-silver mb-4"
-                    style={{
-                      fontFamily: "Cormorant Garamond, serif",
-                      fontSize: "1.3rem",
-                      lineHeight: "1.8",
-                    }}
-                  >
+                  <p className="text-silver">
                     Our cocktail menu recommendations are flexible and can be
                     adapted based on your venue's capabilities, preferred
                     spirits, and price points while maintaining the theatrical
                     presentation that makes each drink special.
                   </p>
-
-                  <ul className="list-unstyled mb-4 private-features">
-                    <li className="mb-3">
+                  <ul className="list-unstyled private-features">
+                    <li>
                       Menu recommendations tailored to your bar capabilities
                     </li>
-                    <li className="mb-3">
+                    <li>
                       Flexible ingredients based on your inventory preferences
                     </li>
-                    <li className="mb-3">
+                    <li>
                       Theatrical presentation training for your bartending staff
                     </li>
-                    <li className="mb-3">
+                    <li>
                       Timing coordination with musical performances
                     </li>
-                    <li className="mb-3">
+                    <li>
                       Special effects guidance (dry ice, garnishes, glitter)
                     </li>
-                    <li className="mb-3">
+                    <li>
                       Pricing strategies that maximize your bar revenue
                     </li>
                   </ul>
@@ -251,7 +221,6 @@ const Cocktails = () => {
                     src="./assets/images/edits/1.png"
                     alt="Venue Bar Setup"
                     className="img-fluid w-100"
-                    style={{ height: "400px", objectFit: "cover" }}
                   />
                 </div>
               </div>
@@ -260,23 +229,11 @@ const Cocktails = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section
-          className="py-5"
-          style={{
-            padding: "100px 0",
-            position: "relative",
-            zIndex: 2,
-            background:
-              "linear-gradient(180deg, transparent 0%, rgba(26, 26, 26, 0.5) 50%, transparent 100%)",
-          }}
-        >
+        <section className="cta-section pt-5">
           <div className="container">
             <div className="text-center">
-              <h2 className="section-title mb-3">Ready to Serve Some Magic?</h2>
-              <p
-                className="section-subtitle mb-5 mx-auto"
-                style={{ maxWidth: "600px" }}
-              >
+              <h2 className="section-title">Ready to Serve Some Magic?</h2>
+              <p className="section-subtitle">
                 These signature cocktails are an integral part of the complete
                 Sanderson Sisters experience. Contact us to learn how we can
                 help integrate these mystical libations into your venue's bar
