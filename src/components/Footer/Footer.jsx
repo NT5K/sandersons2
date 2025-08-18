@@ -75,7 +75,9 @@ const Footer = () => {
           <div className="row">
             <div className="col-12 text-center">
               <p className="mb-3">
-                &copy; {currentYear} Extremely Social. All rights reserved. |{" "}
+                &copy; {currentYear} Extremely Social. All rights reserved.
+                <span className="d-none d-md-inline"> | </span>
+                <br className="d-md-none" />
                 <em>Bringing magic to venues across Ohio since 2023.</em>
               </p>
               <div className="d-flex justify-content-center gap-4">
