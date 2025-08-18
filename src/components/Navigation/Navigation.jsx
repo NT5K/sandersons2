@@ -16,6 +16,7 @@ const Navigation = () => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 100) {
         setIsVisible(false);
+        setIsNavOpen(false); // Add this line
       } else {
         setIsVisible(true);
       }

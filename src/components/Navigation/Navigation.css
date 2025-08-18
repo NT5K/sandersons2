@@ -59,4 +59,13 @@
   .navbar {
     padding: 15px 0;
   }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.3rem;
+    padding: 15px 25px !important;
+  }
 }
