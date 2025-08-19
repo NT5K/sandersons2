@@ -80,11 +80,14 @@ const Home = () => {
   // Use the custom hook to handle the gallery initialization
   useNanoGallery("sanderson_gallery", [
     { src: "edits/1.png", srct: "edits/1.png", title: "The Sanderson Sisters", description: "Professional performers in full character." },
-    { src: "edits/2.png", srct: "edits/2.png", title: "Spellbinding Performance", description: "Live musical numbers and storytelling." },
-    { src: "edits/3.png", srct: "edits/3.png", title: "Witch's Brew", description: "Signature cocktails for every guest." },
-    { src: "edits/5.jpg", srct: "edits/5.jpg", title: "Guests in Costume", description: "Guests embrace the spirit of Salem." },
-    { src: "edits/6.png", srct: "edits/6.png", title: "Live Music", description: "Haunting melodies fill the night." },
-    { src: "edits/7.png", srct: "edits/7.png", title: "Magical Finale", description: "A night to remember forever." },
+{ src: "edits/2.png", srct: "edits/2.png", title: "Spellbinding Performance", description: "Live musical numbers and storytelling." },
+{ src: "edits/3.png", srct: "edits/3.png", title: "Witch's Brew", description: "Signature cocktails for every guest." },
+{ src: "edits/5.jpg", srct: "edits/5.jpg", title: "Guests in Costume", description: "Guests embrace the spirit of Salem." },
+{ src: "edits/6.png", srct: "edits/6.png", title: "Live Music", description: "Haunting melodies fill the night." },
+{ src: "edits/7.png", srct: "edits/7.png", title: "Magical Finale", description: "A night to remember forever." },
+{ src: "edits/10.jpg", srct: "edits/10.jpg", title: "Guests Arrive", description: "Attendees enter the event through a mystical fog." },
+{ src: "edits/11.jpg", srct: "edits/11.jpg", title: "Fortune Teller", description: "A mystical fortune teller shares insight with guests." },
+{ src: "edits/12.jpg", srct: "edits/12.jpg", title: "Witch's Brew", description: "Signature cocktails for every guest." }
   ]);
 
   return (
