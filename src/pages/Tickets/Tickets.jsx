@@ -472,7 +472,6 @@ const Tickets = () => {
                     src="./assets/images/edits/2.png"
                     alt="Custom Sanderson Sisters Experience"
                     className="img-fluid w-100"
-                    style={{ height: "400px", objectFit: "cover" }}
                   />
                 </div>
               </div>
