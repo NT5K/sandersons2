@@ -21,9 +21,7 @@ const useNanoGallery = (galleryID, items) => {
                         valign: "bottom",
                         position: "overImage",
                         hideIcons: true,
-                        display: true,
-                        titleFontSize: "1.2em",
-                        descriptionFontSize: "1.05em",
+                        display: false,
                     },
                     galleryDisplayTransitionDuration: 1500,
                     thumbnailDisplayTransition: "imageSlideUp",
@@ -37,7 +35,7 @@ const useNanoGallery = (galleryID, items) => {
                     touchAutoOpenDelay: 500,
                     viewerToolbar: { display: false },
                     viewerTools: {
-                        topLeft: "label",
+                        topLeft: "title", // Change 'label' to 'title' to only show the title in the viewer
                         topRight: "shareButton, closeButton",
                     },
                     galleryTheme: {
