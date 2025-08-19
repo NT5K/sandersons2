@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import useNanoGallery from "./useNanoGallery";
 
 // --- Data for Hero Icons ---
 const heroIconsData = [
@@ -76,75 +77,15 @@ const reviewsData = [
 ];
 
 const Home = () => {
-  useEffect(() => {
-    // nanogallery2 initialization remains the same
-    const initializeGallery = (galleryID, items) => {
-      if (window.jQuery && window.jQuery.fn.nanogallery2) {
-        window.jQuery(`#${galleryID}`).nanogallery2({
-          itemsBaseURL: `./assets/images/`,
-          items: items,
-          galleryMaxRows: 2,
-          galleryDisplayMode: "rows",
-          thumbnailHeight: "300",
-          thumbnailWidth: "auto",
-          thumbnailAlignment: "scaled",
-          thumbnailGutterWidth: 10,
-          thumbnailGutterHeight: 10,
-          thumbnailBorderHorizontal: 2,
-          thumbnailBorderVertical: 2,
-          thumbnailLabel: {
-            valign: "bottom",
-            position: "overImage",
-            hideIcons: true,
-            display: true,
-            titleFontSize: "1.2em",
-            descriptionFontSize: "1.05em",
-          },
-          galleryDisplayTransitionDuration: 1500,
-          thumbnailDisplayTransition: "imageSlideUp",
-          thumbnailDisplayTransitionDuration: 1200,
-          thumbnailDisplayTransitionEasing: "easeInOutQuint",
-          thumbnailDisplayInterval: 60,
-          thumbnailBuildInit2: "image_scale_1.00",
-          thumbnailHoverEffect2:
-            "thumbnail_scale_1.00_1.00_300|image_scale_1.00_1.05",
-          touchAnimation: true,
-          touchAutoOpenDelay: 500,
-          viewerToolbar: { display: false },
-          viewerTools: {
-            topLeft: "label",
-            topRight: "shareButton, closeButton",
-          },
-          galleryTheme: {
-            thumbnail: {
-              background: "rgba(26, 26, 26, 0.8)",
-              borderColor: "rgba(212, 175, 55, 0.3)",
-            },
-          },
-          locationHash: true,
-          displayBreadcrumb: false,
-        });
-      }
-    };
-
-    const checkLibraries = () => {
-      if (window.jQuery && window.jQuery.fn.nanogallery2) {
-        initializeGallery("sanderson_gallery", [
-          { src: "edits/1.png", srct: "edits/1.png", title: "The Sanderson Sisters", description: "Professional performers in full character." },
-          { src: "edits/2.png", srct: "edits/2.png", title: "Spellbinding Performance", description: "Live musical numbers and storytelling." },
-          { src: "edits/3.png", srct: "edits/3.png", title: "Witch's Brew", description: "Signature cocktails for every guest." },
-          { src: "edits/4.png", srct: "edits/4.png", title: "Intimate Venue", description: "Atmospheric candlelit setting." },
-          { src: "edits/5.jpg", srct: "edits/5.jpg", title: "Guests in Costume", description: "Guests embrace the spirit of Salem." },
-          { src: "edits/6.png", srct: "edits/6.png", title: "Live Music", description: "Haunting melodies fill the night." },
-          { src: "edits/7.png", srct: "edits/7.png", title: "Magical Finale", description: "A night to remember forever." },
-        ]);
-      } else {
-        setTimeout(checkLibraries, 100);
-      }
-    };
-
-    checkLibraries();
-  }, []);
+  // Use the custom hook to handle the gallery initialization
+  useNanoGallery("sanderson_gallery", [
+    { src: "edits/1.png", srct: "edits/1.png", title: "The Sanderson Sisters", description: "Professional performers in full character." },
+    { src: "edits/2.png", srct: "edits/2.png", title: "Spellbinding Performance", description: "Live musical numbers and storytelling." },
+    { src: "edits/3.png", srct: "edits/3.png", title: "Witch's Brew", description: "Signature cocktails for every guest." },
+    { src: "edits/5.jpg", srct: "edits/5.jpg", title: "Guests in Costume", description: "Guests embrace the spirit of Salem." },
+    { src: "edits/6.png", srct: "edits/6.png", title: "Live Music", description: "Haunting melodies fill the night." },
+    { src: "edits/7.png", srct: "edits/7.png", title: "Magical Finale", description: "A night to remember forever." },
+  ]);
 
   return (
     <>
@@ -210,7 +151,7 @@ const Home = () => {
         <section id="experience" className="py-5">
           <div className="container">
             <div className="row align-items-center experience-content">
-              <div className="col-md-6 order-md-1">
+              <div className="col-md-6 order-2 order-md-1">
                 <div className="experience-text">
                   <h2 className="section-title mb-4">Two Magical Experiences Await</h2>
                   <p className="mb-4" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", lineHeight: "1.8", color: "var(--silver)", opacity: "0.9" }}>
@@ -224,7 +165,7 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-md-6 order-md-2">
+              <div className="col-md-6 order-1 order-md-2">
                 <div className="experience-image rounded overflow-hidden shadow-lg">
                   <img src="./assets/images/edits/9.png" alt="Atmospheric Salem setting" className="img-fluid w-100 h-100 object-fit-cover" />
                 </div>
