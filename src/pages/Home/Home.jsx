@@ -226,7 +226,7 @@ const Home = () => {
               </div>
               <div className="col-md-6 order-md-2">
                 <div className="experience-image rounded overflow-hidden shadow-lg">
-                  <img src="./assets/images/edits/3.png" alt="Atmospheric Salem setting" className="img-fluid w-100 h-100 object-fit-cover" />
+                  <img src="./assets/images/edits/9.png" alt="Atmospheric Salem setting" className="img-fluid w-100 h-100 object-fit-cover" />
                 </div>
               </div>
             </div>
