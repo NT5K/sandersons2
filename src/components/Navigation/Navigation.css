@@ -11,7 +11,12 @@
 }
 
 .navbar.hidden {
-  top: -100px;
+  top: -125px;
+}
+
+.navbar-brand-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-brand {
@@ -21,6 +26,17 @@
   color: var(--gold-accent) !important;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.navbar-sub-brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  color: var(--silver);
+  opacity: 0.8;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  margin-top: -2px;
 }
 
 .navbar-nav .nav-link {
@@ -62,6 +78,10 @@
 
   .navbar-brand {
     font-size: 1.2rem;
+  }
+
+  .navbar-sub-brand {
+    font-size: 1.4rem;
   }
 
   .navbar-nav .nav-link {

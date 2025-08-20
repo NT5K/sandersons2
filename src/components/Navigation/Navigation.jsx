@@ -49,9 +49,14 @@ const Navigation = () => {
         }`}
       >
         <div className="container">
-          <Link className="navbar-brand" to="/">
-            The Sanderson Sisters Siore
-          </Link>
+          <div className="navbar-brand-container">
+            <Link className="navbar-brand" to="/">
+              The Sanderson Sisters Soirée
+            </Link>
+            <div className="navbar-sub-brand">
+              "We put the extra in HEXtraordinary."
+            </div>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
