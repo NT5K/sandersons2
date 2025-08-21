@@ -51,10 +51,11 @@ const Navigation = () => {
         <div className="container">
           <div className="navbar-brand-container">
             <Link className="navbar-brand" to="/">
-              The Sanderson Sisters Soirée
+              <span className="d-none d-lg-inline">The Sanderson Sisters Soirée</span>
+              <span className="d-lg-none">The Sanderson Sisters</span>
             </Link>
             <div className="navbar-sub-brand">
-              “Putting the extra in HEXtraordinary since 1693.”
+              "Putting the extra in HEXtraordinary since 1693."
             </div>
           </div>
           <button
