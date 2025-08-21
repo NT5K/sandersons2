@@ -239,7 +239,7 @@ const Cocktails = () => {
                 help integrate these mystical libations into your venue's bar
                 program for maximum guest engagement and revenue.
               </p>
-              <div className="d-flex justify-content-center gap-3 flex-wrap">
+              <div className="d-flex justify-content-center gap-3 flex-wrap mt-3">
                 <Link to="/tickets" className="btn btn-luxury">
                   <i className="fas fa-magic me-2"></i>
                   View Experiences
