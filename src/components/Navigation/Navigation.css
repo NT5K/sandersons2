@@ -36,11 +36,76 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 1.4rem;
   color: var(--silver);
-  opacity: 0.8;
+  opacity: 0;
   font-style: italic;
   letter-spacing: 0.5px;
   margin-top: -2px;
   white-space: normal;
+  transform: translateX(-20px) translateY(15px);
+  animation: spookyZigZag 1.2s ease-out 0.8s forwards;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+}
+
+/* Fast zig-zag spooky appearance animation */
+@keyframes spookyZigZag {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px) translateY(15px) scale(0.8);
+    filter: blur(3px);
+    text-shadow: 0 0 5px rgba(192, 192, 192, 0.1);
+  }
+
+  20% {
+    opacity: 0.2;
+    transform: translateX(15px) translateY(8px) scale(0.9);
+    filter: blur(2px);
+    text-shadow: 0 0 8px rgba(192, 192, 192, 0.2);
+  }
+
+  40% {
+    opacity: 0.4;
+    transform: translateX(-8px) translateY(3px) scale(1.05);
+    filter: blur(1px);
+    text-shadow: 0 0 12px rgba(192, 192, 192, 0.3);
+  }
+
+  60% {
+    opacity: 0.7;
+    transform: translateX(5px) translateY(-2px) scale(1.1);
+    filter: blur(0.5px);
+    text-shadow: 0 0 15px rgba(192, 192, 192, 0.4);
+  }
+
+  80% {
+    opacity: 0.9;
+    transform: translateX(-2px) translateY(1px) scale(1.03);
+    filter: blur(0px);
+    text-shadow: 0 0 18px rgba(192, 192, 192, 0.5);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translateX(0) translateY(0) scale(1);
+    filter: blur(0px);
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+  }
+}
+
+/* Optional: Add a haunting glow effect on hover */
+.navbar-brand-container:hover .navbar-sub-brand {
+  animation: spookyGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes spookyGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
+    opacity: 0.8;
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(192, 192, 192, 0.6),
+      0 0 30px rgba(212, 175, 55, 0.2);
+    opacity: 1;
+  }
 }
 
 .navbar-nav .nav-link {
