@@ -1,4 +1,4 @@
-/* Home.css - Fixed version */
+/* Home.css - Fixed version with extracted inline styles */
 .page-wrapper {
   overflow-x: hidden;
 }
@@ -24,7 +24,7 @@
 
 .video-background {
   position: absolute;
-  top: 50%; /* Corrected from 00% for better centering logic */
+  top: 60%; /* Updated from inline style */
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -105,6 +105,60 @@
   color: var(--silver); /* Match hero p color */
   margin: 0 auto; /* Reset p margin */
   max-width: initial; /* Reset p max-width */
+}
+
+/* Success Story Section */
+.success-story-section {
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, transparent 100%);
+}
+
+.success-story-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--gold-accent);
+}
+
+.success-story-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+}
+
+.success-story-alert {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+/* Experience Section */
+.experience-description {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--silver);
+  opacity: 0.9;
+}
+
+/* Features Section */
+.features-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(45, 27, 105, 0.05) 50%, transparent 100%);
+}
+
+/* Call to Action Section */
+.cta-section {
+  background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.8));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.cta-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--gold-accent);
+}
+
+.cta-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  color: var(--silver);
 }
 
 /* Section Backgrounds */
@@ -201,6 +255,7 @@
   line-height: 1.7;
   color: var(--silver);
   flex-grow: 1; /* Allows text to grow and push author/stars down */
+  font-style: italic;
 }
 
 .review-author {

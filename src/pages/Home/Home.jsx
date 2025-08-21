@@ -129,18 +129,18 @@ const Home = () => {
         </section>
 
         {/* Success Story Section */}
-        <section className="py-5" style={{ background: "linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, transparent 100%)" }}>
+        <section className="py-5 success-story-section">
           <div className="container">
             <div className="row justify-content-center text-center">
               <div className="col-lg-10">
                 <div className="mb-4">
-                  <h3 className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "2.5rem", color: "var(--gold-accent)" }}>
+                  <h3 className="mb-3 success-story-title">
                     Now in Our Second Spellbinding Year
                   </h3>
-                  <p className="text-white-50 mb-4" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.3rem" }}>
-                    Last season, the Sanderson Sisters were <strong style={{ color: "var(--gold-accent)" }}>completely sold out</strong> the entire month of October, half of September, and even into November. This year, we've expanded the magic with two enchanting options.
+                  <p className="text-white-50 mb-4 success-story-text">
+                    Last season, the Sanderson Sisters were <strong className="text-gold">completely sold out</strong> the entire month of October, half of September, and even into November. This year, we've expanded the magic with two enchanting options.
                   </p>
-                  <div className="alert" style={{ background: "rgba(212, 175, 55, 0.1)", border: "1px solid var(--gold-accent)", color: "var(--gold-accent)" }}>
+                  <div className="alert success-story-alert">
                     <i className="fas fa-fire me-2"></i>
                     <strong>Booking Fast:</strong> Five dates already reserved for this season!
                   </div>
@@ -157,14 +157,14 @@ const Home = () => {
               <div className="col-md-6 order-2 order-md-1">
                 <div className="experience-text">
                   <h2 className="section-title mb-4">Two Magical Experiences Await</h2>
-                  <p className="mb-4" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", lineHeight: "1.8", color: "var(--silver)", opacity: "0.9" }}>
-                    From our immersive 90-minute Sanderson Sisters Soirée featuring four bewitching musical numbers paired with signature cocktails, to our flexible Sanderson Sisters Appearances perfect for any venue or private event.
+                  <p className="mb-4 experience-description">
+                    From our immersive 90-minute Sanderson Sisters SoirÃ©e featuring four bewitching musical numbers paired with signature cocktails, to our flexible Sanderson Sisters Appearances perfect for any venue or private event.
                   </p>
-                  <p className="mb-4" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", lineHeight: "1.8", color: "var(--silver)", opacity: "0.9" }}>
+                  <p className="mb-4 experience-description">
                     Every experience features professional performers, Billy Butcherson as your theatrical greeter, and unforgettable moments that transport guests into the mystical world of Salem's most infamous witches.
                   </p>
-                  <p className="mb-0" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", lineHeight: "1.8", color: "var(--silver)", opacity: "0.9" }}>
-                    People are burnt out on the same old murder mysteries and haunted houses. This immersive cocktail experience is the new trend sweeping the country—and your guests will be talking about it long after the night is over.
+                  <p className="mb-0 experience-description">
+                    People are burnt out on the same old murder mysteries and haunted houses. This immersive cocktail experience is the new trend sweeping the countryâ€"and your guests will be talking about it long after the night is over.
                   </p>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const Home = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-5" style={{ background: "linear-gradient(180deg, transparent 0%, rgba(45, 27, 105, 0.05) 50%, transparent 100%)" }}>
+        <section className="py-5 features-section">
           <div className="container">
             <h2 className="section-title text-center mb-5">What Makes Our Magic Special</h2>
             <div className="row g-4">
@@ -261,7 +261,7 @@ const Home = () => {
                     <div className="review-stars mb-3">
                       {[...Array(5)].map((_, i) => <i key={i} className="fas fa-star"></i>)}
                     </div>
-                    <p className="review-text mb-3" style={{ fontStyle: "italic" }}>
+                    <p className="review-text mb-3">
                       {review.quote}
                     </p>
                     <div className="review-author mt-auto">
@@ -275,14 +275,14 @@ const Home = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-5" style={{ background: "linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.8))", border: "1px solid rgba(212, 175, 55, 0.3)" }}>
+        <section className="py-5 cta-section">
           <div className="container">
             <div className="row justify-content-center text-center">
               <div className="col-lg-8">
-                <h3 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "2.5rem", color: "var(--gold-accent)" }}>
+                <h3 className="mb-4 cta-title">
                   Limited Run - Book Before We Vanish!
                 </h3>
-                <p className="mb-4" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.3rem", color: "var(--silver)" }}>
+                <p className="mb-4 cta-text">
                   October weekends are booking up fast, and this is the hottest act in town. We're only booking a small number of venues to keep this experience exclusive.
                 </p>
                 <div className="d-flex justify-content-center gap-3 flex-wrap">
