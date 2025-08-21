@@ -1,5 +1,6 @@
 import React from "react";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
+import SuccessStory from "../../components/SuccessStory/SuccessStory";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import useNanoGallery from "./useNanoGallery";
@@ -129,27 +130,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Success Story Section */}
-        <section className="py-5 success-story-section">
-          <div className="container">
-            <div className="row justify-content-center text-center">
-              <div className="col-lg-10">
-                <div className="mb-4">
-                  <h3 className="mb-3 success-story-title">
-                    Now in Our Second Spellbinding Year
-                  </h3>
-                  <p className="text-white-50 mb-4 success-story-text">
-                    Last season, the Sanderson Sisters were <strong className="text-gold">completely sold out</strong> the entire month of October, half of September, and even into November. This year, we've expanded the magic with two enchanting options.
-                  </p>
-                  <div className="alert success-story-alert">
-                    <i className="fas fa-fire me-2"></i>
-                    <strong>Booking Fast:</strong> Five dates already reserved for this season!
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SuccessStory />
 
         {/* Experience Section */}
         <section id="experience" className="py-5">

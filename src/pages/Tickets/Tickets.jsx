@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PageHero from "../../components/PageHero/PageHero";
+import SuccessStory from "../../components/SuccessStory/SuccessStory";
 import { Link } from "react-router-dom";
 import "./Tickets.css";
 
@@ -195,52 +196,7 @@ const Tickets = () => {
           height="70vh"
         />
 
-        {/* Introduction Section */}
-        <section
-          className="py-5"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, transparent 100%)",
-          }}
-        >
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-lg-10 text-center">
-                <h2 className="section-title mb-4">
-                  Now in Our Second Spellbinding Year
-                </h2>
-                <p
-                  className="fs-5 text-silver mb-4"
-                  style={{
-                    fontFamily: "Cormorant Garamond, serif",
-                    lineHeight: "1.8",
-                  }}
-                >
-                  Last season, our Sanderson Sisters were{" "}
-                  <strong style={{ color: "var(--gold-accent)" }}>
-                    completely sold out
-                  </strong>{" "}
-                  the entire month of October, half of September, and even into
-                  November. This year, we've expanded the magic with two
-                  enchanting options to bring the Hocus Pocus experience to any
-                  venue or event.
-                </p>
-                <div
-                  className="alert"
-                  style={{
-                    background: "rgba(212, 175, 55, 0.1)",
-                    border: "1px solid var(--gold-accent)",
-                    color: "var(--gold-accent)",
-                  }}
-                >
-                  <i className="fas fa-fire me-2"></i>
-                  <strong>Limited Run:</strong> Only booking late September
-                  through October 31st – Five dates already reserved!
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SuccessStory />
 
         {/* Experience Packages */}
         <section className="py-5">
