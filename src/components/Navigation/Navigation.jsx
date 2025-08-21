@@ -54,7 +54,7 @@ const Navigation = () => {
               The Sanderson Sisters Soirée
             </Link>
             <div className="navbar-sub-brand">
-              "We put the extra in HEXtraordinary."
+              “Putting the extra in HEXtraordinary since 1693.”
             </div>
           </div>
           <button

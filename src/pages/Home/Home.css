@@ -31,7 +31,7 @@
   width: auto;
   height: auto;
   z-index: -1;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -50%);
   object-fit: cover;
 }
 
@@ -107,7 +107,6 @@
   max-width: initial; /* Reset p max-width */
 }
 
-
 /* Section Backgrounds */
 .practical-info {
   background: linear-gradient(
@@ -170,7 +169,6 @@
 .info-item strong {
   color: var(--gold-accent);
 }
-
 
 /* Reviews Section */
 .reviews {
@@ -288,11 +286,10 @@
   transform: translateY(-5px);
 }
 
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero {
-    min-height: calc(90vh - 80px);
-    padding: 120px 0 60px;
+    min-height: calc(90vh - 80px) !important;
+    padding: 40px 0 60px !important;
+    padding-top: 150px !important;
   }
 }

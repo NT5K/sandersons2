@@ -11,12 +11,14 @@
 }
 
 .navbar.hidden {
-  top: -125px;
+  top: -140px;
 }
 
 .navbar-brand-container {
   display: flex;
   flex-direction: column;
+  max-width: 80%;
+  overflow-wrap: break-word;
 }
 
 .navbar-brand {
@@ -27,6 +29,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 0;
+  white-space: normal;
 }
 
 .navbar-sub-brand {
@@ -37,6 +40,7 @@
   font-style: italic;
   letter-spacing: 0.5px;
   margin-top: -2px;
+  white-space: normal;
 }
 
 .navbar-nav .nav-link {
@@ -81,7 +85,7 @@
   }
 
   .navbar-sub-brand {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   .navbar-nav .nav-link {
