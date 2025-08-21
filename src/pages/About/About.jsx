@@ -2,9 +2,18 @@
 import React from "react";
 import PageHero from "../../components/PageHero/PageHero";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
+import useNanoGallery from "./useNanoGallery";
 import "./About.css";
 
 const About = () => {
+  // Use the custom hook to handle the gallery initialization
+  useNanoGallery("about_gallery", [
+    { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "The Sanderson Sisters", description: "Professional performers in full character." },
+    { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Live Musical Performance", description: "Four spine-tingling musical numbers." },
+    { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Interactive Experience", description: "Guests become part of the story." },
+    // { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Atmospheric Setting", description: "Spooky decor and mystical ambiance." }
+  ]);
+
   return (
     <>
       <div>
@@ -47,6 +56,14 @@ const About = () => {
                 captivating legend.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="gallery">
+          <div className="container">
+            <h2 className="section-title">Behind the Magic</h2>
+            <div id="about_gallery"></div>
           </div>
         </section>
 
