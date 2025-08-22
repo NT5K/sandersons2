@@ -140,13 +140,13 @@ const Home = () => {
                 <div className="experience-text">
                   <h2 className="section-title mb-4">Two Magical Experiences Await</h2>
                   <p className="mb-4 experience-description">
-                    From our immersive 90-minute Sanderson Sisters SoirÃ©e featuring four bewitching musical numbers paired with signature cocktails, to our flexible Sanderson Sisters Appearances perfect for any venue or private event.
+                    From our immersive 90-minute Sanderson Sisters Soirée featuring four bewitching musical numbers paired with signature cocktails, to our flexible Sanderson Sisters Appearances perfect for any venue or private event.
                   </p>
                   <p className="mb-4 experience-description">
                     Every experience features professional performers, Billy Butcherson as your theatrical greeter, and unforgettable moments that transport guests into the mystical world of Salem's most infamous witches.
                   </p>
                   <p className="mb-0 experience-description">
-                    People are burnt out on the same old murder mysteries and haunted houses. This immersive cocktail experience is the new trend sweeping the countryâ€"and your guests will be talking about it long after the night is over.
+                    People are burnt out on the same old murder mysteries and haunted houses. This immersive cocktail experience is the new trend sweeping the country, and your guests will be talking about it long after the night is over.
                   </p>
                 </div>
               </div>
