@@ -19,7 +19,7 @@
     );
   z-index: 2;
   overflow: hidden;
-  padding-top: 120px;
+  padding-top: 200px;
 }
 
 .video-background {
@@ -109,7 +109,11 @@
 
 /* Success Story Section */
 .success-story-section {
-  background: linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 26, 0.3) 0%,
+    transparent 100%
+  );
 }
 
 .success-story-title {
@@ -140,12 +144,21 @@
 
 /* Features Section */
 .features-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(45, 27, 105, 0.05) 50%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(45, 27, 105, 0.05) 50%,
+    transparent 100%
+  );
 }
 
 /* Call to Action Section */
 .cta-section {
-  background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.8));
+  background: linear-gradient(
+    145deg,
+    rgba(26, 26, 26, 0.95),
+    rgba(42, 42, 42, 0.8)
+  );
   border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
@@ -345,6 +358,11 @@
   .hero {
     min-height: calc(90vh - 80px) !important;
     padding: 40px 0 60px !important;
-    padding-top: 150px !important;
+    padding-top: 110px !important;
+  }
+}
+@media (min-width: 1285px) {
+  .hero {
+    padding-top: 170px !important;
   }
 }
