@@ -6,8 +6,9 @@ import About from "./pages/About/About";
 import Cocktails from "./pages/Cocktails/Cocktails";
 import Home from "./pages/Home/Home";
 import Tickets from "./pages/Tickets/Tickets";
-import "./App.css";
 import Contact from "./pages/Contact/Contact";
+import NotFound from "./pages/NotFound";
+import "./App.css";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
