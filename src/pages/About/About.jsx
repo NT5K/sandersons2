@@ -1,13 +1,16 @@
 // About.jsx
-import React from "react";
+import React, { useRef } from "react";
 import PageHero from "../../components/PageHero/PageHero";
 import DetailsCard from "../../components/DetailsCard/DetailsCard";
 import useNanoGallery from "./useNanoGallery";
 import "./About.css";
 
 const About = () => {
-  // Use the custom hook to handle the gallery initialization
-  useNanoGallery("about_gallery", [
+  // Create a ref for the gallery container
+  const galleryRef = useRef(null);
+
+  // Use the custom hook with the ref
+  useNanoGallery(galleryRef, [
     { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "The Sanderson Sisters", description: "Professional performers in full character." },
     { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Live Musical Performance", description: "Four spine-tingling musical numbers." },
     { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Interactive Experience", description: "Guests become part of the story." },
@@ -62,7 +65,7 @@ const About = () => {
         {/* Gallery Section */}
         <section className="gallery">
           <div className="container">
-            <div id="about_gallery"></div>
+            <div ref={galleryRef} id="about_gallery"></div>
           </div>
         </section>
 

@@ -4,7 +4,11 @@ import { useEffect } from "react";
 const useNanoGallery = (galleryID, items) => {
     useEffect(() => {
         const initializeGallery = () => {
-            if (window.jQuery && window.jQuery.fn.nanogallery2) {
+            // Find the target DOM element first
+            const galleryElement = document.getElementById(galleryID);
+
+            // Check for the element's existence IN ADDITION to jQuery and the plugin
+            if (galleryElement && window.jQuery && window.jQuery.fn.nanogallery2) {
                 window.jQuery(`#${galleryID}`).nanogallery2({
                     itemsBaseURL: `./assets/images/`,
                     items: items,
@@ -48,7 +52,7 @@ const useNanoGallery = (galleryID, items) => {
                     displayBreadcrumb: false,
                 });
             } else {
-                // Retry initialization after a short delay
+                // If the element or jQuery isn't ready, retry
                 setTimeout(initializeGallery, 100);
             }
         };
@@ -57,7 +61,7 @@ const useNanoGallery = (galleryID, items) => {
 
         // Clean-up function to destroy the gallery when the component unmounts
         return () => {
-            if (window.jQuery && window.jQuery.fn.nanogallery2) {
+            if (window.jQuery && window.jQuery.fn.nanogallery2 && document.getElementById(galleryID)) {
                 window.jQuery(`#${galleryID}`).nanogallery2('destroy');
             }
         };

@@ -1,11 +1,15 @@
 // useNanoGallery.js
 import { useEffect } from "react";
 
-const useNanoGallery = (galleryID, items) => {
+const useNanoGallery = (galleryRef, items) => {
     useEffect(() => {
+        // Capture the DOM element from the ref
+        const galleryElement = galleryRef.current;
+
         const initializeGallery = () => {
-            if (window.jQuery && window.jQuery.fn.nanogallery2) {
-                window.jQuery(`#${galleryID}`).nanogallery2({
+            // Check if the element exists and if jQuery and the plugin are loaded
+            if (galleryElement && window.jQuery && window.jQuery.fn.nanogallery2) {
+                window.jQuery(galleryElement).nanogallery2({
                     itemsBaseURL: `./assets/images/`,
                     items: items,
                     galleryMaxRows: 1,
@@ -47,8 +51,8 @@ const useNanoGallery = (galleryID, items) => {
                     locationHash: true,
                     displayBreadcrumb: false,
                 });
-            } else {
-                // Retry initialization after a short delay
+            } else if (galleryElement) {
+                // If the element exists but the plugin isn't ready, retry.
                 setTimeout(initializeGallery, 100);
             }
         };
@@ -57,11 +61,15 @@ const useNanoGallery = (galleryID, items) => {
 
         // Clean-up function to destroy the gallery when the component unmounts
         return () => {
-            if (window.jQuery && window.jQuery.fn.nanogallery2) {
-                window.jQuery(`#${galleryID}`).nanogallery2('destroy');
+            // Use the captured element in the cleanup
+            if (galleryElement && window.jQuery && window.jQuery.fn.nanogallery2) {
+                // Safer check to ensure the plugin is initialized before destroying
+                if (window.jQuery(galleryElement).data('nanogallery2')) {
+                    window.jQuery(galleryElement).nanogallery2('destroy');
+                }
             }
         };
-    }, [galleryID, items]);
+    }, [galleryRef, items]); // Dependency array ensures the effect re-runs if the ref or items change
 };
 
 export default useNanoGallery;
