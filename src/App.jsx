@@ -11,7 +11,7 @@ import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
-    <Router basename="/sandersons2/">
+    <Router>
       <div className="App">
         <Navigation />
         <main>
