@@ -1,37 +1,150 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import PageHero from "../../components/PageHero/PageHero";
 import Card from "../../components/ContactCard/ContactCard";
 import "./Contact.css";
 
 const Contact = () => {
+  // Form state management
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
+    phone: "",
+    contactReason: "Soirée Experience",
     venueType: "",
     eventDate: "",
-    experienceType: "",
     message: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // State to manage the visibility of the success message
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  // State to manage validation errors
+  const [validationErrors, setValidationErrors] = useState({});
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // Clear validation error when user starts typing
+    if (validationErrors[name]) {
+      setValidationErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  // Validate required fields
+  const validateForm = () => {
+    const errors = {};
+
+    if (!formData.firstName.trim()) {
+      errors.firstName = "Please enter your first name.";
+    }
+
+    if (!formData.lastName.trim()) {
+      errors.lastName = "Please enter your last name.";
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "Please enter your email address.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = "Please enter a valid email address.";
+    }
+
+    if (!formData.eventDate.trim()) {
+      errors.eventDate = "Please enter your preferred date(s).";
+    }
+
+    if (!formData.message.trim()) {
+      errors.message = "Please enter additional details.";
+    }
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the formData to a server
-    console.log("Form submitted:", formData);
-    alert(
-      "Thank you for your inquiry! Dominick will get back to you within 24 hours to discuss bringing the Sanderson Sisters to your venue."
-    );
-    setFormData({
-      name: "",
-      email: "",
-      venueType: "",
-      eventDate: "",
-      experienceType: "",
-      message: "",
-    });
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    console.log("Form submission started");
+    console.log("Current form data:", formData);
+
+    // Validate the form before submission
+    if (!validateForm()) {
+      console.log("Form validation failed:", validationErrors);
+      return; // Stop submission if validation fails
+    }
+
+    // IMPORTANT: Make sure this matches your Google Form ID exactly
+    const formId = "1FAIpQLSfNF1sD5L2JRCdWuTVrovuRoNS-C8GaZ9kix3qNjFLZLvgBYw";
+    const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+
+    console.log("Submitting to URL:", formUrl);
+
+    // Create a FormData object to send the data.
+    const formDataToSend = new FormData();
+
+    // Map form fields to Google Form entry IDs (from your prefilled URL)
+    formDataToSend.append("entry.192242539", formData.firstName || ""); // First Name
+    formDataToSend.append("entry.202404098", formData.lastName || ""); // Last Name
+    formDataToSend.append("entry.779890641", formData.email || ""); // Email
+    formDataToSend.append("entry.80092182", formData.phone || ""); // Phone
+    formDataToSend.append("entry.1432619189", formData.contactReason || ""); // Contact Reason
+    formDataToSend.append("entry.228855407", formData.venueType || ""); // Venue Type
+    formDataToSend.append("entry.1954645428", formData.eventDate || ""); // Event Date
+    formDataToSend.append("entry.850683340", formData.message || ""); // Message
+
+    // Log what we're sending
+    console.log("FormData entries:");
+    for (let [key, value] of formDataToSend.entries()) {
+      console.log(key, ":", value);
+    }
+
+    // Use fetch to send the form data to the Google Form.
+    fetch(formUrl, {
+      method: "POST",
+      body: formDataToSend,
+      mode: "no-cors", // This is required for Google Forms submissions like this.
+    })
+      .then((response) => {
+        console.log("Form submission response:", response);
+        // Clear all form fields
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          contactReason: "Soirée Experience",
+          venueType: "",
+          eventDate: "",
+          message: "",
+        });
+        setValidationErrors({}); // Clear any validation errors
+        setIsSubmitted(true); // Show the success message
+        // Hide the success message after a few seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+        console.log("Form submitted successfully");
+      })
+      .catch((error) => {
+        // Log any errors to the console.
+        console.error("Error submitting form:", error);
+        // More specific error handling
+        if (
+          error.name === "TypeError" &&
+          error.message.includes("Failed to fetch")
+        ) {
+          console.log("This might be a CORS issue or network problem");
+        }
+        alert(
+          "There was an error submitting your form. Please try again or contact us directly."
+        );
+      });
   };
 
   return (
@@ -120,37 +233,179 @@ const Contact = () => {
               {/* Contact Form */}
               <div className="contact-form-container">
                 <h3 className="mb-4 text-center">Quick Inquiry Form</h3>
-                <form onSubmit={handleSubmit}>
+                <form
+                  onSubmit={handleSubmit}
+                  className="needs-validation"
+                  noValidate
+                >
+                  {/* First Name */}
                   <div className="mb-3">
-                    <label htmlFor="name" className="form-label">
-                      Contact Name
+                    <label htmlFor="firstName" className="form-label">
+                      First Name <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      className="form-control"
-                      id="name"
-                      name="name"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={handleChange}
+                      className={`form-control ${
+                        validationErrors.firstName ? "is-invalid" : ""
+                      }`}
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Your first name"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       required
                     />
+                    {validationErrors.firstName && (
+                      <div className="invalid-feedback d-block">
+                        {validationErrors.firstName}
+                      </div>
+                    )}
                   </div>
+
+                  {/* Last Name */}
+                  <div className="mb-3">
+                    <label htmlFor="lastName" className="form-label">
+                      Last Name <span className="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className={`form-control ${
+                        validationErrors.lastName ? "is-invalid" : ""
+                      }`}
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Your last name"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
+                    />
+                    {validationErrors.lastName && (
+                      <div className="invalid-feedback d-block">
+                        {validationErrors.lastName}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Email Address */}
                   <div className="mb-3">
                     <label htmlFor="email" className="form-label">
-                      Email Address
+                      Email Address <span className="text-danger">*</span>
                     </label>
                     <input
                       type="email"
-                      className="form-control"
+                      className={`form-control ${
+                        validationErrors.email ? "is-invalid" : ""
+                      }`}
                       id="email"
                       name="email"
                       placeholder="your.email@venue.com"
                       value={formData.email}
-                      onChange={handleChange}
+                      onChange={handleInputChange}
                       required
                     />
+                    {validationErrors.email && (
+                      <div className="invalid-feedback d-block">
+                        {validationErrors.email}
+                      </div>
+                    )}
                   </div>
+
+                  {/* Phone Number */}
+                  <div className="mb-3">
+                    <label htmlFor="phone" className="form-label">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      className="form-control"
+                      id="phone"
+                      name="phone"
+                      placeholder="(216) 555-0123"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+
+                  {/* Contact Reason - Radio Buttons */}
+                  <div className="mb-3">
+                    <label className="form-label">Reason for Contact</label>
+                    <div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="contactReason"
+                          id="reason_soiree"
+                          value="Soirée Experience"
+                          checked={
+                            formData.contactReason === "Soirée Experience"
+                          }
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="reason_soiree"
+                        >
+                          Sanderson Sisters Soirée (90-minute full experience)
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="contactReason"
+                          id="reason_appearance"
+                          value="Appearance"
+                          checked={formData.contactReason === "Appearance"}
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="reason_appearance"
+                        >
+                          Sanderson Sisters Appearance (1-2 hours)
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="contactReason"
+                          id="reason_custom"
+                          value="Custom Experience"
+                          checked={
+                            formData.contactReason === "Custom Experience"
+                          }
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="reason_custom"
+                        >
+                          Custom Experience (Brunch, Private Party, etc.)
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="contactReason"
+                          id="reason_other"
+                          value="Other"
+                          checked={formData.contactReason === "Other"}
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="reason_other"
+                        >
+                          Other Inquiry
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Venue Type */}
                   <div className="mb-3">
                     <label htmlFor="venueType" className="form-label">
                       Venue Type
@@ -160,75 +415,81 @@ const Contact = () => {
                       id="venueType"
                       name="venueType"
                       value={formData.venueType}
-                      onChange={handleChange}
-                      required
+                      onChange={handleInputChange}
                     >
                       <option value="">Select your venue type</option>
-                      <option value="restaurant">Restaurant</option>
-                      <option value="bar">Bar/Pub</option>
-                      <option value="event-space">Event Space</option>
-                      <option value="hotel">Hotel/Resort</option>
-                      <option value="private-party">Private Party</option>
-                      <option value="corporate">Corporate Event</option>
-                      <option value="other">Other</option>
+                      <option value="Restaurant">Restaurant</option>
+                      <option value="Bar/Pub">Bar/Pub</option>
+                      <option value="Event Space">Event Space</option>
+                      <option value="Hotel/Resort">Hotel/Resort</option>
+                      <option value="Private Party">Private Party</option>
+                      <option value="Corporate Event">Corporate Event</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="experienceType" className="form-label">
-                      Experience Interest
-                    </label>
-                    <select
-                      className="form-select"
-                      id="experienceType"
-                      name="experienceType"
-                      value={formData.experienceType}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select experience type</option>
-                      <option value="soiree">
-                        Sanderson Sisters Soirée (90-minute full experience)
-                      </option>
-                      <option value="appearance">
-                        Sanderson Sisters Appearance (1-2 hours)
-                      </option>
-                      <option value="custom">
-                        Custom Experience (Brunch, etc.)
-                      </option>
-                      <option value="not-sure">Not sure - need guidance</option>
-                    </select>
-                  </div>
+
+                  {/* Preferred Date(s) */}
                   <div className="mb-3">
                     <label htmlFor="eventDate" className="form-label">
-                      Preferred Date(s)
+                      Preferred Date(s) <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
-                      className="form-control"
+                      className={`form-control ${
+                        validationErrors.eventDate ? "is-invalid" : ""
+                      }`}
                       id="eventDate"
                       name="eventDate"
                       placeholder="October 14th, or October weekends, etc."
                       value={formData.eventDate}
-                      onChange={handleChange}
+                      onChange={handleInputChange}
+                      required
                     />
+                    {validationErrors.eventDate && (
+                      <div className="invalid-feedback d-block">
+                        {validationErrors.eventDate}
+                      </div>
+                    )}
                   </div>
+
+                  {/* Message */}
                   <div className="mb-4">
                     <label htmlFor="message" className="form-label">
-                      Additional Details
+                      Additional Details <span className="text-danger">*</span>
                     </label>
                     <textarea
-                      className="form-control"
+                      className={`form-control ${
+                        validationErrors.message ? "is-invalid" : ""
+                      }`}
                       id="message"
                       name="message"
                       rows="4"
                       placeholder="Venue capacity, preferred timing, special requests, or any questions..."
                       value={formData.message}
-                      onChange={handleChange}
+                      onChange={handleInputChange}
+                      required
                     />
+                    {validationErrors.message && (
+                      <div className="invalid-feedback d-block">
+                        {validationErrors.message}
+                      </div>
+                    )}
                   </div>
+
+                  {/* Submit Button */}
                   <button type="submit" className="btn btn-submit w-100">
                     Send Inquiry to Dominick
                   </button>
+
+                  {/* Success Message */}
+                  {isSubmitted && (
+                    <div className="alert alert-success mt-3" role="alert">
+                      <i className="fas fa-check-circle me-2"></i>
+                      Thanks for reaching out! Dominick will get back to you
+                      within 24 hours to discuss bringing the Sanderson Sisters
+                      to your venue.
+                    </div>
+                  )}
                 </form>
               </div>
             </div>
