@@ -217,7 +217,7 @@ const Contact = () => {
                 <div className="info-item">
                   <i className="fas fa-fire"></i>
                   <span>
-                    <strong>Status:</strong> 5 dates already booked - Limited
+                    <strong>Status:</strong> Only booking late September to November 1st! - Limited
                     availability
                   </span>
                 </div>
@@ -596,7 +596,7 @@ const Contact = () => {
                   type="social"
                   iconClass="fas fa-calendar-check"
                   title="Availability"
-                  description="Season: Late September through October 31st. Peak Times: October weekends. Current Status: 5 dates already booked. Book Early: Last year sold out 3 months straight."
+                  description="Season: Late September through October 31st. Peak Times: October weekends. Limited Run: Only booking late September to November 1st!. Book Early: Last year sold out 3 months straight."
                   link="mailto:dominick@extrememp.com?subject=Availability Check"
                   linkText="Check Availability"
                 />

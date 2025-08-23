@@ -82,7 +82,7 @@ const venueInfoData = [
     icon: "fas fa-calendar-alt",
     title: "Availability",
     description:
-      "<strong>Limited Run:</strong> Late September through October 31st<br /><strong>Booking Status:</strong> 5 dates already reserved<br /><strong>Note:</strong> October weekends booking fastest",
+      "<strong>Limited Run:</strong> Late September through October 31st<br /><strong>Booking Status:</strong> Only booking late September to November 1st!<br /><strong>Note:</strong> October weekends booking fastest",
   },
   {
     icon: "fas fa-users",
@@ -417,9 +417,9 @@ const Tickets = () => {
                       Holiday and special occasion entertainment
                     </li>
                   </ul>
-                  <a href="/contact" className="btn btn-luxury">
+                  <Link to="/contact" className="btn btn-luxury">
                     Discuss Custom Options
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-6">
