@@ -91,23 +91,6 @@
   }
 }
 
-/* Optional: Add a haunting glow effect on hover */
-.navbar-brand-container:hover .navbar-sub-brand {
-  animation: spookyGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes spookyGlow {
-  0% {
-    text-shadow: 0 0 10px rgba(192, 192, 192, 0.3);
-    opacity: 0.8;
-  }
-  100% {
-    text-shadow: 0 0 20px rgba(192, 192, 192, 0.6),
-      0 0 30px rgba(212, 175, 55, 0.2);
-    opacity: 1;
-  }
-}
-
 .navbar-nav .nav-link {
   color: var(--silver) !important;
   font-family: "Cinzel", serif;
