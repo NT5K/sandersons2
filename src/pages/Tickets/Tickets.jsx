@@ -190,7 +190,7 @@ const Tickets = () => {
       <div className="page-wrapper">
         {/* Hero Section */}
         <PageHero
-          backgroundImage="./assets/images/hero/witches-hero-wide.png"
+          backgroundImage="./assets/images/hero/tickets-hero-wide.png"
           title="Choose Your Experience"
           subtitle="Two Magical Offerings from Extremely Social"
           height="70vh"
