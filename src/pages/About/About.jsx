@@ -62,7 +62,6 @@ const About = () => {
         {/* Gallery Section */}
         <section className="gallery">
           <div className="container">
-            <h2 className="section-title">Behind the Magic</h2>
             <div id="about_gallery"></div>
           </div>
         </section>
