@@ -39,9 +39,6 @@ const Footer = () => {
                 <Link to="/tickets">Sanderson Sisters Soirée</Link>
               </p>
               <p>
-                <Link to="/tickets">Private Appearances</Link>
-              </p>
-              <p>
                 <Link to="/cocktails">Signature Cocktails</Link>
               </p>
               <p>
