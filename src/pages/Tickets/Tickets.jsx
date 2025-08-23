@@ -94,7 +94,7 @@ const venueInfoData = [
     icon: "fas fa-handshake",
     title: "Booking",
     description:
-      "<strong>Contact:</strong> Dominick Palazzo<br /><strong>Phone:</strong> (216) 375-2550<br /><strong>Email:</strong> dominick@extrememp.com",
+      "<strong>Contact:</strong> Dominick Palazzo<br /><strong>Phone:</strong> (216) 375-2550<br /><strong>Email:</strong> booking@sistaaasentertainment.com",
   },
 ];
 

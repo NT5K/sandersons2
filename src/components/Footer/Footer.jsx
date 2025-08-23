@@ -56,8 +56,8 @@ const Footer = () => {
                 <a href="tel:2163752550">(216) 375-2550</a>
               </p>
               <p>
-                <a href="mailto:dominick@extrememp.com">
-                  dominick@extrememp.com
+                <a href="mailto:booking@sistaaasentertainment.com">
+                  booking@sistaaasentertainment.com
                 </a>
               </p>
               <p>

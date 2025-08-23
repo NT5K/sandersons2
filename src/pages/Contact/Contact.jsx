@@ -201,8 +201,8 @@ const Contact = () => {
                   <i className="fas fa-envelope"></i>
                   <span>
                     <strong>Email:</strong>{" "}
-                    <a href="mailto:dominick@extrememp.com">
-                      dominick@extrememp.com
+                    <a href="mailto:booking@sistaaasentertainment.com">
+                      booking@sistaaasentertainment.com
                     </a>
                   </span>
                 </div>
@@ -570,7 +570,7 @@ const Contact = () => {
                   iconClass="fas fa-envelope-open-text"
                   title="Email Database"
                   description="We'll promote your event to our 7,000+ subscriber database for maximum attendance."
-                  link="mailto:dominick@extrememp.com?subject=Email Marketing Support"
+                  link="mailto:booking@sistaaasentertainment.com?subject=Email Marketing Support"
                   linkText="Learn More"
                 />
               </div>
@@ -597,7 +597,7 @@ const Contact = () => {
                   iconClass="fas fa-calendar-check"
                   title="Availability"
                   description="Season: Late September through October 31st. Peak Times: October weekends. Limited Run: Only booking late September to November 1st!. Book Early: Last year sold out 3 months straight."
-                  link="mailto:dominick@extrememp.com?subject=Availability Check"
+                  link="mailto:booking@sistaaasentertainment.com?subject=Availability Check"
                   linkText="Check Availability"
                 />
               </div>
@@ -617,7 +617,7 @@ const Contact = () => {
                   iconClass="fas fa-building"
                   title="Venue Requirements"
                   description="Basic audio system, space for performers to move, bar service for cocktails, seating arrangement flexibility, parking for guests. We handle the rest!"
-                  link="mailto:dominick@extrememp.com?subject=Venue Requirements"
+                  link="mailto:booking@sistaaasentertainment.com?subject=Venue Requirements"
                   linkText="Discuss Setup"
                 />
               </div>
@@ -664,7 +664,7 @@ const Contact = () => {
                   Call (216) 375-2550 Now
                 </a>
                 <a
-                  href="mailto:dominick@extrememp.com"
+                  href="mailto:booking@sistaaasentertainment.com"
                   className="btn btn-luxury"
                 >
                   <i className="fas fa-envelope me-2"></i>
