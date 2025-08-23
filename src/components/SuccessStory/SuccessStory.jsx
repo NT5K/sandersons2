@@ -23,8 +23,7 @@ const SuccessStory = () => {
               </p>
               <div className="alert success-story-alert">
                 <i className="fas fa-fire me-2"></i>
-                <strong>Limited Run:</strong> Only booking late September
-                through October 31st – Five dates already reserved!
+                <strong>Limited Run:</strong> Only booking late September to November 1st!
               </div>
             </div>
           </div>
