@@ -354,11 +354,27 @@
   transform: translateY(-5px);
 }
 
+/* Animation for video panning */
+@keyframes pan-video {
+  from {
+    transform: translate(-35%, -50%);
+  }
+  to {
+    transform: translate(-65%, -50%);
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: calc(90vh - 80px) !important;
     padding: 40px 0 60px !important;
     padding-top: 110px !important;
+  }
+  /* Apply panning animation on mobile */
+  .video-background {
+    width: 300%; /* Make video much wider than the screen */
+    min-width: 300%;
+    animation: pan-video 15s linear infinite alternate;
   }
 }
 @media (min-width: 1285px) {
