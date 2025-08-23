@@ -29,26 +29,26 @@ const cocktailsData = [
     layout: "image-right",
   },
   {
-    id: "black-flame",
-    name: "Black Flame Elixir",
-    pairing: `~ Paired with "The Witches Are Back" ~`,
-    description: `The most mystical of our offerings, served as the Sisters return from the grave— all thanks to a virgin lighting the black flame candle! This high-energy libation accompanies the audience spotlight moment when someone from the crowd is chosen to play "the virgin" in a hilarious recurring gag that delights guests throughout the evening.`,
-    ingredientsTitle: "Resurrection Elements",
-    ingredientsList: `Dark and mysterious with flickering flames • Channels the power of the legendary black flame candle • Served during the evening's most interactive and energetic moment`,
-    imageSrc: "./assets/images/drinks/marys-mischief.png",
-    imageAlt: "Black Flame Elixir Cocktail",
-    layout: "image-left",
-  },
-  {
     id: "mary",
     name: "Soul Sucker Sangria",
     pairing: `~ Paired with "Carol of the Witches" ~`,
     description: `The perfect finale as the Sanderson Sisters cast their most haunting, melodic spell. This deep red sangria or blackberry-vodka-based cocktail is garnished with dry ice or a "soul swirl" of silver edible glitter. Dark, mysterious, and delicious—served as the sisters circle the room and "choose" their next victims for eternal youth.`,
     ingredientsTitle: "Soul-Stealing Components",
     ingredientsList: `Deep red sangria or blackberry-vodka base • Garnished with mystical dry ice for dramatic effect • Silver edible glitter creates the signature "soul swirl" • The chilling finale to your evening's enchantment`,
-    imageSrc: "./assets/images/drinks/winifreds-revenge.png",
+    imageSrc: "./assets/images/drinks/marys-mischief.png",
     imageAlt: "Soul Sucker Sangria Cocktail",
-    layout: "image-right",
+    layout: "image-left",
+  },
+  {
+    id: "black-flame",
+    name: "Black Flame Elixir",
+    pairing: `~ Paired with "The Witches Are Back" ~`,
+    description: `The most mystical of our offerings, served as the Sisters return from the grave— all thanks to a virgin lighting the black flame candle! This high-energy libation accompanies the audience spotlight moment when someone from the crowd is chosen to play "the virgin" in a hilarious recurring gag that delights guests throughout the evening.`,
+    ingredientsTitle: "Resurrection Elements",
+    ingredientsList: `Dark and mysterious with flickering flames • Channels the power of the legendary black flame candle • Served during the evening's most interactive and energetic moment`,
+    imageSrc: "./assets/images/drinks/black-flame-candle.png",
+    imageAlt: "Black Flame Elixir Cocktail",
+    layout: "image-rigt",
   },
 ];
 
@@ -79,9 +79,7 @@ const CocktailCard = ({ cocktail }) => {
           <p className="cocktail-sister">{cocktail.pairing}</p>
           <p className="cocktail-description">{cocktail.description}</p>
           <div className="cocktail-ingredients">
-            <p className="ingredients-title">
-              {cocktail.ingredientsTitle}
-            </p>
+            <p className="ingredients-title">{cocktail.ingredientsTitle}</p>
             <p className="ingredients-list">{cocktail.ingredientsList}</p>
           </div>
         </div>
@@ -106,14 +104,17 @@ const Cocktails = () => {
         {/* Cocktail Menu Introduction */}
         <section className="cocktail-menu-section">
           <div className="container">
-            <h2 className="section-title text-center">Bewitching Beverages</h2>
+            <h2 className="section-title text-center">
+              Inspirational Cocktail Concepts
+            </h2>
             <div className="menu-intro col-lg-8 mx-auto text-center">
               <p>
-                Four signature cocktails expertly paired with each musical
-                performance in our Sanderson Sisters Soirée. From the welcoming
-                spell to the soul-sucking finale, each libation is crafted to
-                enhance the magical journey and immerse guests deeper into the
-                mystical world of Salem's most infamous witches.
+                Our Sanderson Sisters Soirée is enhanced by signature cocktails
+                expertly paired with each musical performance. Below are four
+                inspirational concepts designed to spark the imagination. The
+                final drink menu is always customized in collaboration with each
+                venue, ensuring a unique and perfectly integrated bar program
+                that enhances the magical journey for your guests.
               </p>
             </div>
           </div>
@@ -170,24 +171,27 @@ const Cocktails = () => {
         <section className="customization-section pt-5">
           <div className="container">
             <h2 className="section-title text-center">
-              Venue Customization
+              Customized For Your Venue
             </h2>
             <div className="row g-5 align-items-center">
               <div className="col-lg-6">
                 <div className="private-text">
                   <h3 className="text-gold">
-                    Adaptable to Your Bar Program
+                    Inspirational Concepts, Practical Solutions
                   </h3>
                   <p className="text-silver">
-                    We provide coordinated drink pairing recommendations and
-                    work with your bartending team to ensure these signature
-                    cocktails can be executed with your existing bar setup and
-                    inventory.
+                    The cocktails featured on this page are inspirational
+                    concepts that demonstrate how we pair libations with key
+                    moments in the show. Our primary goal is to collaborate with
+                    your bartending team to design a custom menu that utilizes
+                    your existing bar setup and inventory while still capturing
+                    the theatrical spirit of the event.
                   </p>
                   <p className="text-silver">
-                    Our cocktail menu recommendations are flexible and can be
-                    adapted based on your venue's capabilities, preferred
-                    spirits, and price points while maintaining the theatrical
+                    Whether you adapt our ideas or create something entirely
+                    new, our recommendations are flexible. We'll help you craft
+                    a menu that meets your venue's capabilities, preferred
+                    spirits, and price points, all while maintaining the magical
                     presentation that makes each drink special.
                   </p>
                   <ul className="list-unstyled private-features">
@@ -200,15 +204,11 @@ const Cocktails = () => {
                     <li>
                       Theatrical presentation training for your bartending staff
                     </li>
-                    <li>
-                      Timing coordination with musical performances
-                    </li>
+                    <li>Timing coordination with musical performances</li>
                     <li>
                       Special effects guidance (dry ice, garnishes, glitter)
                     </li>
-                    <li>
-                      Pricing strategies that maximize your bar revenue
-                    </li>
+                    <li>Pricing strategies that maximize your bar revenue</li>
                   </ul>
                   <Link to="/contact" className="btn btn-luxury">
                     Discuss Your Bar Program
@@ -234,10 +234,10 @@ const Cocktails = () => {
             <div className="text-center">
               <h2 className="section-title">Ready to Serve Some Magic?</h2>
               <p className="section-subtitle">
-                These signature cocktails are an integral part of the complete
-                Sanderson Sisters experience. Contact us to learn how we can
-                help integrate these mystical libations into your venue's bar
-                program for maximum guest engagement and revenue.
+                Our signature cocktail concepts are an integral part of the
+                complete Sanderson Sisters experience. Contact us to learn how
+                we can collaborate with you to integrate a custom, mystical bar
+                program that maximizes guest engagement and revenue.
               </p>
               <div className="d-flex justify-content-center gap-3 flex-wrap mt-3">
                 <Link to="/tickets" className="btn btn-luxury">
