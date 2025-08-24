@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Page Not Found</title>
+    <script type="text/javascript">
+      // Get the current path and search query
+      var path = window.location.pathname;
+      var query = window.location.search;
+
+      // Construct the new URL to redirect to
+      var redirectTo = "/" + path + query;
+
+      // Log the redirect for debugging purposes
+      console.log("Redirecting to: " + redirectTo);
+
+      // Redirect the user
+      window.location.replace(redirectTo);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the homepage...</p>
+  </body>
+</html>
