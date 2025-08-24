@@ -1,127 +1,166 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
+  const navRef = useRef(null);
 
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isNavSticky, setIsNavSticky] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [navHeight, setNavHeight] = useState(0);
+
+  // Set navbar height on mount and when the window is resized
+  useEffect(() => {
+    const updateNavHeight = () => {
+      if (navRef.current) {
+        setNavHeight(navRef.current.offsetHeight);
+      }
+    };
+    updateNavHeight();
+    window.addEventListener("resize", updateNavHeight);
+    return () => window.removeEventListener("resize", updateNavHeight);
+  }, []);
+
+  // Close mobile nav on any route change
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsNavOpen(false);
   }, [location.pathname]);
 
+  // This effect ONLY handles adding/removing body padding.
+  // It runs whenever the sticky state or nav height changes.
   useEffect(() => {
+    if (isNavSticky) {
+      document.body.style.paddingTop = `${navHeight}px`;
+    } else {
+      document.body.style.paddingTop = "0";
+    }
+    // Cleanup padding on component unmount
+    return () => {
+      document.body.style.paddingTop = "0";
+    };
+  }, [isNavSticky, navHeight]);
+
+  // This effect ONLY handles scroll detection and setting state
+  useEffect(() => {
+    const scrollThreshold = 5; // Prevents overly sensitive show/hide behavior
+
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        setIsVisible(false);
-        setIsNavOpen(false); // Add this line
+      const currentScrollY = window.scrollY;
+
+      // Determine if the navbar should become sticky
+      if (currentScrollY > navHeight) {
+        setIsNavSticky(true);
       } else {
-        setIsVisible(true);
+        setIsNavSticky(false);
       }
-      setLastScrollY(window.scrollY);
+
+      // Determine if the navbar should be visible (show/hide logic)
+      if (
+        Math.abs(currentScrollY - lastScrollY) > scrollThreshold ||
+        currentScrollY < navHeight
+      ) {
+        if (currentScrollY > lastScrollY && currentScrollY > navHeight) {
+          // Scrolling Down
+          setIsNavVisible(false);
+        } else {
+          // Scrolling Up or at the top of the page
+          setIsNavVisible(true);
+        }
+      }
+
+      setLastScrollY(currentScrollY <= 0 ? 0 : currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, [lastScrollY, navHeight]);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
+  const isActive = (path) => location.pathname === path;
 
-  const isActive = (path) => {
-    if (path === "/") {
-      return location.pathname === "/";
-    }
-    return location.pathname === path;
-  };
+  // Dynamically build the class string for the nav element
+  const navClasses = `
+    navbar navbar-expand-lg navbar-dark 
+    ${isNavSticky ? "navbar-sticky" : ""} 
+    ${isNavVisible ? "visible" : "hidden"}
+  `;
 
   return (
-    <>
-      <nav
-        className={`navbar navbar-expand-lg navbar-dark ${
-          isVisible ? "" : "hidden"
-        }`}
-      >
-        <div className="container">
-          <div className="navbar-brand-container">
-            <Link className="navbar-brand" to="/">
-              <span className="d-none d-lg-inline">The Sanderson Sisters Soirée</span>
-              <span className="d-lg-none">The Sanderson Sisters</span>
-            </Link>
-            <div className="navbar-sub-brand">
-              "Putting the extra in HEXtraordinary since 1693."
-            </div>
-          </div>
-          <button
-            className="navbar-toggler"
-            type="button"
-            onClick={toggleNav}
-            aria-expanded={isNavOpen}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
-          >
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${isActive("/") ? "active" : ""}`}
-                  to="/"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${isActive("/about") ? "active" : ""}`}
-                  to="/about"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  About
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${
-                    isActive("/cocktails") ? "active" : ""
-                  }`}
-                  to="/cocktails"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  Cocktails
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${isActive("/tickets") ? "active" : ""}`}
-                  to="/tickets"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  Tickets
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${isActive("/contact") ? "active" : ""}`}
-                  to="/contact"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <nav ref={navRef} className={navClasses.trim()}>
+      <div className="container">
+        <Link className="navbar-brand d-flex flex-column" to="/">
+          <span className="brand-main-text">The Sanderson Sisters Soirée</span>
+          <span className="brand-sub-text">
+            "Putting the extra in HEXtraordinary since 1693."
+          </span>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={toggleNav}
+          aria-expanded={isNavOpen ? "true" : "false"}
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}>
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${isActive("/") ? "active" : ""}`}
+                to="/"
+                onClick={() => setIsNavOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${isActive("/about") ? "active" : ""}`}
+                to="/about"
+                onClick={() => setIsNavOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${isActive("/cocktails") ? "active" : ""}`}
+                to="/cocktails"
+                onClick={() => setIsNavOpen(false)}
+              >
+                Cocktails
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${isActive("/tickets") ? "active" : ""}`}
+                to="/tickets"
+                onClick={() => setIsNavOpen(false)}
+              >
+                Tickets
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+                to="/contact"
+                onClick={() => setIsNavOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 

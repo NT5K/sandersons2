@@ -17,13 +17,15 @@ const servicesData = [
   {
     icon: "fas fa-theater-masks",
     title: "Sanderson Sisters Soirée",
-    description: "A complete 90-minute immersive experience featuring four live musical numbers, themed cocktails, Billy Butcherson greeter, and interactive storytelling. Perfect for venues seeking a premium entertainment experience.",
+    description:
+      "A complete 90-minute immersive experience featuring four live musical numbers, themed cocktails, Billy Butcherson greeter, and interactive storytelling. Perfect for venues seeking a premium entertainment experience.",
     link: "/tickets",
   },
   {
     icon: "fas fa-magic",
     title: "Sanderson Sisters Appearances",
-    description: "Shorter, high-impact visits (1-2 hours) perfect for bars, restaurants, private parties, or special events. Includes three spine-tingling songs, photo opportunities, and magical mingling.",
+    description:
+      "Shorter, high-impact visits (1-2 hours) perfect for bars, restaurants, private parties, or special events. Includes three spine-tingling songs, photo opportunities, and magical mingling.",
     link: "/tickets",
   },
 ];
@@ -33,32 +35,51 @@ const featuresData = [
   {
     icon: "fas fa-crown",
     title: "Professional Cast",
-    description: "Experienced performers bring Winifred, Sarah, and Mary to life with authentic costumes, makeup, and character work that rivals any professional theater production.",
+    description:
+      "Experienced performers bring Winifred, Sarah, and Mary to life with authentic costumes, makeup, and character work that rivals any professional theater production.",
   },
   {
     icon: "fas fa-cocktail",
     title: "Signature Cocktails",
-    description: "Four themed libations including Witch's Welcome, The Betrayal Brew, Black Flame Elixir, and Soul Sucker Sangria—each paired perfectly with the performance.",
+    description:
+      "Four themed libations including Witch's Welcome, The Betrayal Brew, Black Flame Elixir, and Soul Sucker Sangria—each paired perfectly with the performance.",
   },
   {
     icon: "fas fa-users",
     title: "Interactive Magic",
-    description: "Guests become part of the show through spell-casting, choosing 'the virgin' for hilarious moments, and intimate character interactions throughout the evening.",
+    description:
+      "Guests become part of the show through spell-casting, choosing 'the virgin' for hilarious moments, and intimate character interactions throughout the evening.",
   },
   {
     icon: "fas fa-calendar-check",
     title: "Flexible Booking",
-    description: "Available late September through October 31st. Custom options available including Sanderson Sisters Brunches and venue-specific adaptations.",
+    description:
+      "Available late September through October 31st. Custom options available including Sanderson Sisters Brunches and venue-specific adaptations.",
   },
 ];
 
 // --- Data for Venue Info Section ---
 const venueInfoData = [
-  { icon: "fas fa-clock", text: "<strong>Availability:</strong> Late September through October 31st" },
-  { icon: "fas fa-users", text: "<strong>Capacity:</strong> Scalable for intimate venues to larger spaces" },
-  { icon: "fas fa-magic", text: "<strong>Setup:</strong> We provide performers, costumes, music, and decor" },
-  { icon: "fas fa-envelope", text: "<strong>Marketing:</strong> 7,000+ email database promotion included" },
-  { icon: "fas fa-phone", text: "<strong>Booking:</strong> Call Dominick at (216) 375-2550" },
+  {
+    icon: "fas fa-clock",
+    text: "<strong>Availability:</strong> Late September through October 31st",
+  },
+  {
+    icon: "fas fa-users",
+    text: "<strong>Capacity:</strong> Scalable for intimate venues to larger spaces",
+  },
+  {
+    icon: "fas fa-magic",
+    text: "<strong>Setup:</strong> We provide performers, costumes, music, and decor",
+  },
+  {
+    icon: "fas fa-envelope",
+    text: "<strong>Marketing:</strong> 7,000+ email database promotion included",
+  },
+  {
+    icon: "fas fa-phone",
+    text: "<strong>Booking:</strong> Call Dominick at (216) 375-2550",
+  },
 ];
 
 // --- Data for Reviews Section ---
@@ -80,24 +101,77 @@ const reviewsData = [
 const Home = () => {
   // Use the custom hook to handle the gallery initialization
   useNanoGallery("sanderson_gallery", [
-    { src: "edits/1.png", srct: "edits/1.png", title: "The Sanderson Sisters", description: "Professional performers in full character." },
-    { src: "edits/2.png", srct: "edits/2.png", title: "Spellbinding Performance", description: "Live musical numbers and storytelling." },
-    { src: "edits/3.png", srct: "edits/3.png", title: "Witch's Brew", description: "Signature cocktails for every guest." },
-    { src: "edits/5.jpg", srct: "edits/5.jpg", title: "Guests in Costume", description: "Guests embrace the spirit of Salem." },
-    { src: "edits/6.png", srct: "edits/6.png", title: "Live Music", description: "Haunting melodies fill the night." },
-    { src: "edits/7.png", srct: "edits/7.png", title: "Magical Finale", description: "A night to remember forever." },
-    { src: "edits/10.jpg", srct: "edits/10.jpg", title: "Guests Arrive", description: "Attendees enter the event through a mystical fog." },
-    { src: "billy/billy1.png", srct: "billy/billy1.png", title: "Witch's Brew", description: "Signature cocktails for every guest." },
-    { src: "edits/11.jpg", srct: "edits/11.jpg", title: "Fortune Teller", description: "A mystical fortune teller shares insight with guests." },
-    { src: "edits/12.jpg", srct: "edits/12.jpg", title: "Witch's Brew", description: "Signature cocktails for every guest." },
+    {
+      src: "edits/1.png",
+      srct: "edits/1.png",
+      title: "The Sanderson Sisters",
+      description: "Professional performers in full character.",
+    },
+    {
+      src: "edits/2.png",
+      srct: "edits/2.png",
+      title: "Spellbinding Performance",
+      description: "Live musical numbers and storytelling.",
+    },
+    {
+      src: "edits/3.png",
+      srct: "edits/3.png",
+      title: "Witch's Brew",
+      description: "Signature cocktails for every guest.",
+    },
+    {
+      src: "edits/5.jpg",
+      srct: "edits/5.jpg",
+      title: "Guests in Costume",
+      description: "Guests embrace the spirit of Salem.",
+    },
+    {
+      src: "edits/6.png",
+      srct: "edits/6.png",
+      title: "Live Music",
+      description: "Haunting melodies fill the night.",
+    },
+    {
+      src: "edits/7.png",
+      srct: "edits/7.png",
+      title: "Magical Finale",
+      description: "A night to remember forever.",
+    },
+    {
+      src: "edits/10.jpg",
+      srct: "edits/10.jpg",
+      title: "Guests Arrive",
+      description: "Attendees enter the event through a mystical fog.",
+    },
+    {
+      src: "billy/billy1.png",
+      srct: "billy/billy1.png",
+      title: "Witch's Brew",
+      description: "Signature cocktails for every guest.",
+    },
+    {
+      src: "edits/11.jpg",
+      srct: "edits/11.jpg",
+      title: "Fortune Teller",
+      description: "A mystical fortune teller shares insight with guests.",
+    },
+    {
+      src: "edits/12.jpg",
+      srct: "edits/12.jpg",
+      title: "Witch's Brew",
+      description: "Signature cocktails for every guest.",
+    },
   ]);
 
   return (
     <>
-      <div className="page-wrapper">
+      <div>
         {/* Hero Section */}
-        <section id="home" className="hero d-flex align-items-center justify-content-center pb-3">
-          <video autoPlay muted loop playsInline className="video-background" style={{ top: "60%" }}>
+        <section
+          id="home"
+          className="hero d-flex align-items-center justify-content-center pb-3"
+        >
+          <video autoPlay muted loop playsInline className="video-background">
             <source src="./assets/videos/header/header1.mp4" type="video/mp4" />
           </video>
           <div className="hero-overlay"></div>
@@ -108,7 +182,10 @@ const Home = () => {
                   <h1 className="mb-3">The Sanderson Sisters Soirée</h1>
                   <h2 className="mb-5">An Exclusive Salem Experience</h2>
                   <p className="mx-auto mb-5">
-                    Step into the shadows of Salem's most notorious witches. Our sophisticated interpretation brings these iconic characters to life through masterful storytelling, atmospheric design, and interactive entertainment.
+                    Step into the shadows of Salem's most notorious witches. Our
+                    sophisticated interpretation brings these iconic characters
+                    to life through masterful storytelling, atmospheric design,
+                    and interactive entertainment.
                   </p>
                   <div className="hero-icons d-flex justify-content-center gap-4 mb-5">
                     {heroIconsData.map((icon, index) => (
@@ -138,21 +215,36 @@ const Home = () => {
             <div className="row align-items-center experience-content">
               <div className="col-md-6 order-2 order-md-1">
                 <div className="experience-text">
-                  <h2 className="section-title mb-4">Two Magical Experiences Await</h2>
+                  <h2 className="section-title mb-4">
+                    Two Magical Experiences Await
+                  </h2>
                   <p className="mb-4 experience-description">
-                    From our immersive 90-minute Sanderson Sisters Soirée featuring four bewitching musical numbers paired with signature cocktails, to our flexible Sanderson Sisters Appearances perfect for any venue or private event.
+                    From our immersive 90-minute Sanderson Sisters Soirée
+                    featuring four bewitching musical numbers paired with
+                    signature cocktails, to our flexible Sanderson Sisters
+                    Appearances perfect for any venue or private event.
                   </p>
                   <p className="mb-4 experience-description">
-                    Every experience features professional performers, Billy Butcherson as your theatrical greeter, and unforgettable moments that transport guests into the mystical world of Salem's most infamous witches.
+                    Every experience features professional performers, Billy
+                    Butcherson as your theatrical greeter, and unforgettable
+                    moments that transport guests into the mystical world of
+                    Salem's most infamous witches.
                   </p>
                   <p className="mb-0 experience-description">
-                    People are burnt out on the same old murder mysteries and haunted houses. This immersive cocktail experience is the new trend sweeping the country, and your guests will be talking about it long after the night is over.
+                    People are burnt out on the same old murder mysteries and
+                    haunted houses. This immersive cocktail experience is the
+                    new trend sweeping the country, and your guests will be
+                    talking about it long after the night is over.
                   </p>
                 </div>
               </div>
               <div className="col-md-6 order-1 order-md-2">
                 <div className="experience-image rounded overflow-hidden shadow-lg">
-                  <img src="./assets/images/edits/9.png" alt="Atmospheric Salem setting" className="img-fluid w-100 h-100 object-fit-cover" />
+                  <img
+                    src="./assets/images/edits/9.png"
+                    alt="Atmospheric Salem setting"
+                    className="img-fluid w-100 h-100 object-fit-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -162,7 +254,9 @@ const Home = () => {
         {/* Services Section */}
         <section className="services py-5 bg-dark">
           <div className="container">
-            <h2 className="section-title text-center mb-5">Choose Your Enchantment</h2>
+            <h2 className="section-title text-center mb-5">
+              Choose Your Enchantment
+            </h2>
             <div className="row g-5 justify-content-center">
               {servicesData.map((service, index) => (
                 <div key={index} className="col-lg-6">
@@ -187,11 +281,17 @@ const Home = () => {
         {/* Features Section */}
         <section className="py-5 features-section">
           <div className="container">
-            <h2 className="section-title text-center mb-5">What Makes Our Magic Special</h2>
+            <h2 className="section-title text-center mb-5">
+              What Makes Our Magic Special
+            </h2>
             <div className="row g-4">
               {featuresData.map((feature, index) => (
                 <div key={index} className="col-lg-3 col-md-6">
-                  <DetailsCard iconClass={feature.icon} title={feature.title} description={feature.description} />
+                  <DetailsCard
+                    iconClass={feature.icon}
+                    title={feature.title}
+                    description={feature.description}
+                  />
                 </div>
               ))}
             </div>
@@ -204,17 +304,25 @@ const Home = () => {
             <div className="row align-items-center">
               <div className="col-md-6">
                 <div className="location-image">
-                  <img src="./assets/images/edits/2.png" alt="Intimate venue setting" className="" />
+                  <img
+                    src="./assets/images/edits/2.png"
+                    alt="Intimate venue setting"
+                    className=""
+                  />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="ps-md-5">
-                  <h2 className="section-title mb-4">Bringing Magic to Your Venue</h2>
+                  <h2 className="section-title mb-4">
+                    Bringing Magic to Your Venue
+                  </h2>
                   <div className="info-content">
                     {venueInfoData.map((item, index) => (
                       <div key={index} className="info-item">
                         <i className={item.icon}></i>
-                        <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: item.text }}
+                        ></span>
                       </div>
                     ))}
                   </div>
@@ -227,7 +335,9 @@ const Home = () => {
         {/* Gallery Section */}
         <section className="gallery">
           <div className="container">
-            <h2 className="section-title text-center mb-5">Experience the Magic</h2>
+            <h2 className="section-title text-center mb-5">
+              Experience the Magic
+            </h2>
             <div id="sanderson_gallery"></div>
           </div>
         </section>
@@ -235,17 +345,19 @@ const Home = () => {
         {/* Reviews Section */}
         <section className="py-5 bg-dark">
           <div className="container">
-            <h2 className="section-title text-center mb-5">What Our Guests Are Saying</h2>
+            <h2 className="section-title text-center mb-5">
+              What Our Guests Are Saying
+            </h2>
             <div className="row g-4">
               {reviewsData.map((review, index) => (
                 <div key={index} className="col-lg-4">
                   <div className="review-card text-center d-flex flex-column">
                     <div className="review-stars mb-3">
-                      {[...Array(5)].map((_, i) => <i key={i} className="fas fa-star"></i>)}
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star"></i>
+                      ))}
                     </div>
-                    <p className="review-text mb-3">
-                      {review.quote}
-                    </p>
+                    <p className="review-text mb-3">{review.quote}</p>
                     <div className="review-author mt-auto">
                       <strong>{review.author}</strong>
                     </div>
@@ -265,11 +377,17 @@ const Home = () => {
                   Limited Run - Book Before We Vanish!
                 </h3>
                 <p className="mb-4 cta-text">
-                  October weekends are booking up fast, and this is the hottest act in town. We're only booking a small number of venues to keep this experience exclusive.
+                  October weekends are booking up fast, and this is the hottest
+                  act in town. We're only booking a small number of venues to
+                  keep this experience exclusive.
                 </p>
                 <div className="d-flex justify-content-center gap-3 flex-wrap">
-                  <Link to="/tickets" className="btn btn-luxury"><i className="fas fa-magic me-2"></i>View Experiences</Link>
-                  <Link to="/contact" className="btn btn-luxury"><i className="fas fa-phone me-2"></i>Book Now</Link>
+                  <Link to="/tickets" className="btn btn-luxury">
+                    <i className="fas fa-magic me-2"></i>View Experiences
+                  </Link>
+                  <Link to="/contact" className="btn btn-luxury">
+                    <i className="fas fa-phone me-2"></i>Book Now
+                  </Link>
                 </div>
               </div>
             </div>

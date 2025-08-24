@@ -187,13 +187,12 @@ const Tickets = () => {
 
   return (
     <>
-      <div className="page-wrapper">
+      <div>
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/hero/tickets-hero-wide.png"
           title="Choose Your Experience"
           subtitle="Two Magical Offerings from Extremely Social"
-          height="70vh"
         />
 
         <SuccessStory />

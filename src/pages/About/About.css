@@ -21,6 +21,10 @@
   opacity: 0.9;
 }
 
+.page-hero.hero-full-height {
+  min-height: 100vh;
+}
+
 /* Production Details */
 .production-details {
   padding: 100px 0;

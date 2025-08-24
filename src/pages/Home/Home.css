@@ -1,10 +1,10 @@
-/* Home.css - Fixed version with extracted inline styles */
+/* Home.css */
 .page-wrapper {
   overflow-x: hidden;
 }
 
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   position: relative;
   background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)),
     radial-gradient(
@@ -19,12 +19,14 @@
     );
   z-index: 2;
   overflow: hidden;
-  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-background {
   position: absolute;
-  top: 60%; /* Updated from inline style */
+  top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -102,9 +104,9 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.7);
-  color: var(--silver); /* Match hero p color */
-  margin: 0 auto; /* Reset p margin */
-  max-width: initial; /* Reset p max-width */
+  color: var(--silver);
+  margin: 0 auto;
+  max-width: initial;
 }
 
 /* Success Story Section */
@@ -175,14 +177,6 @@
 }
 
 /* Section Backgrounds */
-.practical-info {
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.3) 0%,
-    transparent 100%
-  );
-}
-
 .reviews {
   background: linear-gradient(
     180deg,
@@ -204,13 +198,13 @@
 .info-content {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Adjusted gap for better spacing */
+  gap: 15px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  padding: 15px 0; /* Adjusted padding */
+  padding: 15px 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   transition: all 0.3s ease;
 }
@@ -240,12 +234,6 @@
 /* Reviews Section */
 .reviews {
   padding: 120px 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(45, 27, 105, 0.1) 50%,
-    transparent 100%
-  );
 }
 
 .review-card {
@@ -254,7 +242,7 @@
   padding: 40px 30px;
   border-radius: 0;
   transition: all 0.4s ease;
-  height: 100%; /* Ensure cards are same height */
+  height: 100%;
 }
 
 .review-card:hover {
@@ -264,10 +252,10 @@
 
 .review-text {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem; /* Increased size for better readability */
+  font-size: 1.2rem;
   line-height: 1.7;
   color: var(--silver);
-  flex-grow: 1; /* Allows text to grow and push author/stars down */
+  flex-grow: 1;
   font-style: italic;
 }
 
@@ -282,43 +270,16 @@
 }
 
 /* Location Section (Used for Venue Info) */
-.location-description {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: var(--silver);
-  opacity: 0.9;
-}
-
-.location a {
-  color: var(--silver); /* Default link color for location section */
-  text-decoration: none;
-}
-
-.location a:hover {
-  color: var(--gold-accent) !important;
-  transition: all 0.3s ease;
-}
-
-.location .fab {
-  font-size: 1.3rem; /* Consistent icon size */
-}
-
-.location .fab:hover {
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-}
-
 .location-image {
   border: 1px solid rgba(212, 175, 55, 0.3);
   overflow: hidden;
 }
 
 .location-image img {
-  max-height: 400px; /* Specific height for location image */
+  max-height: 400px;
   height: auto;
   object-fit: cover;
-  width: 100%; /* Ensure image is responsive within its container */
+  width: 100%;
 }
 
 /* Gallery Section */
@@ -365,20 +326,16 @@
 }
 
 @media (max-width: 768px) {
+  /* Raise hero content and video on mobile */
   .hero {
-    min-height: calc(90vh - 80px) !important;
-    padding: 40px 0 60px !important;
-    padding-top: 110px !important;
+    padding-bottom: 60px; /* Pushes flex-centered content up by 30px */
   }
+
   /* Apply panning animation on mobile */
   .video-background {
-    width: 300%; /* Make video much wider than the screen */
+    width: 300%;
     min-width: 300%;
     animation: pan-video 15s linear infinite alternate;
-  }
-}
-@media (min-width: 1285px) {
-  .hero {
-    padding-top: 170px !important;
+    top: calc(50% - 75px); /* Raise video by 75px */
   }
 }

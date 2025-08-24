@@ -5,7 +5,7 @@
 }
 
 .cocktails-section {
-  padding-top: 120px; /* Use Bootstrap py- for content if possible */
+  padding-top: 120px;
   padding-bottom: 120px;
   position: relative;
   z-index: 2;

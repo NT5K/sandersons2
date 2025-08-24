@@ -48,7 +48,7 @@ const cocktailsData = [
     ingredientsList: `Dark and mysterious with flickering flames • Channels the power of the legendary black flame candle • Served during the evening's most interactive and energetic moment`,
     imageSrc: "./assets/images/drinks/black-flame-candle.png",
     imageAlt: "Black Flame Elixir Cocktail",
-    layout: "image-rigt",
+    layout: "image-right",
   },
 ];
 
@@ -92,13 +92,12 @@ const CocktailCard = ({ cocktail }) => {
 const Cocktails = () => {
   return (
     <>
-      <div className="page-wrapper">
+      <div>
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/drinks/hero_cocktail_mashup.png"
           title="Signature Cocktails"
           subtitle="Enchanted Libations of Salem"
-          height="70vh"
         />
 
         {/* Cocktail Menu Introduction */}

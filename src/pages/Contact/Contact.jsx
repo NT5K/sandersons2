@@ -155,7 +155,6 @@ const Contact = () => {
           backgroundImage="./assets/images/hero/contact-hero-wide.png"
           title="Book the Magic"
           subtitle="Contact Extremely Social to bring the Sanderson Sisters to your venue"
-          height="70vh"
         />
 
         {/* Primary Contact Section */}

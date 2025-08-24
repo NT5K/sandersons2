@@ -11,9 +11,24 @@ const About = () => {
 
   // Use the custom hook with the ref
   useNanoGallery(galleryRef, [
-    { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "The Sanderson Sisters", description: "Professional performers in full character." },
-    { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Live Musical Performance", description: "Four spine-tingling musical numbers." },
-    { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Interactive Experience", description: "Guests become part of the story." },
+    {
+      src: "gallery/DSC_6711.JPG",
+      srct: "gallery/DSC_6711.JPG",
+      title: "The Sanderson Sisters",
+      description: "Professional performers in full character.",
+    },
+    {
+      src: "gallery/DSC_6711.JPG",
+      srct: "gallery/DSC_6711.JPG",
+      title: "Live Musical Performance",
+      description: "Four spine-tingling musical numbers.",
+    },
+    {
+      src: "gallery/DSC_6711.JPG",
+      srct: "gallery/DSC_6711.JPG",
+      title: "Interactive Experience",
+      description: "Guests become part of the story.",
+    },
     // { src: "gallery/DSC_6711.JPG", srct: "gallery/DSC_6711.JPG", title: "Atmospheric Setting", description: "Spooky decor and mystical ambiance." }
   ]);
 
@@ -25,7 +40,7 @@ const About = () => {
           backgroundImage="./assets/images/hero/witches-hero-wide.png"
           title="About the Experience"
           subtitle="Extremely Social Presents The Sanderson Sisters"
-          height="70vh"
+          className="hero-full-height"
         />
 
         {/* About Section - UPDATED WITH EXTREMELY SOCIAL INFO */}
