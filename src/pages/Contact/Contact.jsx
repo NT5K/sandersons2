@@ -11,7 +11,7 @@ const Contact = () => {
     lastName: "",
     email: "",
     phone: "",
-    contactReason: "Soirée Experience",
+    contactReason: "Other",
     venueType: "",
     eventDate: "",
     message: "",
@@ -217,8 +217,8 @@ const Contact = () => {
                 <div className="info-item">
                   <i className="fas fa-fire"></i>
                   <span>
-                    <strong>Status:</strong> Only booking late September to November 1st! - Limited
-                    availability
+                    <strong>Status:</strong> Only booking late September to
+                    November 1st! - Limited availability
                   </span>
                 </div>
 
@@ -335,6 +335,23 @@ const Contact = () => {
                           className="form-check-input"
                           type="radio"
                           name="contactReason"
+                          id="reason_other"
+                          value="Other"
+                          checked={formData.contactReason === "Other"}
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="reason_other"
+                        >
+                          Other Inquiry
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="radio"
+                          name="contactReason"
                           id="reason_soiree"
                           value="Soirée Experience"
                           checked={
@@ -347,23 +364,6 @@ const Contact = () => {
                           htmlFor="reason_soiree"
                         >
                           Sanderson Sisters Soirée (90-minute full experience)
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="contactReason"
-                          id="reason_appearance"
-                          value="Appearance"
-                          checked={formData.contactReason === "Appearance"}
-                          onChange={handleInputChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="reason_appearance"
-                        >
-                          Sanderson Sisters Appearance (1-2 hours)
                         </label>
                       </div>
                       <div className="form-check">
