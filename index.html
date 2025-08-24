@@ -242,9 +242,10 @@
       // Single Page Apps for GitHub Pages
       // This script checks if the current URL is a redirect from 404.html
       (function (l) {
-        // console.log("Checking for redirect:", l.search);
-        if (l.search[1] === "/") {
-          // console.log("Redirect detected, processing...");
+        // Only process if we have a search parameter that starts with '/?'
+        // This indicates it came from a 404.html redirect
+        if (l.search && l.search.length > 1 && l.search[1] === "/") {
+          console.log("GitHub Pages redirect detected, processing...");
           var decoded = l.search
             .slice(1)
             .split("&")
@@ -252,10 +253,10 @@
               return s.replace(/~and~/g, "&");
             })
             .join("?");
-          // console.log(
-          //   "Redirecting to:",
-          //   l.pathname.slice(0, -1) + decoded + l.hash
-          // );
+          console.log(
+            "Redirecting to:",
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
           window.history.replaceState(
             null,
             null,
