@@ -334,7 +334,7 @@
   /* Apply panning animation on mobile */
   .video-background {
     width: 300%;
-    min-width: 300%;
+    min-width: 380%;
     animation: pan-video 15s linear infinite alternate;
     top: calc(50% - 75px); /* Raise video by 75px */
   }
