@@ -187,7 +187,7 @@ const Tickets = () => {
 
   return (
     <>
-      <div>
+      <div className="page-wrapper">
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/hero/tickets-hero-wide.png"

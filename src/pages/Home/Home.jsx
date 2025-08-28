@@ -165,14 +165,14 @@ const Home = () => {
 
   return (
     <>
-      <div>
+      <div className="page-wrapper">
         {/* Hero Section */}
         <section
           id="home"
           className="hero d-flex align-items-center justify-content-center pb-3"
         >
           <video autoPlay muted loop playsInline className="video-background">
-            <source src="./assets/videos/header/header1.mp4" type="video/mp4" />
+            <source src="./assets/videos/header/header1.mp4#t=2" type="video/mp4" />
           </video>
           <div className="hero-overlay"></div>
           <div className="container position-relative z-3 text-center text-white">

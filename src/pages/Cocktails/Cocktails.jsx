@@ -92,7 +92,7 @@ const CocktailCard = ({ cocktail }) => {
 const Cocktails = () => {
   return (
     <>
-      <div>
+      <div className="page-wrapper">
         {/* Hero Section */}
         <PageHero
           backgroundImage="./assets/images/drinks/hero_cocktail_mashup.png"
