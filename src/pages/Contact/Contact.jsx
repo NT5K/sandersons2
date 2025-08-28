@@ -11,7 +11,7 @@ const Contact = () => {
     lastName: "",
     email: "",
     phone: "",
-    contactReason: "Other",
+    contactReason: "Soirée Experience",
     venueType: "",
     eventDate: "",
     message: "",
@@ -95,7 +95,7 @@ const Contact = () => {
     formDataToSend.append("entry.202404098", formData.lastName || ""); // Last Name
     formDataToSend.append("entry.779890641", formData.email || ""); // Email
     formDataToSend.append("entry.80092182", formData.phone || ""); // Phone
-    formDataToSend.append("entry.1432619189", formData.contactReason || ""); // Contact Reason
+    formDataToSend.append("entry.1074307502", formData.contactReason || ""); // Contact Reason
     formDataToSend.append("entry.228855407", formData.venueType || ""); // Venue Type
     formDataToSend.append("entry.1954645428", formData.eventDate || ""); // Event Date
     formDataToSend.append("entry.850683340", formData.message || ""); // Message
@@ -325,83 +325,29 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Contact Reason - Radio Buttons */}
+                  {/* Reason for Contact */}
                   <div className="mb-3">
-                    <label className="form-label">Reason for Contact</label>
-                    <div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="contactReason"
-                          id="reason_other"
-                          value="Other"
-                          checked={formData.contactReason === "Other"}
-                          onChange={handleInputChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="reason_other"
-                        >
-                          Other Inquiry
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="contactReason"
-                          id="reason_soiree"
-                          value="Soirée Experience"
-                          checked={
-                            formData.contactReason === "Soirée Experience"
-                          }
-                          onChange={handleInputChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="reason_soiree"
-                        >
-                          Sanderson Sisters Soirée (90-minute full experience)
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="contactReason"
-                          id="reason_custom"
-                          value="Custom Experience"
-                          checked={
-                            formData.contactReason === "Custom Experience"
-                          }
-                          onChange={handleInputChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="reason_custom"
-                        >
-                          Custom Experience (Brunch, Private Party, etc.)
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="contactReason"
-                          id="reason_other"
-                          value="Other"
-                          checked={formData.contactReason === "Other"}
-                          onChange={handleInputChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="reason_other"
-                        >
-                          Other Inquiry
-                        </label>
-                      </div>
-                    </div>
+                    <label htmlFor="contactReason" className="form-label">
+                      Reason for Contact
+                    </label>
+                    <select
+                      className="form-select"
+                      id="contactReason"
+                      name="contactReason"
+                      value={formData.contactReason}
+                      onChange={handleInputChange}
+                    >
+                      <option value="Soirée Experience">
+                        Sanderson Sisters Soirée (90-minute experience)
+                      </option>
+                      <option value="Appearance">
+                        Sanderson Sister Appearance
+                      </option>
+                      <option value="Custom Experience">
+                        Custom (Brunch, Private Party, etc.)
+                      </option>
+                      <option value="Other">Other Inquiry</option>
+                    </select>
                   </div>
 
                   {/* Venue Type */}
@@ -430,7 +376,8 @@ const Contact = () => {
                   {/* Preferred Date(s) */}
                   <div className="mb-3">
                     <label htmlFor="eventDate" className="form-label">
-                      Preferred Date(s) <span className="text-danger">*</span>
+                      Preferred Date(s){" "}
+                      <span className="text-danger">*</span>
                     </label>
                     <input
                       type="text"
