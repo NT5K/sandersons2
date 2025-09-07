@@ -12,8 +12,8 @@ const useNanoGallery = (galleryRef, items) => {
                 window.jQuery(galleryElement).nanogallery2({
                     itemsBaseURL: `./assets/images/`,
                     items: items,
-                    galleryMaxRows: 1,
-                    galleryDisplayMode: "rows",
+                    galleryMaxColumns: 2,
+                    galleryDisplayMode: "columns",
                     thumbnailHeight: "300",
                     thumbnailWidth: "auto",
                     thumbnailAlignment: "scaled",
