@@ -96,7 +96,7 @@ const Navigation = () => {
     <nav ref={navRef} className={navClasses.trim()}>
       <div className="container">
         <Link className="navbar-brand d-flex flex-column" to="/">
-          <span className="brand-main-text">The Sanderson Sisters Soirée</span>
+          <span className="brand-main-text">The Sisters Soirée</span>
           <span className="brand-sub-text">
             "Putting the extra in HEXtraordinary since 1693."
           </span>

@@ -154,7 +154,7 @@ const Contact = () => {
         <PageHero
           backgroundImage="./assets/images/hero/contact-hero-wide.png"
           title="Book the Magic"
-          subtitle="Contact Extremely Social to bring the Sanderson Sisters to your venue"
+          subtitle="Contact Extremely Social to bring the Sisters to your venue"
         />
 
         {/* Primary Contact Section */}
@@ -167,7 +167,7 @@ const Contact = () => {
               <div className="contact-info text-white">
                 <h3 className="mb-4">Get the Magic Started</h3>
                 <p className="mb-4">
-                  Ready to bring the Sanderson Sisters to your venue? Dominick
+                  Ready to bring the Sisters to your venue? Dominick
                   Palazzo, owner of Extremely Social, is standing by to help
                   create an unforgettable experience for your guests. With five
                   dates already booked this season, October weekends are filling
@@ -338,10 +338,10 @@ const Contact = () => {
                       onChange={handleInputChange}
                     >
                       <option value="Soirée Experience">
-                        Sanderson Sisters Soirée (90-minute experience)
+                        Sisters Soirée (90-minute experience)
                       </option>
                       <option value="Appearance">
-                        Sanderson Sister Appearance
+                        Sister Appearance
                       </option>
                       <option value="Custom Experience">
                         Custom (Brunch, Private Party, etc.)
@@ -432,7 +432,7 @@ const Contact = () => {
                     <div className="alert alert-success mt-3" role="alert">
                       <i className="fas fa-check-circle me-2"></i>
                       Thanks for reaching out! Dominick will get back to you
-                      within 24 hours to discuss bringing the Sanderson Sisters
+                      within 24 hours to discuss bringing the Sisters
                       to your venue.
                     </div>
                   )}
@@ -453,7 +453,7 @@ const Contact = () => {
                 <Card
                   type="social"
                   iconClass="fas fa-theater-masks"
-                  title="Sanderson Sisters Soirée"
+                  title="Sisters Soirée"
                   description="Complete 90-minute immersive experience with four musical numbers, Billy Butcherson greeter, themed cocktails, and full audience interaction. Custom pricing based on venue capacity with revenue sharing model available."
                   link="/tickets"
                   linkText="View Soirée Details"
@@ -463,7 +463,7 @@ const Contact = () => {
                 <Card
                   type="social"
                   iconClass="fas fa-magic"
-                  title="Sanderson Sisters Appearances"
+                  title="Sisters Appearances"
                   description="Flexible 1-2 hour visits perfect for any venue size, featuring three songs, character interactions, and photo opportunities. Pricing: 1 hour ($450), 1.5 hours ($600), 2 hours ($750)."
                   link="/tickets"
                   linkText="View Appearance Details"
@@ -485,7 +485,7 @@ const Contact = () => {
                   type="social"
                   iconClass="fab fa-youtube"
                   title="YouTube Channel"
-                  description="Watch performance clips and see what makes our Sanderson Sisters special."
+                  description="Watch performance clips and see what makes our Sisters special."
                   link="https://www.youtube.com/@extremelysocial7946/videos"
                   linkText="@ExtremelySocial"
                 />

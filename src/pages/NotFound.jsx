@@ -41,7 +41,7 @@ const NotFound = () => {
                     }}
                   >
                     It seems like the page you're looking for has disappeared
-                    into the mystical void. Perhaps the Sanderson Sisters cast a
+                    into the mystical void. Perhaps the Sisters cast a
                     misdirection spell, or maybe you stumbled upon a broken
                     enchantment.
                   </p>
@@ -110,7 +110,7 @@ const NotFound = () => {
                           opacity: "0.9",
                         }}
                       >
-                        Discover our immersive Sanderson Sisters experiences,
+                        Discover our immersive Sisters experiences,
                         from the full 90-minute Soirée to flexible venue
                         appearances.
                       </p>

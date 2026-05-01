@@ -16,14 +16,14 @@ const heroIconsData = [
 const servicesData = [
   {
     icon: "fas fa-theater-masks",
-    title: "Sanderson Sisters Soirée",
+    title: "Sisters Soirée",
     description:
       "A complete 90-minute immersive experience featuring four live musical numbers, themed cocktails, Billy Butcherson greeter, and interactive storytelling. Perfect for venues seeking a premium entertainment experience.",
     link: "/tickets",
   },
   {
     icon: "fas fa-magic",
-    title: "Sanderson Sisters Appearances",
+    title: "Sisters Appearances",
     description:
       "Shorter, high-impact visits (1-2 hours) perfect for bars, restaurants, private parties, or special events. Includes three spine-tingling songs, photo opportunities, and magical mingling.",
     link: "/tickets",
@@ -54,7 +54,7 @@ const featuresData = [
     icon: "fas fa-calendar-check",
     title: "Flexible Booking",
     description:
-      "Available late September through October 31st. Custom options available including Sanderson Sisters Brunches and venue-specific adaptations.",
+      "Available late September through October 31st. Custom options available including Sisters Brunches and venue-specific adaptations.",
   },
 ];
 
@@ -93,18 +93,18 @@ const reviewsData = [
     author: "— Michael R., Cleveland",
   },
   {
-    quote: `"This wasn't just dinner theater—it was a complete immersive experience. The Sanderson Sisters were hilarious and engaging. We loved every minute!"`,
+    quote: `"This wasn't just dinner theater—it was a complete immersive experience. The Sisters were hilarious and engaging. We loved every minute!"`,
     author: "— Jennifer L., Westlake",
   },
 ];
 
 const Home = () => {
   // Use the custom hook to handle the gallery initialization
-  useNanoGallery("sanderson_gallery", [
+  useNanoGallery("sisters_gallery", [
     {
       src: "edits/1.png",
       srct: "edits/1.png",
-      title: "The Sanderson Sisters",
+      title: "The Sisters",
       description: "Professional performers in full character.",
     },
     {
@@ -179,7 +179,7 @@ const Home = () => {
             <div className="row">
               <div className="col-12">
                 <div className="hero-content mx-auto">
-                  <h1 className="mb-3">The Sanderson Sisters Soirée</h1>
+                  <h1 className="mb-3">The Sisters Soirée</h1>
                   <h2 className="mb-5">An Exclusive Salem Experience</h2>
                   <p className="mx-auto mb-5">
                     Step into the shadows of Salem's most notorious witches. Our
@@ -219,9 +219,9 @@ const Home = () => {
                     Two Magical Experiences Await
                   </h2>
                   <p className="mb-4 experience-description">
-                    From our immersive 90-minute Sanderson Sisters Soirée
+                    From our immersive 90-minute Sisters Soirée
                     featuring four bewitching musical numbers paired with
-                    signature cocktails, to our flexible Sanderson Sisters
+                    signature cocktails, to our flexible Sisters
                     Appearances perfect for any venue or private event.
                   </p>
                   <p className="mb-4 experience-description">
@@ -338,7 +338,7 @@ const Home = () => {
             <h2 className="section-title text-center mb-5">
               Experience the Magic
             </h2>
-            <div id="sanderson_gallery"></div>
+            <div id="sisters_gallery"></div>
           </div>
         </section>
 

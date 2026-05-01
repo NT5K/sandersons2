@@ -16,7 +16,7 @@ const Footer = () => {
                 Immersive experience creation company specializing in
                 over-the-top themed events designed to engage guests and create
                 unforgettable moments. Now in our second spellbinding year with
-                the Sanderson Sisters.
+                the Sisters.
               </p>
               <a
                 href="https://www.youtube.com/@extremelysocial7946/videos"
@@ -36,7 +36,7 @@ const Footer = () => {
                 <Link to="/about">About Extremely Social</Link>
               </p>
               <p>
-                <Link to="/tickets">Sanderson Sisters Soirée</Link>
+                <Link to="/tickets">Sisters Soirée</Link>
               </p>
               <p>
                 <Link to="/cocktails">Signature Cocktails</Link>

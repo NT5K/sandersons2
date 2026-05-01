@@ -9,7 +9,7 @@ const packagesData = [
   {
     isFeatured: true,
     icon: "fas fa-theater-masks",
-    name: "Sanderson Sisters Soirée",
+    name: "Sisters Soirée",
     subtitle: "The Complete 90-Minute Experience",
     price: "Custom",
     priceNote: "Pricing based on venue capacity & ticket price",
@@ -29,13 +29,13 @@ const packagesData = [
   {
     isFeatured: false,
     icon: "fas fa-magic",
-    name: "Sanderson Sisters Appearances",
+    name: "Sisters Appearances",
     subtitle: "Flexible High-Impact Visits",
     price: "$450-$750",
     priceNote: "1 to 2 hours • Perfect for any venue",
     features: [
       "Three spine-tingling musical performances",
-      "Professional Sanderson Sisters cast",
+      "Professional Sisters cast",
       "Wicked banter and character interactions",
       "Mingling and photo opportunities",
       "Perfect for bars, restaurants, private parties",
@@ -154,9 +154,9 @@ const Tickets = () => {
 
   const faqData = [
     {
-      question: "What's included in the Sanderson Sisters Soirée?",
+      question: "What's included in the Sisters Soirée?",
       answer:
-        "The 90-minute Soirée includes four live musical numbers by professional Sanderson Sisters impersonators, Billy Butcherson as theatrical greeter, four themed cocktails paired with each performance, guest interaction, spooky decor, photo opportunities, and a complete immersive experience that transports you into the world of Hocus Pocus.",
+        "The 90-minute Soirée includes four live musical numbers by professional Sisters impersonators, Billy Butcherson as theatrical greeter, four themed cocktails paired with each performance, guest interaction, spooky decor, photo opportunities, and a complete immersive experience that transports you into the world of Hocus Pocus.",
     },
     {
       question: "How do the Appearances differ from the Soirée?",
@@ -166,7 +166,7 @@ const Tickets = () => {
     {
       question: "Can you customize the experience for our venue?",
       answer:
-        "Absolutely! We've successfully adapted our magic for various venues and events. We can create custom experiences like our popular Sanderson Sisters Brunch (hosted at Valenti's Restaurant with three sold-out seatings) or tailor the performance to your space and audience needs.",
+        "Absolutely! We've successfully adapted our magic for various venues and events. We can create custom experiences like our popular Sisters Brunch (hosted at Valenti's Restaurant with three sold-out seatings) or tailor the performance to your space and audience needs.",
     },
     {
       question: "What do you provide vs. what does the venue need?",
@@ -384,7 +384,7 @@ const Tickets = () => {
                   <p className="text-silver mb-3">
                     We get creative! If neither of our standard options fits
                     exactly what you need, we can adapt. We've successfully
-                    hosted a Sanderson Sisters Brunch at Valenti's Restaurant in
+                    hosted a Sisters Brunch at Valenti's Restaurant in
                     Broadview Heights with three seatings—all sold out.
                   </p>
                   <p className="text-silver mb-4">
@@ -425,7 +425,7 @@ const Tickets = () => {
                 <div className="private-image border border-warning overflow-hidden">
                   <img
                     src="./assets/images/edits/2.png"
-                    alt="Custom Sanderson Sisters Experience"
+                    alt="Custom Sisters Experience"
                     className="img-fluid w-100"
                   />
                 </div>

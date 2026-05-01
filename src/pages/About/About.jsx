@@ -14,7 +14,7 @@ const About = () => {
     {
       src: "gallery/DSC_6711.JPG",
       srct: "gallery/DSC_6711.JPG",
-      title: "The Sanderson Sisters",
+      title: "The Sisters",
       description: "Professional performers in full character.",
     },
     {
@@ -45,7 +45,7 @@ const About = () => {
         <PageHero
           backgroundImage="./assets/images/hero/witches-hero-wide.png"
           title="About the Experience"
-          subtitle="Extremely Social Presents The Sanderson Sisters"
+          subtitle="Extremely Social Presents The Sisters Soirée"
           className="hero-full-height"
         />
 
@@ -58,13 +58,13 @@ const About = () => {
                 Extremely Social is an immersive experience creation company
                 specializing in over-the-top themed events designed to engage
                 guests and create unforgettable moments. Now in our second year,
-                The Sanderson Sisters experience represents our commitment to
+                The Sisters Soirée experience represents our commitment to
                 bringing beloved characters to life through professional
                 theatrical excellence.
               </p>
 
               <p>
-                Last season, our Sanderson Sisters were completely sold out the
+                Last season, our Sisters were completely sold out the
                 entire month of October, half of September, and even into
                 November. This unprecedented success stems from our dedication
                 to creating something far beyond traditional murder mysteries
@@ -98,7 +98,7 @@ const About = () => {
               <DetailsCard
                 iconClass="fas fa-theater-masks"
                 title="Professional Cast"
-                description="Professional Sanderson Sisters impersonators bring Winifred, Sarah, and Mary to life with authentic costumes, masterful character work, and theatrical flair that rivals any professional production."
+                description="Professional Sisters impersonators bring Winifred, Sarah, and Mary to life with authentic costumes, masterful character work, and theatrical flair that rivals any professional production."
               />
               <DetailsCard
                 iconClass="fas fa-user-tie"
@@ -152,7 +152,7 @@ const About = () => {
                   become active participants rather than passive observers.
                 </p>
                 <p>
-                  From our sold-out Sanderson Sisters experiences to custom
+                  From our sold-out Sisters experiences to custom
                   venue partnerships, we bring creativity and innovation to
                   every project. We don't just host events—we create magical
                   moments that guests will talk about long after the night is
@@ -162,7 +162,7 @@ const About = () => {
               <div className="company-image">
                 <img
                   src="./assets/images/edits/5.jpg"
-                  alt="Extremely Social - The Sanderson Sisters"
+                  alt="Extremely Social - The Sisters"
                   className="img-fluid"
                 />
               </div>
@@ -206,7 +206,7 @@ const About = () => {
                 <h4 className="mb-3 text-uppercase">Custom Options</h4>
                 <p>
                   Beyond our standard offerings, we create custom experiences
-                  like our popular Sanderson Sisters Brunch, hosted at Valenti's
+                  like our popular Sisters Brunch, hosted at Valenti's
                   Restaurant with three sold-out seatings. We adapt to venue
                   needs and creative visions.
                 </p>

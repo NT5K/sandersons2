@@ -12,7 +12,7 @@ const SuccessStory = () => {
                 Now in Our Second Spellbinding Year
               </h3>
               <p className="text-white-50 mb-4 success-story-text">
-                Last season, our Sanderson Sisters were{" "}
+                Last season, our Sisters were{" "}
                 <strong style={{ color: "var(--gold-accent)" }}>
                   completely sold out
                 </strong>{" "}

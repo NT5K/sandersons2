@@ -10,7 +10,7 @@ const cocktailsData = [
     id: "winifred",
     name: "Witch's Welcome",
     pairing: `~ Paired with "I Put a Spell on You" ~`,
-    description: `The perfect greeting as the Sanderson Sisters make their grand entrance. This enchanting elixir puts a playful spell on guests, "claiming" them for the next 90 minutes of magical mayhem. A bewitching blend that sets the tone for an unforgettable evening of interactive entertainment.`,
+    description: `The perfect greeting as the Sisters make their grand entrance. This enchanting elixir puts a playful spell on guests, "claiming" them for the next 90 minutes of magical mayhem. A bewitching blend that sets the tone for an unforgettable evening of interactive entertainment.`,
     ingredientsTitle: "Mystical Elements",
     ingredientsList: `A welcoming concoction designed to enchant and delight • Crafted to complement the Sisters' dramatic entrance • Sets the magical tone for the evening's entertainment`,
     imageSrc: "./assets/images/drinks/winifreds-revenge.png",
@@ -32,7 +32,7 @@ const cocktailsData = [
     id: "mary",
     name: "Soul Sucker Sangria",
     pairing: `~ Paired with "Carol of the Witches" ~`,
-    description: `The perfect finale as the Sanderson Sisters cast their most haunting, melodic spell. This deep red sangria or blackberry-vodka-based cocktail is garnished with dry ice or a "soul swirl" of silver edible glitter. Dark, mysterious, and delicious—served as the sisters circle the room and "choose" their next victims for eternal youth.`,
+    description: `The perfect finale as the Sisters cast their most haunting, melodic spell. This deep red sangria or blackberry-vodka-based cocktail is garnished with dry ice or a "soul swirl" of silver edible glitter. Dark, mysterious, and delicious—served as the sisters circle the room and "choose" their next victims for eternal youth.`,
     ingredientsTitle: "Soul-Stealing Components",
     ingredientsList: `Deep red sangria or blackberry-vodka base • Garnished with mystical dry ice for dramatic effect • Silver edible glitter creates the signature "soul swirl" • The chilling finale to your evening's enchantment`,
     imageSrc: "./assets/images/drinks/marys-mischief.png",
@@ -108,7 +108,7 @@ const Cocktails = () => {
             </h2>
             <div className="menu-intro col-lg-8 mx-auto text-center">
               <p>
-                Our Sanderson Sisters Soirée is enhanced by signature cocktails
+                Our Sisters Soirée is enhanced by signature cocktails
                 expertly paired with each musical performance. Below are four
                 inspirational concepts designed to spark the imagination. The
                 final drink menu is always customized in collaboration with each
@@ -159,7 +159,7 @@ const Cocktails = () => {
                   title="Atmospheric Service"
                   description="Our professional cast serves each cocktail with theatrical flair and 
                       character interaction, ensuring every drink delivery becomes a memorable moment 
-                      in your Sanderson Sisters journey."
+                      in your Sisters journey."
                 />
               </div>
             </div>
@@ -234,7 +234,7 @@ const Cocktails = () => {
               <h2 className="section-title">Ready to Serve Some Magic?</h2>
               <p className="section-subtitle">
                 Our signature cocktail concepts are an integral part of the
-                complete Sanderson Sisters experience. Contact us to learn how
+                complete Sisters experience. Contact us to learn how
                 we can collaborate with you to integrate a custom, mystical bar
                 program that maximizes guest engagement and revenue.
               </p>
