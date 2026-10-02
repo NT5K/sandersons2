@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import PageHero from "../../components/PageHero/PageHero";
 import Card from "../../components/ContactCard/ContactCard";
 import "./Contact.css";
 
+const CONTACT_EMAIL = "dominick@extrememp.com";
+
 const Contact = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch {
+      // Clipboard unavailable (e.g. insecure context); mailto link still works
+    }
+  };
+
   return (
     <>
       <div>
@@ -101,15 +115,27 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="mailto:dominick@extrememp.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="contact-direct-item"
                 >
                   <i className="fas fa-envelope"></i>
                   <span className="contact-direct-label">Email</span>
                   <span className="contact-direct-value">
-                    dominick@extrememp.com
+                    {CONTACT_EMAIL}
                   </span>
                 </a>
+
+                <button
+                  type="button"
+                  className="contact-copy-btn"
+                  onClick={copyEmail}
+                  aria-live="polite"
+                >
+                  <i
+                    className={`fas ${emailCopied ? "fa-check" : "fa-copy"} me-2`}
+                  ></i>
+                  {emailCopied ? "Email Copied!" : "Copy Email Address"}
+                </button>
               </div>
             </div>
           </div>
