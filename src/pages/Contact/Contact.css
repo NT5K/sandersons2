@@ -15,8 +15,8 @@
   align-items: start;
 }
 
-/* Form Container */
-.contact-form-container {
+/* Direct Contact Container */
+.contact-direct-container {
   background: linear-gradient(
     145deg,
     rgba(26, 26, 26, 0.95),
@@ -30,7 +30,7 @@
   border-radius: 0.25rem; /* Bootstrap default radius */
 }
 
-.contact-form-container::before {
+.contact-direct-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -46,7 +46,7 @@
   transition: left 0.8s ease;
 }
 
-.contact-form-container:hover::before {
+.contact-direct-container:hover::before {
   left: 100%;
 }
 
@@ -94,43 +94,55 @@
   left: 100%;
 }
 
-/* Form Styling */
-.contact-form-container .form-control,
-.contact-form-container .form-select,
-.contact-form-container .btn {
-  border-radius: 0; /* Keep square edges for form elements */
+/* Direct Contact Block */
+.contact-direct-intro {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  color: var(--silver);
 }
 
-.contact-form-container .form-control,
-.contact-form-container .form-select {
-  background: rgba(26, 26, 26, 0.6);
+.contact-direct-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 25px 20px;
+  margin-bottom: 20px;
   border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(26, 26, 26, 0.6);
   color: var(--silver);
-  padding: 15px 20px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
   transition: all 0.3s ease;
 }
 
-.contact-form-container .form-control::placeholder,
-.contact-form-container .form-select option {
-  color: rgba(192, 192, 192, 0.6); /* Silver with opacity for placeholders */
+.contact-direct-item:last-child {
+  margin-bottom: 0;
 }
 
-.contact-form-container .form-control:focus,
-.contact-form-container .form-select:focus {
-  background: rgba(26, 26, 26, 0.8);
+.contact-direct-item:hover {
   border-color: var(--gold-accent);
-  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
   color: var(--silver);
+  transform: translateY(-3px);
 }
 
-.contact-form-container label {
+.contact-direct-item i {
+  font-size: 1.6rem;
+  color: var(--gold-accent);
+}
+
+.contact-direct-label {
   font-family: "Cinzel", serif;
   color: var(--gold-accent);
   letter-spacing: 0.5px;
   font-size: 0.95rem;
-  margin-bottom: 8px; /* Custom margin */
+}
+
+.contact-direct-value {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
 }
 
 /* Contact Info */
@@ -289,7 +301,7 @@
   }
 }
 @media (max-width: 575.98px) {
-  .contact-form-container {
+  .contact-direct-container {
     padding: 40px 25px;
   }
 }
